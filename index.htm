@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+        }
+        .result {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Survey</h1>
+        <form id="surveyForm">
+            <div class="form-group">
+                <label for="question1">How satisfied are you with our service?</label>
+                <select class="form-control" id="question1" required>
+                    <option value="">Choose...</option>
+                    <option value="Very Satisfied">Very Satisfied</option>
+                    <option value="Satisfied">Satisfied</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="Dissatisfied">Dissatisfied</option>
+                    <option value="Very Dissatisfied">Very Dissatisfied</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question2">Would you recommend us to others?</label>
+                <select class="form-control" id="question2" required>
+                    <option value="">Choose...</option>
+                    <option value="Definitely">Definitely</option>
+                    <option value="Maybe">Maybe</option>
+                    <option value="Not Sure">Not Sure</option>
+                    <option value="Probably Not">Probably Not</option>
+                    <option value="Definitely Not">Definitely Not</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div class="result mt-5">
+            <h2 class="text-center">Survey Results</h2>
+            <p><strong>Satisfaction:</strong> <span id="resultQuestion1"></span></p>
+            <p><strong>Recommendation:</strong> <span id="resultQuestion2"></span></p>
+            <button class="btn btn-secondary" onclick="resetForm()">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('surveyForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const question1 = document.getElementById('question1').value;
+            const question2 = document.getElementById('question2').value;
+
+            document.getElementById('resultQuestion1').innerText = question1;
+            document.getElementById('resultQuestion2').innerText = question2;
+
+            document.getElementById('surveyForm').style.display = 'none';
+            document.querySelector('.result').style.display = 'block';
+        });
+
+        function resetForm() {
+            document.getElementById('surveyForm').reset();
+            document.getElementById('surveyForm').style.display = 'block';
+            document.querySelector('.result').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
