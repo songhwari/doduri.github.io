@@ -21,6 +21,7 @@ const questionsData = [
         type: 'single',
         condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'COVID'
     },
+    // COVID-19 questions for Age 12 and Over
     {
         id: 'covidOver12Q1',
         text: 'Are you feeling sick today?',
@@ -28,59 +29,8 @@ const questionsData = [
         type: 'single',
         condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'COVID' && document.getElementById('ageGroup').value === '12 and Over'
     },
-    {
-        id: 'covidOver12Q2',
-        text: 'Have you received a COVID-19 vaccination before?',
-        options: ['Yes', 'No'],
-        type: 'single',
-        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'COVID' && document.getElementById('ageGroup').value === '12 and Over'
-    },
-    {
-        id: 'covidOver12Q3',
-        text: 'Have you had an adverse or allergic reaction to a prior COVID vaccine, anaphylaxis due to any cause, or allergic reaction to any other vaccine or injectable therapy?',
-        options: ['Yes', 'No'],
-        type: 'single',
-        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'COVID' && document.getElementById('ageGroup').value === '12 and Over'
-    },
-    {
-        id: 'covidOver12Q4',
-        text: 'Do you have hemophilia or other bleeding disorder or take blood thinner?',
-        options: ['Yes', 'No'],
-        type: 'single',
-        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'COVID' && document.getElementById('ageGroup').value === '12 and Over'
-    },
-    {
-        id: 'covidOver12Q5',
-        text: 'Are you, or might you be, pregnant?',
-        options: ['Yes', 'No'],
-        type: 'single',
-        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'COVID' && document.getElementById('ageGroup').value === '12 and Over'
-    },
-    {
-        id: 'covidOver12Q6',
-        text: 'Do you have an immunocompromising condition (HIV/AIDS, cancer, leukemia, etc.) or take an immunocompromising medicine or treatment (steroids, chemotherapy, radiation therapy, etc.)?',
-        options: ['Yes', 'No'],
-        type: 'single',
-        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'COVID' && document.getElementById('ageGroup').value === '12 and Over'
-    },
-    {
-        id: 'covidOver12Q7',
-        text: 'Have you received a smallpox/mpox vaccine in the past month, or plan to receive smallpox/mpox vaccine today?',
-        options: ['Yes', 'No'],
-        type: 'single',
-        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'COVID' && document.getElementById('ageGroup').value === '12 and Over'
-    },
-    {
-        id: 'covidOver12Q8',
-        text: 'Check all that apply to the person being vaccinated:',
-        options: [
-            'History of COVID-19 disease within the past 3 months',
-            'History of multi-system inflammatory syndrome (MIS-C or MIS –A)',
-            'History of myocarditis or pericarditis within 3 weeks after a dose of any COVID-19 vaccine'
-        ],
-        type: 'multiple',
-        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'COVID' && document.getElementById('ageGroup').value === '12 and Over'
-    },
+    // (other COVID-19 questions for Age 12 and Over)
+    // COVID-19 questions for Under 12
     {
         id: 'covidUnder12Q1',
         text: 'Is your child sick today?',
@@ -88,44 +38,56 @@ const questionsData = [
         type: 'single',
         condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'COVID' && document.getElementById('ageGroup').value === 'Under 12'
     },
+    // (other COVID-19 questions for Under 12)
+    // Influenza questions for children
     {
-        id: 'covidUnder12Q2',
-        text: 'Has your child received a COVID-19 vaccination before?',
+        id: 'influenzaQ1',
+        text: 'Are you currently sick, feel ill, or have a fever over 100F?',
         options: ['Yes', 'No'],
         type: 'single',
-        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'COVID' && document.getElementById('ageGroup').value === 'Under 12'
+        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'Influenza'
     },
     {
-        id: 'covidUnder12Q3',
-        text: 'Has your child had an adverse or allergic reaction to a prior COVID vaccine, anaphylaxis due to any cause, or allergic reaction to any other vaccine or injectable therapy?',
+        id: 'influenzaQ2',
+        text: 'Have you had a serious reaction, other than Flu-like symptoms, following an influenza vaccine in the past?',
         options: ['Yes', 'No'],
         type: 'single',
-        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'COVID' && document.getElementById('ageGroup').value === 'Under 12'
+        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'Influenza'
     },
     {
-        id: 'covidUnder12Q4',
-        text: 'Does your child have hemophilia or other bleeding disorder or take a blood thinner?',
+        id: 'influenzaQ3',
+        text: 'Have you ever experienced numbness or weakness of their legs or elsewhere (Guillain-Barre syndrome) within 6 weeks of receiving an influenza vaccine?',
         options: ['Yes', 'No'],
         type: 'single',
-        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'COVID' && document.getElementById('ageGroup').value === 'Under 12'
+        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'Influenza'
     },
     {
-        id: 'covidUnder12Q5',
-        text: 'Does your child have an immunocompromising condition (HIV/AIDS, cancer, leukemia, etc.) or take an immunocompromising medicine or treatment (steroids, chemotherapy, radiation therapy, etc.)?',
+        id: 'influenzaQ4',
+        text: 'Have you ever had, or been treated for, an allergic reaction (flushing, hives, wheezing, and/or low blood pressure) to any vaccine, or do they have an allergy to any of the following: gelatin, MSG, Gentamicyn, Neomycin, Połymyxin-B, thimerosal, formaldehyde, latex, or other vaccine component?',
         options: ['Yes', 'No'],
         type: 'single',
-        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'COVID' && document.getElementById('ageGroup').value === 'Under 12'
+        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'Influenza'
     },
     {
-        id: 'covidUnder12Q6',
-        text: 'Check all that apply to the person being vaccinated:',
-        options: [
-            'History of COVID-19 disease within the past 3 months',
-            'History of multi-system inflammatory syndrome (MIS-C)',
-            'History of myocarditis or pericarditis'
-        ],
-        type: 'multiple',
-        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'COVID' && document.getElementById('ageGroup').value === 'Under 12'
+        id: 'influenzaQ5',
+        text: 'If your child is between 6 months and 8 years of age, has your child received at least 2 doses of flu vaccine?',
+        options: ['Yes', 'No', 'N/A'],
+        type: 'single',
+        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'Influenza'
+    },
+    {
+        id: 'influenzaQ6',
+        text: 'Have you received an influenza vaccine within the past 30 days?',
+        options: ['Yes', 'No'],
+        type: 'single',
+        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'Influenza'
+    },
+    {
+        id: 'influenzaQ7',
+        text: 'Are you, or might you be, pregnant?',
+        options: ['Yes', 'No'],
+        type: 'single',
+        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'Influenza'
     }
 ];
 
