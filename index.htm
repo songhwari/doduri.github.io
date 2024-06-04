@@ -3,67 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Survey Page</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .container {
-            max-width: 600px;
-            margin-top: 50px;
-        }
-        .result {
-            display: none;
-        }
-    </style>
+    <title>Survey Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1 class="text-center">Survey</h1>
-        <form id="surveyForm">
-            <div class="form-group">
-                <label for="question1">Who will get vaccinated?</label>
-                <select class="form-control" id="question1" required>
-                    <option value="">Choose...</option>
-                    <option value="Myself">Myself</option>
-                    <option value="My child">My child</option>
-                </select>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title text-center">Vaccination Survey</h1>
+                <form id="surveyForm">
+                    <div id="dynamicQuestions"></div>
+                    <button type="button" id="nextButton" class="btn btn-primary btn-block mt-4" onclick="nextQuestion()">Next</button>
+                    <button type="button" id="completeButton" class="btn btn-success btn-block mt-4" style="display:none;" onclick="showSummary()">Complete</button>
+                </form>
+                <div id="summary" style="display: none;">
+                    <h2 class="text-center mt-4">Survey Summary</h2>
+                    <div id="summaryContent" class="mt-3"></div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="question2">Which vaccine is required?</label>
-                <select class="form-control" id="question2" required>
-                    <option value="">Choose...</option>
-                    <option value="Routine">Routine</option>
-                    <option value="Influenza">Influenza</option>
-                    <option value="Covid">Covid</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-        <div class="result mt-5">
-            <h2 class="text-center">Survey Results</h2>
-            <p><strong>Vaccination Candidate:</strong> <span id="resultQuestion1"></span></p>
-            <p><strong>Vaccine Required:</strong> <span id="resultQuestion2"></span></p>
-            <button class="btn btn-secondary" onclick="resetForm()">Reset</button>
         </div>
     </div>
-
-    <script>
-        document.getElementById('surveyForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const question1 = document.getElementById('question1').value;
-            const question2 = document.getElementById('question2').value;
-
-            document.getElementById('resultQuestion1').innerText = question1;
-            document.getElementById('resultQuestion2').innerText = question2;
-
-            document.getElementById('surveyForm').style.display = 'none';
-            document.querySelector('.result').style.display = 'block';
-        });
-
-        function resetForm() {
-            document.getElementById('surveyForm').reset();
-            document.getElementById('surveyForm').style.display = 'block';
-            document.querySelector('.result').style.display = 'none';
-        }
-    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
