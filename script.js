@@ -38,7 +38,45 @@ const questionsData = [
         type: 'single',
         condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'COVID' && document.getElementById('ageGroup').value === 'Under 12'
     },
-    // (other COVID-19 questions for Under 12)
+    {
+        id: 'covidUnder12Q2',
+        text: 'Has your child received a COVID-19 vaccination before?',
+        options: ['Yes', 'No'],
+        type: 'single',
+        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'COVID' && document.getElementById('ageGroup').value === 'Under 12'
+    },
+    {
+        id: 'covidUnder12Q3',
+        text: 'Has your child had an adverse or allergic reaction to a prior COVID vaccine, anaphylaxis due to any cause, or allergic reaction to any other vaccine or injectable therapy?',
+        options: ['Yes', 'No'],
+        type: 'single',
+        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'COVID' && document.getElementById('ageGroup').value === 'Under 12'
+    },
+    {
+        id: 'covidUnder12Q4',
+        text: 'Does your child have hemophilia or other bleeding disorder or take a blood thinner?',
+        options: ['Yes', 'No'],
+        type: 'single',
+        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'COVID' && document.getElementById('ageGroup').value === 'Under 12'
+    },
+    {
+        id: 'covidUnder12Q5',
+        text: 'Does your child have an immunocompromising condition (HIV/AIDS, cancer, leukemia, etc.) or take an immunocompromising medicine or treatment (steroids, chemotherapy, radiation therapy, etc.)?',
+        options: ['Yes', 'No'],
+        type: 'single',
+        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'COVID' && document.getElementById('ageGroup').value === 'Under 12'
+    },
+    {
+        id: 'covidUnder12Q6',
+        text: 'Check all that apply to the person being vaccinated:',
+        options: [
+            'History of COVID-19 disease within the past 3 months',
+            'History of multi-system inflammatory syndrome (MIS-C)',
+            'History of myocarditis or pericarditis'
+        ],
+        type: 'multiple',
+        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'COVID' && document.getElementById('ageGroup').value === 'Under 12'
+    },
     // Influenza questions for children
     {
         id: 'influenzaQ1',
