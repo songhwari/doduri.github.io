@@ -88,6 +88,105 @@ const questionsData = [
         options: ['Yes', 'No'],
         type: 'single',
         condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'Influenza'
+    },
+    // Routine vaccine questions for children
+    {
+        id: 'routineQ1',
+        text: 'Is the child sick today?',
+        options: ['Yes', 'No', 'Unknown'],
+        type: 'single',
+        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'Routine'
+    },
+    {
+        id: 'routineQ2',
+        text: 'Has the child had a serious reaction after receiving a vaccination?',
+        options: ['Yes', 'No', 'Unknown'],
+        type: 'single',
+        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'Routine'
+    },
+    {
+        id: 'routineQ3',
+        text: 'Does the child have allergies to medication, food, a vaccine component, or latex?',
+        options: ['Yes', 'No', 'Unknown'],
+        type: 'single',
+        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'Routine'
+    },
+    {
+        id: 'routineQ4',
+        text: 'Has the child, a sibling, or a parent had a seizure; has the child had brain or other nervous system problems?',
+        options: ['Yes', 'No', 'Unknown'],
+        type: 'single',
+        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'Routine'
+    },
+    {
+        id: 'routineQ5',
+        text: 'Has the child had a health problem involving heart, lung (e.g. asthma), kidney, or metabolic disease (e.g., diabetes), anemia, or other blood disorder? Is he/she on long-term aspirin therapy?',
+        options: ['Yes', 'No', 'Unknown'],
+        type: 'single',
+        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'Routine'
+    },
+    {
+        id: 'routineQ6',
+        text: 'Does the child have cancer, leukemia, HIV/AIDS, or does the child or family members (parents or siblings) have an immune system problem?',
+        options: ['Yes', 'No', 'Unknown'],
+        type: 'single',
+        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'Routine'
+    },
+    {
+        id: 'routineQ7',
+        text: 'In the past 3 months, has the child taken medications that weaken his/her immune system, such as prednisone or other steroids; anticancer drugs; biologic drugs for autoimmune diseases such as rheumatoid arthritis, Crohn\'s disease, or psoriasis; or had radiation treatments?',
+        options: ['Yes', 'No', 'Unknown'],
+        type: 'single',
+        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'Routine'
+    },
+    {
+        id: 'routineQ8',
+        text: 'In the past year, has the child received a transfusion of blood or blood products, or been given immune (gamma) globulin or an antiviral drug?',
+        options: ['Yes', 'No', 'Unknown'],
+        type: 'single',
+        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'Routine'
+    },
+    {
+        id: 'routineQ9',
+        text: 'If your child is a baby, have you ever been told he/she has had intussusception?',
+        options: ['Yes', 'No', 'Unknown', 'Not Applicable'],
+        type: 'single',
+        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'Routine'
+    },
+    {
+        id: 'routineQ10',
+        text: 'If the child to be vaccinated IS 2 through 4 years of age, has a healthcare provider told you that the child had wheezing or asthma in the past 12 months?',
+        options: ['Yes', 'No', 'Unknown', 'Not Applicable'],
+        type: 'single',
+        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'Routine'
+    },
+    {
+        id: 'routineQ11',
+        text: 'Has the child had (or is a candidate for) his/her spleen removed, or do they have sickle cell anemia?',
+        options: ['Yes', 'No', 'Unknown'],
+        type: 'single',
+        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'Routine'
+    },
+    {
+        id: 'routineQ12',
+        text: 'Has the child ever passed out (had vasovagal syncope) during or after a previous immunization or blood draw?',
+        options: ['Yes', 'No', 'Unknown'],
+        type: 'single',
+        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'Routine'
+    },
+    {
+        id: 'routineQ13',
+        text: 'Has the child received any vaccinations in the past 4 weeks?',
+        options: ['Yes', 'No', 'Unknown'],
+        type: 'single',
+        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'Routine'
+    },
+    {
+        id: 'routineQ14',
+        text: 'Is the child/teen pregnant or is there a chance she could become pregnant during the next month?',
+        options: ['Yes', 'No', 'Unknown', 'Not Applicable'],
+        type: 'single',
+        condition: () => document.getElementById('recipient').value === 'My Child' && document.getElementById('vaccinationType').value === 'Routine'
     }
 ];
 
