@@ -164,7 +164,7 @@ const questionsData = [
         text: 'Have you had a health problem involving heart, lung (e.g., asthma), kidney, or metabolic disease (e.g., diabetes), anemia, or other blood disorder?',
         options: ['Yes', 'No', 'Unknown'],
         type: 'single',
-        condition: () => document.getElementById('recipient').value === 'Myself && document.getElementById('vaccinationType').value === 'Routine'
+        condition: () => document.getElementById('recipient').value === 'Myself' && document.getElementById('vaccinationType').value === 'Routine'
     },
     {
         id: 'routineAdultQ6',
@@ -415,7 +415,6 @@ function displayQuestion(index) {
     dynamicQuestions.innerHTML = ''; // Clear previous question
 
     if (index >= questionsData.length) {
-        document.getElementById('nextButton').style.display = 'none';
         document.getElementById('completeButton').style.display = 'block';
         return;
     }
