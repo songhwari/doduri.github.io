@@ -36,3 +36,7 @@ body {
 #summaryContent {
     white-space: pre-wrap;
 }
+
+#summaryContent .highlight {
+	color: red;
+}
