@@ -182,7 +182,7 @@ const questionsData = [
     },
     {
         id: 'Q8',
-        text: 'In the past year, have you received transfusion of blood or blood a products, or been given immune (gamma) globulin or an antiviral drug?',
+        text: 'In the past year, have you received transfusion of blood or blood products, or been given immune (gamma) globulin or an antiviral drug?',
         options: ['Yes', 'No', 'Unknown'],
         type: 'single',
         condition: () => document.getElementsByName('recipient')[0].value === 'Myself' && document.getElementsByName('vaccinationType')[0].value === 'Routine'
@@ -345,7 +345,7 @@ const questionsData = [
     },
     {
         id: 'Q5',
-        text: 'Have you received an influenza vacccine within the past 30 days?',
+        text: 'Have you received an influenza vaccine within the past 30 days?',
         options: ['Yes', 'No'],
         type: 'single',
         condition: () => document.getElementsByName('recipient')[0].value === 'Myself' && document.getElementsByName('vaccinationType')[0].value === 'Influenza'
@@ -381,14 +381,14 @@ const questionsData = [
     },
     {
         id: 'Q4',
-        text: 'Have you ever had, or been treated for, an allergic reaction (flushing, hives, wheezing, and/or low blood pressure) to any vaccine, or do they have an allergy to any of the following: gelatin, MSG, Gentamicyn, Neomycin, Połymyxin-B, thimerosal, formaldehyde, latex, or other vaccine component?',
+        text: 'Have you ever had, or been treated for, an allergic reaction (flushing, hives, wheezing, and/or low blood pressure) to any vaccine, or do they have an allergy to any of the following: gelatin, MSG, Gentamicin, Neomycin, Polymyxin-B, thimerosal, formaldehyde, latex, or other vaccine component?',
         options: ['Yes', 'No'],
         type: 'single',
         condition: () => document.getElementsByName('recipient')[0].value === 'My Child' && document.getElementsByName('vaccinationType')[0].value === 'Influenza'
     },
     {
         id: 'Q5',
-        text: 'If your child is between 6 months and 8 years of age, has your child o received at least 2 doses of flu vaccine?',
+        text: 'If your child is between 6 months and 8 years of age, has your child received at least 2 doses of flu vaccine?',
         options: ['Yes', 'No', 'N/A'],
         type: 'single',
         condition: () => document.getElementsByName('recipient')[0].value === 'My Child' && document.getElementsByName('vaccinationType')[0].value === 'Influenza'
