@@ -338,7 +338,7 @@ const questionsData = [
     },
     {
         id: 'Q4',
-        text: 'Have you ever had, or been treated for, an allergic 4. reaction (flushing, hives, wheezing, and/or low blood pressure) to any vaccine, or do you have an allergy to any of the following: gelatin, MSG, Gentamycin, Neomycin, Polymyxin-B, thimerosal, formaldehyde, latex, or other vaccine component?',
+        text: 'Have you ever had, or been treated for, an allergic 4. reaction (flushing, hives, wheezing, and/or low blood pressure) to any vaccine, or do you have an allergy to any of the following: gelatin, MSG, Gentamicin, Neomycin, Polymyxin-B, thimerosal, formaldehyde, latex, or other vaccine component?',
         options: ['Yes', 'No'],
         type: 'single',
         condition: () => document.getElementsByName('recipient')[0].value === 'Myself' && document.getElementsByName('vaccinationType')[0].value === 'Influenza'
