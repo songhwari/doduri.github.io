@@ -338,7 +338,7 @@ const questionsData = [
     },
     {
         id: 'Q4',
-        text: 'Have you ever had, or been treated for, an allergic 4. reaction (flushing, hives, wheezing, and/or low blood pressure) to any vaccine, or do you have an allergy to any of the following: gelatin, MSG, Gentamicin, Neomycin, Polymyxin-B, thimerosal, formaldehyde, latex, or other vaccine component?',
+        text: 'Have you ever had, or been treated for, an allergic reaction (flushing, hives, wheezing, and/or low blood pressure) to any vaccine, or do you have an allergy to any of the following: gelatin, MSG, Gentamicin, Neomycin, Polymyxin-B, thimerosal, formaldehyde, latex, or other vaccine component?',
         options: ['Yes', 'No'],
         type: 'single',
         condition: () => document.getElementsByName('recipient')[0].value === 'Myself' && document.getElementsByName('vaccinationType')[0].value === 'Influenza'
@@ -411,6 +411,8 @@ const questionsData = [
 ];
 
 function displayQuestion(index) {
+	if (index > 0) document.getElementById('surveyTitle').style.display = 'none';
+
     const dynamicQuestions = document.getElementById('dynamicQuestions');
     dynamicQuestions.innerHTML = ''; // Clear previous question
 
@@ -518,6 +520,7 @@ function showSummary() {
 
     document.getElementById('surveyForm').style.display = 'none';
     document.getElementById('summary').style.display = 'block';
+	
 }
 
 window.onload = function() {
