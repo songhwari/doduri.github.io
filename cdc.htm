@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIS</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title text-center" id="page_title">VIS</h1>
+                <div id="buttonContainer">
+                    <!-- First step buttons will be dynamically inserted here -->
+                </div>
+                <div id="secondStepContainer" style="display: none;">
+                    <!-- Second step buttons will be dynamically inserted here -->
+                </div>
+                <div id="homeContainer" style="display: block;">
+                    <button type="button" class="btn btn-success btn-block mt-3" onclick="javascript:window.location.reload();">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Sample data for the buttons
+        const firstStepButtons = [
+            { text: '2,4,6 months', subButtons: [
+                { text: 'First vaccine', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/multi.html' },
+                { text: 'Rotavirus', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/rotavirus.html' }
+            ]},
+            { text: '12 months', subButtons: [
+                { text: 'Hep A', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/hep-a.html' },
+                { text: 'Hib', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/hib.html' },
+                { text: 'PCV', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/pcv.html' },
+                { text: 'MMR', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/mmr.html' },
+                { text: 'Varicella', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/varicella.html' }
+            ]},
+            { text: '18 months', subButtons: [
+                { text: 'Hep A', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/hep-a.html' },
+                { text: 'DTaP', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/dtap.html' }
+            ]},
+            { text: '4 years', subButtons: [
+                { text: 'DTaP', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/dtap.html' },
+                { text: 'Polio', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/ipv.html' },
+                { text: 'MMRV', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/mmrv.html' }
+            ]},
+            { text: '9 & 11 years', subButtons: [
+                { text: 'HPV', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/hpv.html' },
+                { text: 'Menveo', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/mening.html' },
+                { text: 'Tdap', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/tdap.html' }
+            ]},
+            { text: 'Flu, COVID & JEV', subButtons: [
+                { text: 'Flu', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/flu.html' },
+                { text: 'JEV', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/je-ixiaro.html' },
+                { text: 'COVID', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/covid-19.html' }
+            ]},
+            { text: 'Others', subButtons: [
+                { text: 'Hep A', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/hep-a.html' },
+                { text: 'Hep B', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/hep-b.html' },
+                { text: 'Hib', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/hib.html' },
+                { text: 'PCV13', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/pcv.html' },
+                { text: 'PPSV23', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/ppv.html' },
+                { text: 'MMR', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/mmr.html' },
+                { text: 'Varicella', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/varicella.html' },
+                { text: 'Tdap', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/tdap.html' },
+                { text: 'Td', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/td.html' },
+                { text: 'HPV', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/hpv.html' },
+                { text: 'Menveo', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/mening.html' },
+                { text: 'Men B', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/mening-serogroup.html' },
+                { text: 'Polio', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/ipv.html' },
+                { text: 'RSV', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/rsv.html' },
+                { text: 'RSV (Nirsevimab)', url: 'https://www.cdc.gov/vaccines/vpd/rsv/immunization-information-statement.html' },
+                { text: 'Zoster', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/shingles-recombinant.html' },
+                { text: 'Anthrax', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/anthrax.html' },
+                { text: 'Rabies', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/rabies.html' },
+                { text: 'Tick-borne Encephalitis Virus', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/tbe.html' },
+                { text: 'Typhoid', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/typhoid.html' },
+                { text: 'Yellow fever', url: 'https://www.cdc.gov/vaccines/hcp/vis/vis-statements/yf.html' }
+            ]}
+        ];
+
+        $(document).ready(function() {
+            // Render first step buttons
+            firstStepButtons.forEach((button, index) => {
+                $('#buttonContainer').append(`<button type="button" class="btn btn-secondary btn-block mt-3" onclick="showSecondStep(${index}, this)">${button.text}</button>`);
+            });
+        });
+
+        function showSecondStep(index, page_title_button) {
+			document.getElementById('page_title').innerText = page_title_button.innerText;
+
+            const secondStepContainer = $('#secondStepContainer');
+            secondStepContainer.empty(); // Clear any previous buttons
+            firstStepButtons[index].subButtons.forEach(subButton => {
+                secondStepContainer.append(`<button type="button" class="btn btn-secondary btn-block mt-3" onclick="openLink('${subButton.url}')">${subButton.text}</button>`);
+            });
+            $('#buttonContainer').hide();
+            secondStepContainer.show();
+        }
+
+        function openLink(url) {
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
