@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Survey Form</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -11,10 +11,14 @@
     <div class="container mt-5">
         <div class="card">
             <div class="card-body">
-                <h1 class="card-title text-center" id="page_title">Home</h1>
-                <div id="homeContainer" style="display: block;">
-                    <button type="button" class="btn btn-secondary btn-block mt-3" onclick="location.href='./survey.htm';">Vaccination Survey</button>
-                    <button type="button" class="btn btn-secondary btn-block mt-3" onclick="location.href='./vis.htm';">VIS</button>
+                <h1 class="card-title text-center" id="surveyTitle">Vaccination Survey</h1>
+                <form id="surveyForm">
+                    <div id="dynamicQuestions"></div>
+                    <button type="button" id="completeButton" class="btn btn-success btn-block mt-4" style="display:none;" onclick="showSummary()">Complete</button>
+                </form>
+                <div id="summary" style="display: none;">
+                    <h2 class="text-center mt-4" >Summary</h2>
+                    <div id="summaryContent" class="mt-3"></div>
                 </div>
             </div>
         </div>
@@ -22,5 +26,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
