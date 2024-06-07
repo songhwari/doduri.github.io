@@ -2,6 +2,13 @@ let currentQuestionIndex = 0;
 let responses = [];
 
 const questionsData = [
+
+    {
+        id: 'welcome',
+        text: 'Before you begin filling out the vaccine screening questionnaires, we inform you that we will not ask you patient identification informtation and record your answers. After finishing the survey, please show the results to the nurse.',
+        options: ['Continue'],
+        type: 'single'
+    },
     {
         id: 'recipient',
         text: 'Are you the vaccine recipient?',
@@ -17,7 +24,7 @@ const questionsData = [
     {
         id: 'ageGroup',
         text: 'Age group:',
-        options: ['Under 12', '12 and Over'],
+        options: ['6 months - 11 years', '12 and Over'],
         type: 'single',
         condition: () => document.getElementsByName('recipient')[0].value === 'My Child' && document.getElementsByName('vaccinationType')[0].value === 'COVID'
     },
@@ -31,7 +38,7 @@ const questionsData = [
     },
     {
         id: 'Q2',
-        text: 'Have you received a COVID-19 vaccination before? (Historical immunizations should be documented within the immunization workflow component.)',
+        text: 'Have you received a COVID-19 vaccination before?',
         options: ['Yes', 'No'],
         type: 'single',
         condition: () => (document.getElementsByName('recipient')[0].value === 'Myself' && document.getElementsByName('vaccinationType')[0].value === 'COVID' ) || ( document.getElementsByName('recipient')[0].value === 'My Child' && document.getElementsByName('vaccinationType')[0].value === 'COVID' && document.getElementsByName('ageGroup')[0].value === '12 and Over' )
@@ -73,7 +80,7 @@ const questionsData = [
     },
     {
         id: 'Q8',
-        text: 'Check all that apply to the person being vaccinated: (Any active or resolved problems should be documented within the Problem List workflow component)',
+        text: 'Check all that apply to the person being vaccinated:',
         options: [
             'History of COVID-19 disease within the past 3 months',
             'History of multi-system inflammatory syndrome (MIS-C or MIS-A)',
@@ -203,7 +210,7 @@ const questionsData = [
     },
     {
         id: 'Q11',
-        text: 'Have you received any vaccinations the past 4 weeks?',
+        text: 'Have you received any vaccinations in the past 4 weeks?',
         options: ['Yes', 'No', 'Unknown'],
         type: 'single',
         condition: () => document.getElementsByName('recipient')[0].value === 'Myself' && document.getElementsByName('vaccinationType')[0].value === 'Routine'
@@ -260,7 +267,7 @@ const questionsData = [
     },
     {
         id: 'Q7',
-        text: 'In the past 3 months, has the child taken medications that weaken his/her immune system, such as prednisone or other steroids; anticancer drugs; biologic drugs for autoimmune diseases such as rheumatoid arthritis, Crohn\'s disease, or psoriasis; or had radiation treatments?',
+        text: 'In the past 3 months, has the child taken medications that weaken his/her immune system, such as prednisone or other steroids; anticancer drugs; biologic drugs for autoimmune diseases such as rheumatoid arthritis, Crohn`s disease, or psoriasis; or had radiation treatments?',
         options: ['Yes', 'No', 'Unknown'],
         type: 'single',
         condition: () => document.getElementsByName('recipient')[0].value === 'My Child' && document.getElementsByName('vaccinationType')[0].value === 'Routine'
@@ -281,7 +288,7 @@ const questionsData = [
     },
     {
         id: 'Q10',
-        text: 'If the child to be vaccinated IS 2 through 4 years of age, has a healthcare provider told you that the child had wheezing or asthma in the past 12 months?',
+        text: 'If the child to be vaccinated is 2 through 4 years of age, has a healthcare provider told you that the child had wheezing or asthma in the past 12 months?',
         options: ['Yes', 'No', 'Unknown', 'Not Applicable'],
         type: 'single',
         condition: () => document.getElementsByName('recipient')[0].value === 'My Child' && document.getElementsByName('vaccinationType')[0].value === 'Routine'
@@ -331,7 +338,7 @@ const questionsData = [
     },
     {
         id: 'Q3',
-        text: 'Have you ever experienced numbness or weakness of their legs or elsewhere (Guillain-Barre syndrome) within 6 weeks of receiving an influenza vaccine?',
+        text: 'Have you ever experienced numbness or weakness of your legs or elsewhere (Guillain-Barre syndrome) within 6 weeks of receiving an influenza vaccine?',
         options: ['Yes', 'No'],
         type: 'single',
         condition: () => document.getElementsByName('recipient')[0].value === 'Myself' && document.getElementsByName('vaccinationType')[0].value === 'Influenza'
@@ -504,19 +511,21 @@ function showSummary() {
     const summaryContent = document.getElementById('summaryContent');
     summaryContent.innerHTML = '';
 
-    const inputs = document.querySelectorAll('#surveyForm input[type="hidden"]');
-    inputs.forEach(input => {
-        const responseDiv = document.createElement('div');
-		if (input.name === "recipient" || input.name === "vaccinationType" || input.name === "ageGroup") {
-	        responseDiv.textContent = `${input.value}`;
+	const inputs = document.querySelectorAll('#surveyForm input[type="hidden"]');
+	inputs.forEach(input => {
+		const responseDiv = document.createElement('div');
+		if (input.name === "welcome") {
+			// Do nothing for "welcome" input
+		} else if (input.name === "recipient" || input.name === "vaccinationType" || input.name === "ageGroup") {
+			responseDiv.innerHTML = `<strong>${input.value}</strong>`;
 		} else if (input.value === "" || input.value === "No") {
-	        responseDiv.textContent = `${input.name}: ${input.value}`;
+			responseDiv.innerHTML = `${input.name}. ${input.getAttribute('data-text')}: <strong>${input.value}</strong>`;
 		} else {
 			responseDiv.classList.add('highlight');
-	        responseDiv.textContent = `${input.name}. ${input.getAttribute('data-text')}: ${input.value}`;
+			responseDiv.innerHTML = `${input.name}. ${input.getAttribute('data-text')}: <strong>${input.value}</strong>`;
 		}
-        summaryContent.appendChild(responseDiv);
-    });
+		summaryContent.appendChild(responseDiv);
+	});
 
     document.getElementById('surveyForm').style.display = 'none';
     document.getElementById('summary').style.display = 'block';

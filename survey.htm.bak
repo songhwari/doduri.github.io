@@ -17,7 +17,7 @@
                     <button type="button" id="completeButton" class="btn btn-success btn-block mt-4" style="display:none;" onclick="showSummary()">Complete</button>
                 </form>
                 <div id="summary" style="display: none;">
-                    <h2 class="text-center mt-4" >Please show this page to the nurse.</h2>
+                    <h2 class="text-center mt-4" >Summary</h2>
                     <div id="summaryContent" class="mt-3"></div>
                 </div>
             </div>
