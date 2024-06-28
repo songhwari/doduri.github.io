@@ -49,6 +49,10 @@ function redirectToSurvey(name) {
     window.location.href = `./screening.htm?name=${name}`;
 }
 
+function redirectToCalc(name) {
+    window.location.href = `./calc.htm?name=${name}`;
+}
+
 function goBack() {
     document.getElementById('initialOptions').style.display = 'block';
     document.getElementById('adultOptions').style.display = 'none';
