@@ -32,7 +32,12 @@ function populateLastVisitDate() {
 function setTodayAsDefault() {
     const today = new Date();
     document.getElementById('visitDate').valueAsDate = today;
+
+    document.getElementById('dobYear').value = today.getFullYear();
+    document.getElementById('dobMonth').value = today.getMonth() + 1; // Months are 0-indexed
+    document.getElementById('dobDay').value = today.getDate();
 }
+
 
 function calculateWeightLoss() {
     const birthWeight = parseFloat(document.getElementById('birthWeight').value);
@@ -42,9 +47,13 @@ function calculateWeightLoss() {
 }
 
 function calculateFuWeight() {
-    const lastVisitDate = new Date(document.getElementById('lastVisitDate').value);
-    const visitDate = new Date(document.getElementById('visitDate').value);
+    const dobYear = parseInt(document.getElementById('dobYear').value);
+    const dobMonth = parseInt(document.getElementById('dobMonth').value) - 1; // Months are 0-indexed
+    const dobDay = parseInt(document.getElementById('dobDay').value);
+    const lastVisitDate = new Date(dobYear, dobMonth, dobDay);
+
     const lastVisitWeight = parseFloat(document.getElementById('lastVisitWeight').value);
+    const visitDate = new Date(document.getElementById('visitDate').value);
     const visitWeight = parseFloat(document.getElementById('visitWeight').value);
 
     const diffTime = Math.abs(visitDate - lastVisitDate);
