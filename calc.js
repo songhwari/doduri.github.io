@@ -59,9 +59,15 @@ function calculateFuWeight() {
     const dobMonth = parseInt(document.getElementById('dobMonth').value) - 1; // Months are 0-indexed
     const dobDay = parseInt(document.getElementById('dobDay').value);
     const lastVisitDate = new Date(dobYear, dobMonth, dobDay);
-
     const lastVisitWeight = parseFloat(document.getElementById('lastVisitWeight').value);
-    const visitDate = new Date(document.getElementById('visitDate').value);
+
+    const visitDateInput = document.getElementById('visitDate').value;
+    const visitDateParts = visitDateInput.split('-');
+    const visitYear = parseInt(visitDateParts[0]);
+    const visitMonth = parseInt(visitDateParts[1]) - 1;
+    const visitDay = parseInt(visitDateParts[2]);
+	const visitDate = new Date(visitYear, visitMonth, visitDay);
+    //const visitDate = new Date(document.getElementById('visitDate').value);
     const visitWeight = parseFloat(document.getElementById('visitWeight').value);
 
     const diffTime = visitDate - lastVisitDate;
