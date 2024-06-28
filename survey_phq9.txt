@@ -1,11 +1,11 @@
-Feeling down, depressed, or hopeless|Not at all,0|Several days,1|More than half the days,2|Nearly every day,3
-Little interest or pleasure in doing things|Not at all,0|Several days,1|More than half the days,2|Nearly every day,3
-Trouble falling or staying asleep, or sleeping too much|Not at all,0|Several days,1|More than half the days,2|Nearly every day,3
-Poor appetite, weight loss, or over eating|Not at all,0|Several days,1|More than half the days,2|Nearly every day,3
-Feeling tired or having little energy|Not at all,0|Several days,1|More than half the days,2|Nearly every day,3
-Feeling bad about yourself or that you are a failure or have let yourself or your family down|Not at all,0|Several days,1|More than half the days,2|Nearly every day,3
-Trouble concentrating on things like school work, reading, or watching TV?|Not at all,0|Several days,1|More than half the days,2|Nearly every day,3
-Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual|Not at all,0|Several days,1|More than half the days,2|Nearly every day,3
-Thoughts that you would be better off dead, or of hurting yourself in some way|Not at all,0|Several days,1|More than half the days,2|Nearly every day,3
-In the past year have you felt depressed or sad most days, even if you felt okay sometimes?|Yes,1|No,0
-If you checked off any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?|Not at all,0|Somewhat,1|Very,2|Extremely,3
+Feeling down, depressed, or hopeless|Not at all/0|Several days/1|More than half the days/2|Nearly every day/3
+Little interest or pleasure in doing things|Not at all/0|Several days/1|More than half the days/2|Nearly every day/3
+Trouble falling or staying asleep, or sleeping too much|Not at all/0|Several days/1|More than half the days/2|Nearly every day/3
+Poor appetite, weight loss, or over eating|Not at all/0|Several days/1|More than half the days/2|Nearly every day/3
+Feeling tired or having little energy|Not at all/0|Several days/1|More than half the days/2|Nearly every day/3
+Feeling bad about yourself or that you are a failure or have let yourself or your family down|Not at all/0|Several days/1|More than half the days/2|Nearly every day/3
+Trouble concentrating on things like school work, reading, or watching TV?|Not at all/0|Several days/1|More than half the days/2|Nearly every day/3
+Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual|Not at all/0|Several days/1|More than half the days/2|Nearly every day/3
+Thoughts that you would be better off dead, or of hurting yourself in some way|Not at all/0|Several days/1|More than half the days/2|Nearly every day/3
+In the past year have you felt depressed or sad most days, even if you felt okay sometimes?|Yes/1|No/0
+If you checked off any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?|Not at all/0|Somewhat/1|Very/2|Extremely/3

@@ -1,42 +1,42 @@
-Makes sounds that let you know he or she is happy or upset|Not Yet,1|Somewhat,2|Very Much,3
-Seems happy to see you|Not Yet,1|Somewhat,2|Very Much,3
-Follows a moving toy with his or her eyes|Not Yet,1|Somewhat,2|Very Much,3
-Turns head to find the person who is talking|Not Yet,1|Somewhat,2|Very Much,3
-Holds head steady when being pulled up to a sitting position|Not Yet,1|Somewhat,2|Very Much,3
-Brings hands together|Not Yet,1|Somewhat,2|Very Much,3
-Laughs|Not Yet,1|Somewhat,2|Very Much,3
-Keeps head steady when held in a sitting position|Not Yet,1|Somewhat,2|Very Much,3
-Makes sounds like "ga," "ma," or "ba"|Not Yet,1|Somewhat,2|Very Much,3
-Looks when you call his or her name|Not Yet,1|Somewhat,2|Very Much,3
-Does your child have a hard time being with new people?|Not at all,1|Somewhat,2|Very Much,3
-Does your child have a hard time in new places?|Not at all,1|Somewhat,2|Very Much,3
-Does your child have a hard time with change?|Not at all,1|Somewhat,2|Very Much,3
-Does your child mind being held by other people?|Not at all,1|Somewhat,2|Very Much,3
-Does your child cry a lot?|Not at all,1|Somewhat,2|Very Much,3
-Does your child have a hard time calming down?|Not at all,1|Somewhat,2|Very Much,3
-Is your child fussy or irritable?|Not at all,1|Somewhat,2|Very Much,3
-Is it hard to comfort your child?|Not at all,1|Somewhat,2|Very Much,3
-Is it hard to keep your child on a schedule or routine?|Not at all,1|Somewhat,2|Very Much,3
-Is it hard to put your child to sleep?|Not at all,1|Somewhat,2|Very Much,3
-Is it hard to get enough sleep because of your child?|Not at all,1|Somewhat,2|Very Much,3
-Does your child have trouble staying asleep?|Not at all,1|Somewhat,2|Very Much,3
-Do you have any concerns about your child's learning or development?|Not at all,1|Somewhat,2|Very Much,3
-Do you have any concerns about your child's behavior?|Not at all,1|Somewhat,2|Very Much,3
-Does anyone who lives with your child smoke tobacco?|Yes,1|No,2
-In the last year, have you ever drunk alcohol or used drugs more than you meant to?|Yes,1|No,2
-Have you felt you wanted or needed to cut down on your drinking or drug use in the last year?|Yes,1|No,2
-Has a family member's drinking or drug use ever had a bad effect on your child?|Yes,1|No,2
-Within the past 12 months, we worried whether our food would run out before we got money to buy more.|Never true,1|Sometimes true,2|Often true,3
-In general, how would you describe your relationship with your spouse/partner?|No tension,1|Some tension,2|A lot tension,3|Not applicable,4
-Do you and your partner work out arguments with:|No difficulty,1|Some difficulty,2|Great difficulty,3|Not applicable,4
-During the past week, how many days did you or other family members read to your child?|0,1|1,2|2,3|3,4|4,5|5,6|6,7|7,8
-I have been able to laugh and see the funny side of things|As much as I always could,1|Not quite so much now,2|Definitely not so much now,3|Not at all,4
-I have looked forward with enjoyment to things|As much as I ever did,1|Rather less than I used to,2|Definitely less than I used to,3|Hardly at all,4
-I have blamed myself unnecessarily when things went wrong|Yes, most of the time,4|Yes, some of the time,3|Not very often,2|No, never,1
-I have been anxious or worried for no good reason|No, not at all,1|Hardly ever,2|Yes, sometimes,3|Yes, very often,4
-I have felt scared or panicky for no good reason|Yes, quite a lot,4|Yes, sometimes,3|No, not much,2|No, not at all,1
-Things have been getting on top of me|Yes, most of the time I haven't been able to cope at all,4|Yes, sometimes I haven't been coping as well as usual,3|No, most of the time I have coped quite well,2|No, I have been coping as well as ever,1
-I have been so unhappy that I have had difficulty sleeping|Yes, most of the time,4|Yes, sometimes,3|Not very often,2|No, not at all,1
-I have felt sad or miserable|Yes, most of the time,4|Yes, quite often,3|Not very often,2|No, not at all,1
-I have been so unhappy that I have been crying|Yes, most of the time,4|Yes, quite often,3|Only occasionally,2|No, never,1
-The thought of harming myself has occurred to me|Yes, quite often,4|Sometimes,3|Hardly ever,2|Never,1
+Makes sounds that let you know he or she is happy or upset|Not Yet/1|Somewhat/2|Very Much/3
+Seems happy to see you|Not Yet/1|Somewhat/2|Very Much/3
+Follows a moving toy with his or her eyes|Not Yet/1|Somewhat/2|Very Much/3
+Turns head to find the person who is talking|Not Yet/1|Somewhat/2|Very Much/3
+Holds head steady when being pulled up to a sitting position|Not Yet/1|Somewhat/2|Very Much/3
+Brings hands together|Not Yet/1|Somewhat/2|Very Much/3
+Laughs|Not Yet/1|Somewhat/2|Very Much/3
+Keeps head steady when held in a sitting position|Not Yet/1|Somewhat/2|Very Much/3
+Makes sounds like "ga," "ma," or "ba"|Not Yet/1|Somewhat/2|Very Much/3
+Looks when you call his or her name|Not Yet/1|Somewhat/2|Very Much/3
+Does your child have a hard time being with new people?|Not at all/1|Somewhat/2|Very Much/3
+Does your child have a hard time in new places?|Not at all/1|Somewhat/2|Very Much/3
+Does your child have a hard time with change?|Not at all/1|Somewhat/2|Very Much/3
+Does your child mind being held by other people?|Not at all/1|Somewhat/2|Very Much/3
+Does your child cry a lot?|Not at all/1|Somewhat/2|Very Much/3
+Does your child have a hard time calming down?|Not at all/1|Somewhat/2|Very Much/3
+Is your child fussy or irritable?|Not at all/1|Somewhat/2|Very Much/3
+Is it hard to comfort your child?|Not at all/1|Somewhat/2|Very Much/3
+Is it hard to keep your child on a schedule or routine?|Not at all/1|Somewhat/2|Very Much/3
+Is it hard to put your child to sleep?|Not at all/1|Somewhat/2|Very Much/3
+Is it hard to get enough sleep because of your child?|Not at all/1|Somewhat/2|Very Much/3
+Does your child have trouble staying asleep?|Not at all/1|Somewhat/2|Very Much/3
+Do you have any concerns about your child's learning or development?|Not at all/1|Somewhat/2|Very Much/3
+Do you have any concerns about your child's behavior?|Not at all/1|Somewhat/2|Very Much/3
+Does anyone who lives with your child smoke tobacco?|Yes/1|No/2
+In the last year, have you ever drunk alcohol or used drugs more than you meant to?|Yes/1|No/2
+Have you felt you wanted or needed to cut down on your drinking or drug use in the last year?|Yes/1|No/2
+Has a family member's drinking or drug use ever had a bad effect on your child?|Yes/1|No/2
+Within the past 12 months, we worried whether our food would run out before we got money to buy more.|Never true/1|Sometimes true/2|Often true/3
+In general, how would you describe your relationship with your spouse/partner?|No tension/1|Some tension/2|A lot tension/3|Not applicable/4
+Do you and your partner work out arguments with:|No difficulty/1|Some difficulty/2|Great difficulty/3|Not applicable/4
+During the past week, how many days did you or other family members read to your child?|0/1|1/2|2/3|3/4|4/5|5/6|6/7|7/8
+I have been able to laugh and see the funny side of things|As much as I always could/1|Not quite so much now/2|Definitely not so much now/3|Not at all/4
+I have looked forward with enjoyment to things|As much as I ever did/1|Rather less than I used to/2|Definitely less than I used to/3|Hardly at all/4
+I have blamed myself unnecessarily when things went wrong|Yes, most of the time/4|Yes, some of the time/3|Not very often/2|No, never/1
+I have been anxious or worried for no good reason|No, not at all/1|Hardly ever/2|Yes, sometimes/3|Yes, very often/4
+I have felt scared or panicky for no good reason|Yes, quite a lot/4|Yes, sometimes/3|No, not much/2|No, not at all/1
+Things have been getting on top of me|Yes, most of the time I haven't been able to cope at all/4|Yes, sometimes I haven't been coping as well as usual/3|No, most of the time I have coped quite well/2|No, I have been coping as well as ever/1
+I have been so unhappy that I have had difficulty sleeping|Yes, most of the time/4|Yes, sometimes/3|Not very often/2|No, not at all/1
+I have felt sad or miserable|Yes, most of the time/4|Yes, quite often/3|Not very often/2|No, not at all/1
+I have been so unhappy that I have been crying|Yes, most of the time/4|Yes, quite often/3|Only occasionally/2|No, never/1
+The thought of harming myself has occurred to me|Yes, quite often/4|Sometimes/3|Hardly ever/2|Never/1

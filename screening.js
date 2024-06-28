@@ -23,7 +23,7 @@ async function loadSurvey() {
             return {
                 question: parts[0],
                 options: parts.slice(1).map(option => {
-                    const [text, score] = option.split(',');
+                    const [text, score] = option.split('/');
                     return { text, score: parseInt(score, 10) };
                 })
             };

@@ -1,48 +1,39 @@
-PHQ-9
-
-Over the last 2 weeks, how often have you been bothered by any of the following problems?
-
-Little interest or pleasure in doing things|Not at all,0|Several days,1|More than half the days,2|Nearly every day,3
-Feeling down, depressed, or hopeless|Not at all,0|Several days,1|More than half the days,2|Nearly every day,3
-Trouble falling or staying asleep, or sleeping too much|Not at all,0|Several days,1|More than half the days,2|Nearly every day,3
-Feeling Tired or Little Energy|Not at all,0|Several days,1|More than half the days,2|Nearly every day,3
-Poor Appetite or Overeating|Not at all,0|Several days,1|More than half the days,2|Nearly every day,3
-Feeling bad about yourself or that you are a failure or have let yourself or your family down|Not at all,0|Several days,1|More than half the days,2|Nearly every day,3
-Trouble concentrating on things, such as reading the newspaper or watching television|Not at all,0|Several days,1|More than half the days,2|Nearly every day,3
-Moving or speaking so slowly that other people have noticed, or being so fidgety or restless that you have been moving more than usual|Not at all,0|Several days,1|More than half the days,2|Nearly every day,3
-Thoughts that you would be better off dead, or of hurting yourself in some way|Not at all,0|Several days,1|More than half the days,2|Nearly every day,3
-If you checked off any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?|Not difficult at all,0|Somewhat difficult,1|Very difficult,2|Extremely difficult,3
-
-GAD-7
-
-Feeling nervous, anxious, or on edge|Not at all,0|Several days,1|Over half the days,2|Nearly every day,3
-Not being able to stop or control worrying|Not at all,0|Several days,1|Over half the days,2|Nearly every day,3
-Worrying too much about different things|Not at all,0|Several days,1|Over half the days,2|Nearly every day,3
-Trouble relaxing|Not at all,0|Several days,1|Over half the days,2|Nearly every day,3
-Being so restless that it is hard to sit still|Not at all,0|Several days,1|Over half the days,2|Nearly every day,3
-Becoming easily annoyed or irritable|Not at all,0|Several days,1|Over half the days,2|Nearly every day,3
-Feeling afraid, as if something awful might happen|Not at all,0|Several days,1|Over half the days,2|Nearly every day,3
-If you checked off any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?|Not at all,0|Somewhat difficult,1|Very difficult,2|Extremely difficult,3
-
-PCL-5
-
-Repeated, disturbing, and unwanted memories of the stressful experience?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Repeated, disturbing dreams of the stressful experience?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Suddenly feeling or acting as if the stressful experience were actually happening again (as if you were actually back there reliving it)?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Feeling very upset when something reminded you of the stressful experience?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Having strong physical reactions when something reminded you of the stressful experience (for example, heart pounding, trouble breathing, sweating)?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Avoiding memories, thoughts, or feelings related to the stressful experience?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Avoiding external reminders of the stressful experience (for example, people, places, conversations, activities, objects, or situations)?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Trouble remembering important parts of the stressful experience?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Having strong negative beliefs about yourself, other people, or the world (for example, having thoughts such as: I am bad, there is something seriously wrong with me, no one can be trusted, the world is completely dangerous)?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Blaming yourself or someone else for the stressful experience or what happened after it?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Having strong negative feelings such as fear, horror, anger, guilt, or shame?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Loss of interest in activities that you used to enjoy?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Feeling distant or cut off from other people?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Trouble experiencing positive feelings (for example, being unable to feel happiness or have loving feelings for people close to you)?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Irritable behavior, angry outbursts, or acting aggressively?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Taking too many risks or doing things that could cause you harm?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Being “superalert” or watchful or on guard?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Feeling jumpy or easily startled?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Having difficulty concentrating?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Trouble falling or staying asleep?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
+Over the last 2 weeks, how often have you been bothered by any of the following problems?|Continue/0
+Little interest or pleasure in doing things|Not at all/0|Several days/1|More than half the days/2|Nearly every day/3
+Feeling down, depressed, or hopeless|Not at all/0|Several days/1|More than half the days/2|Nearly every day/3
+Trouble falling or staying asleep, or sleeping too much|Not at all/0|Several days/1|More than half the days/2|Nearly every day/3
+Feeling Tired or Little Energy|Not at all/0|Several days/1|More than half the days/2|Nearly every day/3
+Poor Appetite or Overeating|Not at all/0|Several days/1|More than half the days/2|Nearly every day/3
+Feeling bad about yourself or that you are a failure or have let yourself or your family down|Not at all/0|Several days/1|More than half the days/2|Nearly every day/3
+Trouble concentrating on things, such as reading the newspaper or watching television|Not at all/0|Several days/1|More than half the days/2|Nearly every day/3
+Moving or speaking so slowly that other people have noticed, or being so fidgety or restless that you have been moving more than usual|Not at all/0|Several days/1|More than half the days/2|Nearly every day/3
+Thoughts that you would be better off dead, or of hurting yourself in some way|Not at all/0|Several days/1|More than half the days/2|Nearly every day/3
+If you checked off any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?|Not difficult at all/0|Somewhat difficult/1|Very difficult/2|Extremely difficult/3
+Feeling nervous, anxious, or on edge|Not at all/0|Several days/1|Over half the days/2|Nearly every day/3
+Not being able to stop or control worrying|Not at all/0|Several days/1|Over half the days/2|Nearly every day/3
+Worrying too much about different things|Not at all/0|Several days/1|Over half the days/2|Nearly every day/3
+Trouble relaxing|Not at all/0|Several days/1|Over half the days/2|Nearly every day/3
+Being so restless that it is hard to sit still|Not at all/0|Several days/1|Over half the days/2|Nearly every day/3
+Becoming easily annoyed or irritable|Not at all/0|Several days/1|Over half the days/2|Nearly every day/3
+Feeling afraid, as if something awful might happen|Not at all/0|Several days/1|Over half the days/2|Nearly every day/3
+If you checked off any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?|Not at all/0|Somewhat difficult/1|Very difficult/2|Extremely difficult/3
+Repeated, disturbing, and unwanted memories of the stressful experience?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Repeated, disturbing dreams of the stressful experience?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Suddenly feeling or acting as if the stressful experience were actually happening again (as if you were actually back there reliving it)?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Feeling very upset when something reminded you of the stressful experience?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Having strong physical reactions when something reminded you of the stressful experience (for example, heart pounding, trouble breathing, sweating)?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Avoiding memories, thoughts, or feelings related to the stressful experience?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Avoiding external reminders of the stressful experience (for example, people, places, conversations, activities, objects, or situations)?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Trouble remembering important parts of the stressful experience?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Having strong negative beliefs about yourself, other people, or the world (for example, having thoughts such as: I am bad, there is something seriously wrong with me, no one can be trusted, the world is completely dangerous)?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Blaming yourself or someone else for the stressful experience or what happened after it?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Having strong negative feelings such as fear, horror, anger, guilt, or shame?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Loss of interest in activities that you used to enjoy?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Feeling distant or cut off from other people?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Trouble experiencing positive feelings (for example, being unable to feel happiness or have loving feelings for people close to you)?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Irritable behavior, angry outbursts, or acting aggressively?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Taking too many risks or doing things that could cause you harm?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Being “superalert” or watchful or on guard?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Feeling jumpy or easily startled?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Having difficulty concentrating?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Trouble falling or staying asleep?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4

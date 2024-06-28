@@ -1,20 +1,20 @@
-Repeated, disturbing, and unwanted memories of the stressful experience?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Repeated, disturbing dreams of the stressful experience?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Suddenly feeling or acting as if the stressful experience were actually happening again (as if you were actually back there reliving it)?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Feeling very upset when something reminded you of the stressful experience?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Having strong physical reactions when something reminded you of the stressful experience (for example, heart pounding, trouble breathing, sweating)?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Avoiding memories, thoughts, or feelings related to the stressful experience?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Avoiding external reminders of the stressful experience (for example, people, places, conversations, activities, objects, or situations)?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Trouble remembering important parts of the stressful experience?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Having strong negative beliefs about yourself, other people, or the world (for example, having thoughts such as: I am bad, there is something seriously wrong with me, no one can be trusted, the world is completely dangerous)?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Blaming yourself or someone else for the stressful experience or what happened after it?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Having strong negative feelings such as fear, horror, anger, guilt, or shame?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Loss of interest in activities that you used to enjoy?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Feeling distant or cut off from other people?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Trouble experiencing positive feelings (for example, being unable to feel happiness or have loving feelings for people close to you)?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Irritable behavior, angry outbursts, or acting aggressively?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Taking too many risks or doing things that could cause you harm?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Being “superalert” or watchful or on guard?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Feeling jumpy or easily startled?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Having difficulty concentrating?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
-Trouble falling or staying asleep?|Not at all,0|A little bit,1|Moderately,2|Quite a bit,3|Extremely,4
+Repeated, disturbing, and unwanted memories of the stressful experience?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Repeated, disturbing dreams of the stressful experience?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Suddenly feeling or acting as if the stressful experience were actually happening again (as if you were actually back there reliving it)?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Feeling very upset when something reminded you of the stressful experience?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Having strong physical reactions when something reminded you of the stressful experience (for example, heart pounding, trouble breathing, sweating)?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Avoiding memories, thoughts, or feelings related to the stressful experience?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Avoiding external reminders of the stressful experience (for example, people, places, conversations, activities, objects, or situations)?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Trouble remembering important parts of the stressful experience?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Having strong negative beliefs about yourself, other people, or the world (for example, having thoughts such as: I am bad, there is something seriously wrong with me, no one can be trusted, the world is completely dangerous)?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Blaming yourself or someone else for the stressful experience or what happened after it?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Having strong negative feelings such as fear, horror, anger, guilt, or shame?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Loss of interest in activities that you used to enjoy?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Feeling distant or cut off from other people?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Trouble experiencing positive feelings (for example, being unable to feel happiness or have loving feelings for people close to you)?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Irritable behavior, angry outbursts, or acting aggressively?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Taking too many risks or doing things that could cause you harm?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Being “superalert” or watchful or on guard?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Feeling jumpy or easily startled?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Having difficulty concentrating?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
+Trouble falling or staying asleep?|Not at all/0|A little bit/1|Moderately/2|Quite a bit/3|Extremely/4
