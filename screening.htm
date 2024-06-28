@@ -11,66 +11,21 @@
     <div class="container mt-5">
         <div class="card">
             <div class="card-body">
-                <h1 class="card-title text-center">Survey</h1>
-                <form id="surveyForm"></form>
-                <button type="button" class="btn btn-primary btn-block mt-3" onclick="calculateScore()">Submit</button>
-                <p class="mt-3" id="result"></p>
+                <h1 class="card-title text-center" id="surveyTitle">Survey</h1>
+                <form id="surveyForm">
+                    <div id="dynamicQuestions"></div>
+                    <button type="button" id="completeButton" class="btn btn-success btn-block mt-4" style="display:none;" onclick="calculateScore()">Complete</button>
+                </form>
+                <div id="summary" style="display: none;">
+                    <h2 class="text-center mt-4">Survey Results</h2>
+                    <div id="summaryContent" class="mt-3"></div>
+                </div>
             </div>
         </div>
     </div>
-    <script>
-        async function loadSurvey() {
-            try {
-                const response = await fetch('survey_18m.txt');
-                const text = await response.text();
-                const lines = text.split('\n').filter(line => line.trim());
-                const form = document.getElementById('surveyForm');
-                
-                lines.forEach(line => {
-                    const parts = line.split('|');
-                    const questionText = parts[0];
-                    const options = parts.slice(1);
-                    
-                    const div = document.createElement('div');
-                    div.classList.add('question', 'mb-3');
-                    
-                    const label = document.createElement('h5');
-                    label.textContent = questionText;
-                    div.appendChild(label);
-                    
-                    options.forEach(option => {
-                        const [optionText, optionScore] = option.split(',');
-                        const button = document.createElement('button');
-                        button.type = 'button';
-                        button.classList.add('btn', 'btn-secondary', 'mr-2', 'mb-2');
-                        button.textContent = optionText;
-                        button.value = optionScore;
-                        button.onclick = () => selectOption(questionText, optionScore);
-                        div.appendChild(button);
-                    });
-                    
-                    form.appendChild(div);
-                });
-            } catch (error) {
-                console.error('Error loading survey:', error);
-            }
-        }
-
-        const selectedOptions = {};
-
-        function selectOption(question, score) {
-            selectedOptions[question] = parseInt(score, 10);
-        }
-
-        function calculateScore() {
-            const score = Object.values(selectedOptions).reduce((total, value) => total + value, 0);
-            document.getElementById('result').textContent = 'Your total score is: ' + score;
-        }
-
-        window.onload = loadSurvey;
-    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script_screening.js"></script>
 </body>
 </html>
