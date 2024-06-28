@@ -69,7 +69,7 @@ function calculateFuWeight() {
 	const diffWeight = visitWeight - lastVisitWeight;
 
     const weightChangePerDay = (visitWeight - lastVisitWeight) / diffDays;
-    document.getElementById('result').innerHTML = `<strong>Total Weigth Change: {$diffWeight} g</strong><br><strong>Duration: ${diffDays} days</strong><br><strong>Daily Weight Change: ${weightChangePerDay.toFixed(2)} grams/day</strong>`;
+    document.getElementById('result').innerHTML = `<strong>Total Weigth Change: ${diffWeight} g</strong><br><strong>Duration: ${diffDays} days</strong><br><strong>Daily Weight Change: ${weightChangePerDay.toFixed(2)} grams/day</strong>`;
 }
 
 window.onload = initializeForm;
