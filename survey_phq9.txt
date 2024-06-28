@@ -7,5 +7,5 @@ Feeling bad about yourself or that you are a failure or have let yourself or you
 Trouble concentrating on things like school work, reading, or watching TV?|Not at all/0|Several days/1|More than half the days/2|Nearly every day/3
 Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual|Not at all/0|Several days/1|More than half the days/2|Nearly every day/3
 Thoughts that you would be better off dead, or of hurting yourself in some way|Not at all/0|Several days/1|More than half the days/2|Nearly every day/3
-In the past year have you felt depressed or sad most days, even if you felt okay sometimes?|Yes/1|No/0
-If you checked off any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?|Not at all/0|Somewhat/1|Very/2|Extremely/3
+In the past year have you felt depressed or sad most days, even if you felt okay sometimes?|Yes/0|No/0
+If you checked off any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?|Not at all/0|Somewhat/0|Very/0|Extremely/0
