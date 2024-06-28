@@ -1,0 +1,8 @@
+Sitting and Reading|No chance of dozing,0|Slight chance of dozing,1|Moderate chance of dozing,2|High chance of dozing,3
+Watching Television|No chance of dozing,0|Slight chance of dozing,1|Moderate chance of dozing,2|High chance of dozing,3
+Sitting Inactive in a Public Place|No chance of dozing,0|Slight chance of dozing,1|Moderate chance of dozing,2|High chance of dozing,3
+As a Passenger In a Car for an Hour Without a Break|No chance of dozing,0|Slight chance of dozing,1|Moderate chance of dozing,2|High chance of dozing,3
+Sitting and Talking to Someone|No chance of dozing,0|Slight chance of dozing,1|Moderate chance of dozing,2|High chance of dozing,3
+Sitting Quietly After Eating Lunch When You Have Not Had Alcohol|No chance of dozing,0|Slight chance of dozing,1|Moderate chance of dozing,2|High chance of dozing,3
+In a Car, While Stopped In Traffic|No chance of dozing,0|Slight chance of dozing,1|Moderate chance of dozing,2|High chance of dozing,3
+Lying down to rest in the afternoon when circumstances permit|No chance of dozing,0|Slight chance of dozing,1|Moderate chance of dozing,2|High chance of dozing,3

@@ -1,0 +1,10 @@
+Do you snore loudly? (louder than talking or loud enough to be heard through closed doors?)|Yes,1|No,0
+Do you have or are you being treated for high blood pressure?|Yes,1|No,0
+Are you older than 50 years?|Yes,1|No,0
+Are you male?|Yes,1|No,0
+Do you often feel tired, fatigued, or sleepy during the daytime, even after a “good” night’s sleep?|Yes,1|No,0
+Height (cm) - Nurse portion|Continue,0
+Weight (kg) – Nurse portion|Continue,0
+Has anyone ever observed you stop breathing during your sleep?|Yes,1|No,0
+Does your neck measure more than 16“ (female)/17” (male)?- Nurse portion|Continue,0
+Body mass index: Over 35? – Nurse portion|Continue,0
