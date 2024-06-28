@@ -46,7 +46,7 @@ function setTodayAsDefault() {
 }
 
 function redirectToSurvey(name) {
-    window.location.href = `./screening.html?name=${name}`;
+    window.location.href = `./screening.htm?name=${name}`;
 }
 
 function goBack() {
@@ -87,7 +87,7 @@ function calculateAge(event) {
     else if (diffDays >= 4320) surveyName = '12+years';
 
     if (surveyName) {
-        window.location.href = `./screening.html?name=${surveyName}`;
+        window.location.href = `./screening.htm?name=${surveyName}`;
     } else {
         alert('Invalid date range.');
     }
