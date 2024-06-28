@@ -3,7 +3,7 @@ let responses = [];
 
 async function loadSurvey() {
     try {
-        const response = await fetch('survey.txt');
+        const response = await fetch('survey_18m.txt');
         const text = await response.text();
         const lines = text.split('\n').filter(line => line.trim());
         const questions = lines.map(line => {
