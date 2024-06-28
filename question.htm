@@ -30,7 +30,7 @@
                 <div id="pedsOptions" class="text-center" style="display: none;">
                     <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('aceq')">ACEQ</button>
                     <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('aceq_self')">ACEQ-Self</button>
-                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('hospital_address')">Hospital Address for NBS</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showAddress()">Hospital Address for NBS</button>
                     <button type="button" class="btn btn-secondary btn-block mb-2" onclick="javascript:location.href='https://www.bilitool.org/';">Bilitool</button>
                     <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToCalc('weight_loss')">Weight loss calculator</button>
                     <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToCalc('fu_weight')">Weight calculator</button>
@@ -73,6 +73,12 @@
                         <button type="button" class="btn btn-secondary btn-block mt-3" onclick="goBack()">Back</button>
                     </form>
                 </div>
+				<div id="hospAddress" class="text-center" style="display: none;">
+				<strong>BDAACH PCMH Bldg P3031 Unit#0244<br>
+				APO AP 96271-5244<br>
+				0503-337-2273</strong>
+				<button type="button" class="btn btn-secondary btn-block mt-3" onclick="goBack()">Back</button>
+				</div>
             </div>
         </div>
     </div>

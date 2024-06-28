@@ -53,11 +53,20 @@ function redirectToCalc(name) {
     window.location.href = `./calc.htm?name=${name}`;
 }
 
+function showAddress() {
+    document.getElementById('initialOptions').style.display = 'none';
+    document.getElementById('adultOptions').style.display = 'none';
+    document.getElementById('pedsOptions').style.display = 'none';
+    document.getElementById('pedsWellCheckUp').style.display = 'none';
+    document.getElementById('hospAddress').style.display = 'block';
+}
+
 function goBack() {
     document.getElementById('initialOptions').style.display = 'block';
     document.getElementById('adultOptions').style.display = 'none';
     document.getElementById('pedsOptions').style.display = 'none';
     document.getElementById('pedsWellCheckUp').style.display = 'none';
+    document.getElementById('hospAddress').style.display = 'none';
 }
 
 function calculateAge(event) {
