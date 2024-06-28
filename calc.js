@@ -17,15 +17,23 @@ function initializeForm() {
 }
 
 function populateLastVisitDate() {
-    const lastVisitDateSelect = document.getElementById('lastVisitDate');
+    const dobYearSelect = document.getElementById('dobYear');
     const currentYear = new Date().getFullYear();
-    const startYear = currentYear - 18;
+    const startYear = currentYear - 1;
 
     for (let year = currentYear; year >= startYear; year--) {
         const option = document.createElement('option');
-        option.value = `${year}-01-01`;
-        option.textContent = `${year}-01-01`;
-        lastVisitDateSelect.appendChild(option);
+        option.value = year;
+        option.textContent = year;
+        dobYearSelect.appendChild(option);
+    }
+
+    const dobDaySelect = document.getElementById('dobDay');
+    for (let day = 1; day <= 31; day++) {
+        const option = document.createElement('option');
+        option.value = day;
+        option.textContent = day;
+        dobDaySelect.appendChild(option);
     }
 }
 
