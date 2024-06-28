@@ -1,12 +1,24 @@
 let currentQuestionIndex = 0;
 let responses = [];
+let surveyQuestions = [];
+
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
 
 async function loadSurvey() {
+    const surveyName = getQueryParam('name');
+    if (!surveyName) {
+        alert('Survey name is missing in the URL parameters.');
+        return;
+    }
+
     try {
-        const response = await fetch('survey_18m.txt');
+        const response = await fetch(`survey_${surveyName}.txt`);
         const text = await response.text();
         const lines = text.split('\n').filter(line => line.trim());
-        const questions = lines.map(line => {
+        surveyQuestions = lines.map(line => {
             const parts = line.split('|');
             return {
                 question: parts[0],
@@ -16,7 +28,6 @@ async function loadSurvey() {
                 })
             };
         });
-        window.surveyQuestions = questions;  // Make questions accessible globally
         displayQuestion();
     } catch (error) {
         console.error('Error loading survey:', error);

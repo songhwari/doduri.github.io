@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Selector</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title text-center">Select Option</h1>
+                <div id="initialOptions" class="text-center">
+                    <button type="button" class="btn btn-primary btn-lg btn-block mb-3" onclick="showOptions('adult')">Adult</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-block mb-3" onclick="showOptions('peds')">Peds</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-block mb-3" onclick="showPedsWellCheckUp()">Peds Well Check Up</button>
+                </div>
+                <div id="adultOptions" class="text-center" style="display: none;">
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('phq9')">PHQ9</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('gad7')">GAD7</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('pcl5')">PCL5</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('stopbang')">Stop-Bang</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('epworth')">Epworth Scale</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('insomnia')">Insomnia</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('phq9_gad7_pcl5')">PHQ9+GAD7+PCL5</button>
+                    <button type="button" class="btn btn-secondary btn-block mt-3" onclick="goBack()">Back</button>
+                </div>
+                <div id="pedsOptions" class="text-center" style="display: none;">
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('aceq')">ACEQ</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('aceq_self')">ACEQ-Self</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('hospital_address')">Hospital Address for NBS</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('bilitool')">Bilitool</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('weight_loss')">Weight loss calculator</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('weight_calculator')">Weight calculator</button>
+                    <button type="button" class="btn btn-secondary btn-block mt-3" onclick="goBack()">Back</button>
+                </div>
+                <div id="pedsWellCheckUp" class="text-center" style="display: none;">
+                    <form id="checkUpForm" onsubmit="calculateAge(event)">
+                        <div class="form-group">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" class="form-control" id="dob" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="visitDate">Visit Date</label>
+                            <input type="date" class="form-control" id="visitDate" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Calculate</button>
+                        <button type="button" class="btn btn-secondary btn-block mt-3" onclick="goBack()">Back</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="question.js"></script>
+</body>
+</html>
