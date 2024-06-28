@@ -1,0 +1,2 @@
+What is your favorite color?|Red,1|Blue,2|Green,3|Yellow,4
+What is your favorite animal?|Dog,1|Cat,2|Bird,3|Fish,4

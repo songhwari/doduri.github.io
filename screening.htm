@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            margin: 20px;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Survey</h1>
+    <form id="surveyForm"></form>
+    <button type="button" onclick="calculateScore()">Submit</button>
+    <p id="result"></p>
+    <script>
+        async function loadSurvey() {
+            try {
+                const response = await fetch('survey_18m.txt');
+                const text = await response.text();
+                const lines = text.split('\n').filter(line => line.trim());
+                const form = document.getElementById('surveyForm');
+                
+                lines.forEach(line => {
+                    const parts = line.split('|');
+                    const questionText = parts[0];
+                    const options = parts.slice(1);
+                    
+                    const div = document.createElement('div');
+                    div.classList.add('question');
+                    
+                    const label = document.createElement('label');
+                    label.textContent = questionText;
+                    div.appendChild(label);
+                    div.appendChild(document.createElement('br'));
+                    
+                    options.forEach(option => {
+                        const [optionText, optionScore] = option.split(',');
+                        const label = document.createElement('label');
+                        const radio = document.createElement('input');
+                        radio.type = 'radio';
+                        radio.name = questionText;
+                        radio.value = optionScore;
+                        label.appendChild(radio);
+                        label.appendChild(document.createTextNode(optionText));
+                        div.appendChild(label);
+                        div.appendChild(document.createElement('br'));
+                    });
+                    
+                    form.appendChild(div);
+                });
+            } catch (error) {
+                console.error('Error loading survey:', error);
+            }
+        }
+
+        function calculateScore() {
+            const form = document.getElementById('surveyForm');
+            const inputs = form.querySelectorAll('input[type="radio"]:checked');
+            let score = 0;
+
+            inputs.forEach(input => {
+                score += parseInt(input.value, 10);
+            });
+
+            document.getElementById('result').textContent = 'Your total score is: ' + score;
+        }
+
+        window.onload = loadSurvey;
+    </script>
+</body>
+</html>
