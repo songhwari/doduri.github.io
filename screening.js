@@ -1,5 +1,4 @@
 let currentQuestionIndex = 0;
-let displayQuestionIndex = 0;
 let responses = [];
 let surveyQuestions = [];
 let totalQuestions = 0;
@@ -20,25 +19,39 @@ async function loadSurvey() {
         const response = await fetch(`survey_${surveyName}.txt`);
         const text = await response.text();
         const lines = text.split('\n').filter(line => line.trim());
-        surveyQuestions = lines.map(line => {
-            const parts = line.split('|');
-            if (parts[0].startsWith('*')) {
-                return {
-                    question: parts[0].substring(1),
-                    options: [{ text: 'Free Text', score: 0, isFreeText: true }]
-                };
-            } else {
-                return {
-                    question: parts[0],
-                    options: parts.slice(1).map(option => {
+        let isTitleSet = false;
+
+        lines.forEach(line => {
+            if (line.includes('|')) {
+                const parts = line.split('|');
+                if (parts.length > 1) {
+                    const options = parts.slice(1).map(option => {
                         const [text, score] = option.split('/');
                         return { text, score: parseInt(score, 10) };
-                    })
-                };
+                    });
+
+                    if (options.length > 0) {
+                        surveyQuestions.push({
+                            question: parts[0],
+                            options: options
+                        });
+                        totalQuestions++;
+                    }
+                }
+            } else if (line.startsWith('*')) {
+                surveyQuestions.push({
+                    question: line.slice(1),
+                    options: []
+                });
+                totalQuestions++;
+            } else {
+                if (!isTitleSet) {
+                    document.getElementById('surveyTitle').textContent = line;
+                    isTitleSet = true;
+                }
             }
         });
 
-        totalQuestions = surveyQuestions.filter(q => q.options.length > 1 || q.options[0].isFreeText).length;
         displayQuestion();
     } catch (error) {
         console.error('Error loading survey:', error);
@@ -57,52 +70,38 @@ function displayQuestion() {
     const questionData = surveyQuestions[currentQuestionIndex];
     const div = document.createElement('div');
     div.classList.add('question', 'mb-4');
-    
+
     const label = document.createElement('label');
     label.textContent = questionData.question;
     div.appendChild(label);
     div.appendChild(document.createElement('br'));
-    
-    questionData.options.forEach(option => {
-        if (option.isFreeText) {
-            const input = document.createElement('input');
-            input.type = 'text';
-            input.className = 'form-control mb-2';
-            input.oninput = () => handleFreeTextInput(input.value);
-            div.appendChild(input);
-        } else {
+
+    if (questionData.options.length === 0) {
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.className = 'form-control';
+        input.oninput = (e) => handleTextInput(e.target.value);
+        div.appendChild(input);
+    } else {
+        questionData.options.forEach(option => {
             const button = document.createElement('button');
             button.type = 'button';
             button.className = 'btn btn-secondary btn-block mb-2';
             button.textContent = option.text;
             button.onclick = () => handleOptionClick(option.score);
             div.appendChild(button);
-        }
-    });
-    
-    form.appendChild(div);
-    
-    if (questionData.options.length > 1 || questionData.options[0].isFreeText) {
-        updateQuestionCounter();
-        displayQuestionIndex++;
-    } else {
-        updateQuestionCounter(true);
+        });
     }
+
+    form.appendChild(div);
 
     if (currentQuestionIndex > 0) {
         document.getElementById('backButton').style.display = 'block';
     } else {
         document.getElementById('backButton').style.display = 'none';
     }
-}
 
-function updateQuestionCounter(skip = false) {
-    const counterDiv = document.getElementById('questionCounter');
-    if (skip) {
-        counterDiv.textContent = '';
-    } else {
-        counterDiv.textContent = `Question ${displayQuestionIndex + 1} of ${totalQuestions}`;
-    }
+    document.getElementById('questionCounter').textContent = `Question ${currentQuestionIndex + 1} of ${totalQuestions}`;
 }
 
 function handleOptionClick(score) {
@@ -111,15 +110,13 @@ function handleOptionClick(score) {
     displayQuestion();
 }
 
-function handleFreeTextInput(value) {
-    responses[currentQuestionIndex] = value ? 0 : null;
-    document.getElementById('completeButton').style.display = value ? 'block' : 'none';
+function handleTextInput(text) {
+    responses[currentQuestionIndex] = text;
 }
 
 function goBack() {
     if (currentQuestionIndex > 0) {
         currentQuestionIndex--;
-        displayQuestionIndex--;
         displayQuestion();
     }
 }
@@ -131,9 +128,12 @@ function calculateScore() {
 
     surveyQuestions.forEach((questionData, index) => {
         const response = responses[index];
-        const responseText = typeof response === 'number'
-            ? questionData.options.find(option => option.score === response).text
-            : response;
+        let responseText;
+        if (typeof response === 'number') {
+            responseText = questionData.options.find(option => option.score === response).text;
+        } else {
+            responseText = response;
+        }
         const div = document.createElement('div');
         div.textContent = `${questionData.question}: ${responseText}`;
         summaryContent.appendChild(div);
