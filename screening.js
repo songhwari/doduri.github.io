@@ -203,6 +203,64 @@ function customizeResult(summaryContent, surveyName) {
 			resultDiv.innerHTML = `<strong>Your total score is: ${score}, Severe</strong>`;
 		}
 		summaryContent.appendChild(resultDiv);
+	} else if (surveyName === 'longform') {
+		const responses_phq9 = responses.slice(0, 12);
+		const responses_gad7 = responses.slice(12, 21);
+		const responses_pcl5 = responses.slice(21, 42);
+	    const score_phq9 = responses_phq9.reduce((acc, curr) => acc + (typeof curr === 'number' ? curr : 0), 0);
+	    const score_gad7 = responses_gad7.reduce((acc, curr) => acc + (typeof curr === 'number' ? curr : 0), 0);
+	    const score_pcl5 = responses_pcl5.reduce((acc, curr) => acc + (typeof curr === 'number' ? curr : 0), 0);
+
+		surveyQuestions.forEach((questionData, index) => {
+			if (index < 10 || (index > 12 && index<12+8) ) {
+				return;
+			}
+			const response = responses[index];
+			const responseText = questionData.isSubjective ? response : questionData.options.find(option => option.score === response)?.text;
+			const div = document.createElement('div');
+			div.textContent = `${questionData.question}: ${responseText}`;
+			summaryContent.appendChild(div);
+		});
+
+		const resultDiv_phq9 = document.createElement('div');
+		resultDiv_phq9.className = 'mt-4';
+		if (score < 5) {
+			resultDiv_phq9.innerHTML = `<strong>Your total score is: ${score}, none</strong>`;
+		} else if (score < 10) {
+			resultDiv_phq9.innerHTML = `<strong>Your total score is: ${score}, mild</strong>`;
+		} else if (score < 15) {
+			resultDiv_phq9.innerHTML = `<strong>Your total score is: ${score}, moderate</strong>`;
+		} else if (score < 20) {
+			resultDiv_phq9.innerHTML = `<strong>Your total score is: ${score}, moderately severe</strong>`;
+		} else if (score < 28) {
+			resultDiv_phq9.innerHTML = `<strong>Your total score is: ${score}, severe</strong>`;
+		}
+		summaryContent.appendChild(resultDiv_phq9);
+
+		const resultDiv_gad7 = document.createElement('div');
+		resultDiv_gad7.className = 'mt-4';
+		if (score < 5) {
+			resultDiv_gad7.innerHTML = `<strong>Your total score is: ${score}, none</strong>`;
+		} else if (score < 10) {
+			resultDiv_gad7.innerHTML = `<strong>Your total score is: ${score}, mild</strong>`;
+		} else if (score < 15) {
+			resultDiv_gad7.innerHTML = `<strong>Your total score is: ${score}, moderate</strong>`;
+		} else if (score < 20) {
+			resultDiv_gad7.innerHTML = `<strong>Your total score is: ${score}, severe</strong>`;
+		}
+		summaryContent.appendChild(resultDiv_gad7);
+
+		const resultDiv_pcl5 = document.createElement('div');
+		resultDiv_pcl5.className = 'mt-4';
+		if (score < 40) {
+			resultDiv_pcl5.innerHTML = `<strong>Your total score is: ${score}, Low to moderate</strong>`;
+		} else if (score < 60) {
+			resultDiv_pcl5.innerHTML = `<strong>Your total score is: ${score}, Moderate to severe</strong>`;
+		} else if (score < 81) {
+			resultDiv_pcl5.innerHTML = `<strong>Your total score is: ${score}, Severe</strong>`;
+		}
+		summaryContent.appendChild(resultDiv_pcl5);
+
 	} else if (surveyName === 'ess') {
 		const resultDiv = document.createElement('div');
 		resultDiv.className = 'mt-4';
