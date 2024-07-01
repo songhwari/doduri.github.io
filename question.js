@@ -3,6 +3,7 @@ function showOptions(optionType) {
     document.getElementById('adultOptions').style.display = optionType === 'adult' ? 'block' : 'none';
     document.getElementById('pedsOptions').style.display = optionType === 'peds' ? 'block' : 'none';
     document.getElementById('pedsWellCheckUp').style.display = optionType === 'peds_well_check_up' ? 'block' : 'none';
+    document.getElementById('hospAddress').style.display = optionType === 'hosp_address' ? 'block' : 'none';
 }
 
 function showPedsWellCheckUp() {
@@ -51,14 +52,6 @@ function redirectToSurvey(name) {
 
 function redirectToCalc(name) {
     window.location.href = `./calc.htm?name=${name}`;
-}
-
-function showAddress() {
-    document.getElementById('initialOptions').style.display = 'none';
-    document.getElementById('adultOptions').style.display = 'none';
-    document.getElementById('pedsOptions').style.display = 'none';
-    document.getElementById('pedsWellCheckUp').style.display = 'none';
-    document.getElementById('hospAddress').style.display = 'block';
 }
 
 function goBack() {
