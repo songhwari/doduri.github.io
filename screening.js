@@ -192,6 +192,17 @@ function customizeResult(summaryContent, surveyName) {
 			resultDiv.innerHTML = `<strong>Your total score is: ${score}, severe</strong>`;
 		}
 		summaryContent.appendChild(resultDiv);
+	} else if (surveyName === 'pcl5') {
+		const resultDiv = document.createElement('div');
+		resultDiv.className = 'mt-4';
+		if (score < 40) {
+			resultDiv.innerHTML = `<strong>Your total score is: ${score}, Low to moderate</strong>`;
+		} else if (score < 60) {
+			resultDiv.innerHTML = `<strong>Your total score is: ${score}, Moderate to severe</strong>`;
+		} else if (score < 81) {
+			resultDiv.innerHTML = `<strong>Your total score is: ${score}, Severe</strong>`;
+		}
+		summaryContent.appendChild(resultDiv);
 	} else {
 		surveyQuestions.forEach((questionData, index) => {
 			const response = responses[index];
