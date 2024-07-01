@@ -3,6 +3,7 @@ let responses = [];
 let surveyQuestions = [];
 let surveyTitle = "Survey";
 let totalQuestions = 0;
+let visibleQuestionIndex = 0;
 
 function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
@@ -27,16 +28,29 @@ async function loadSurvey() {
                 title = line;
             } else {
                 const parts = line.split('|');
-                surveyQuestions.push({
-                    question: parts[0],
-                    options: parts.slice(1).map(option => {
-                        const [text, score] = option.split('/');
-                        return { text, score: parseInt(score, 10) };
-                    }),
-                    isSubjective: parts[0].startsWith('*'),
-                    title: title || "Survey"
-                });
-                if (parts.length !== 2) {
+                if (parts.length === 2) {
+                    // Skip single-option questions for total count
+                    surveyQuestions.push({
+                        question: parts[0],
+                        options: parts.slice(1).map(option => {
+                            const [text, score] = option.split('/');
+                            return { text, score: parseInt(score, 10) };
+                        }),
+                        isSubjective: parts[0].startsWith('*'),
+                        title: title || "Survey",
+                        isCounted: false
+                    });
+                } else {
+                    surveyQuestions.push({
+                        question: parts[0],
+                        options: parts.slice(1).map(option => {
+                            const [text, score] = option.split('/');
+                            return { text, score: parseInt(score, 10) };
+                        }),
+                        isSubjective: parts[0].startsWith('*'),
+                        title: title || "Survey",
+                        isCounted: true
+                    });
                     totalQuestions++;
                 }
             }
@@ -53,7 +67,6 @@ function displayQuestion() {
     form.innerHTML = ''; // Clear previous question
 
     if (currentQuestionIndex >= surveyQuestions.length) {
-        document.getElementById('nextButton').style.display = 'none';
         document.getElementById('completeButton').style.display = 'block';
         return;
     }
@@ -64,8 +77,13 @@ function displayQuestion() {
     const div = document.createElement('div');
     div.classList.add('question', 'mb-4');
 
+    if (questionData.isCounted) {
+        visibleQuestionIndex++;
+    }
     const label = document.createElement('label');
-    label.textContent = `${questionData.question} (${currentQuestionIndex + 1} of ${totalQuestions})`;
+    label.textContent = questionData.isCounted
+        ? `${questionData.question} (${visibleQuestionIndex} of ${totalQuestions})`
+        : questionData.question;
     div.appendChild(label);
     div.appendChild(document.createElement('br'));
 
@@ -93,6 +111,7 @@ function displayQuestion() {
     } else {
         document.getElementById('backButton').style.display = 'none';
     }
+    document.getElementById('completeButton').style.display = (currentQuestionIndex === surveyQuestions.length - 1) ? 'block' : 'none';
 }
 
 function handleOptionClick(score) {
@@ -104,6 +123,9 @@ function handleOptionClick(score) {
 function goBack() {
     if (currentQuestionIndex > 0) {
         currentQuestionIndex--;
+        if (surveyQuestions[currentQuestionIndex].isCounted) {
+            visibleQuestionIndex--;
+        }
         displayQuestion();
     }
 }
