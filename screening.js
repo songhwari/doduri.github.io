@@ -1,6 +1,7 @@
 let currentQuestionIndex = 0;
 let responses = [];
 let surveyQuestions = [];
+let filteredQuestions = [];
 let totalQuestions = 0;
 
 function getQueryParam(param) {
@@ -37,7 +38,8 @@ async function loadSurvey() {
             }
         });
 
-        totalQuestions = surveyQuestions.filter(q => q.options.length > 1 || q.options[0].isFreeText).length;
+        filteredQuestions = surveyQuestions.filter(q => q.options.length > 1 || q.options[0].isFreeText);
+        totalQuestions = filteredQuestions.length;
         displayQuestion();
     } catch (error) {
         console.error('Error loading survey:', error);
@@ -48,12 +50,12 @@ function displayQuestion() {
     const form = document.getElementById('dynamicQuestions');
     form.innerHTML = ''; // Clear previous question
 
-    if (currentQuestionIndex >= surveyQuestions.length) {
+    if (currentQuestionIndex >= filteredQuestions.length) {
         document.getElementById('completeButton').style.display = 'block';
         return;
     }
 
-    const questionData = surveyQuestions[currentQuestionIndex];
+    const questionData = filteredQuestions[currentQuestionIndex];
     const div = document.createElement('div');
     div.classList.add('question', 'mb-4');
     
@@ -118,7 +120,7 @@ function calculateScore() {
     const summaryContent = document.getElementById('summaryContent');
     summaryContent.innerHTML = '';
 
-    surveyQuestions.forEach((questionData, index) => {
+    filteredQuestions.forEach((questionData, index) => {
         const response = responses[index];
         const responseText = typeof response === 'number'
             ? questionData.options.find(option => option.score === response).text
