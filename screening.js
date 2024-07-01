@@ -168,6 +168,30 @@ function customizeResult(summaryContent, surveyName) {
 			resultDiv.innerHTML = `<strong>Your total score is: ${score}, severe</strong>`;
 		}
 		summaryContent.appendChild(resultDiv);
+	} else if (surveyName === 'gad7') {
+		surveyQuestions.forEach((questionData, index) => {
+			if (index < 8) {
+				return;
+			}
+			const response = responses[index];
+			const responseText = questionData.isSubjective ? response : questionData.options.find(option => option.score === response)?.text;
+			const div = document.createElement('div');
+			div.textContent = `${questionData.question}: ${responseText}`;
+			summaryContent.appendChild(div);
+		});
+
+		const resultDiv = document.createElement('div');
+		resultDiv.className = 'mt-4';
+		if (score < 5) {
+			resultDiv.innerHTML = `<strong>Your total score is: ${score}, none</strong>`;
+		} else if (score < 10) {
+			resultDiv.innerHTML = `<strong>Your total score is: ${score}, mild</strong>`;
+		} else if (score < 15) {
+			resultDiv.innerHTML = `<strong>Your total score is: ${score}, moderate</strong>`;
+		} else if (score < 20) {
+			resultDiv.innerHTML = `<strong>Your total score is: ${score}, severe</strong>`;
+		}
+		summaryContent.appendChild(resultDiv);
 	} else {
 		surveyQuestions.forEach((questionData, index) => {
 			const response = responses[index];
