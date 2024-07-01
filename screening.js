@@ -1,6 +1,7 @@
 let currentQuestionIndex = 0;
 let responses = [];
 let surveyQuestions = [];
+let surveyTitle = "Survey";
 let totalQuestions = 0;
 
 function getQueryParam(param) {
@@ -19,35 +20,24 @@ async function loadSurvey() {
         const response = await fetch(`survey_${surveyName}.txt`);
         const text = await response.text();
         const lines = text.split('\n').filter(line => line.trim());
-        let isTitleSet = false;
 
+        let title = "";
         lines.forEach(line => {
-            if (line.includes('|')) {
+            if (!line.includes('|')) {
+                title = line;
+            } else {
                 const parts = line.split('|');
-                if (parts.length > 1) {
-                    const options = parts.slice(1).map(option => {
+                surveyQuestions.push({
+                    question: parts[0],
+                    options: parts.slice(1).map(option => {
                         const [text, score] = option.split('/');
                         return { text, score: parseInt(score, 10) };
-                    });
-
-                    if (options.length > 0) {
-                        surveyQuestions.push({
-                            question: parts[0],
-                            options: options
-                        });
-                        totalQuestions++;
-                    }
-                }
-            } else if (line.startsWith('*')) {
-                surveyQuestions.push({
-                    question: line.slice(1),
-                    options: []
+                    }),
+                    isSubjective: parts[0].startsWith('*'),
+                    title: title || "Survey"
                 });
-                totalQuestions++;
-            } else {
-                if (!isTitleSet) {
-                    document.getElementById('surveyTitle').textContent = line;
-                    isTitleSet = true;
+                if (parts.length !== 2) {
+                    totalQuestions++;
                 }
             }
         });
@@ -63,24 +53,27 @@ function displayQuestion() {
     form.innerHTML = ''; // Clear previous question
 
     if (currentQuestionIndex >= surveyQuestions.length) {
+        document.getElementById('nextButton').style.display = 'none';
         document.getElementById('completeButton').style.display = 'block';
         return;
     }
 
     const questionData = surveyQuestions[currentQuestionIndex];
+    document.getElementById('surveyTitle').textContent = questionData.title;
+
     const div = document.createElement('div');
     div.classList.add('question', 'mb-4');
 
     const label = document.createElement('label');
-    label.textContent = questionData.question;
+    label.textContent = `${questionData.question} (${currentQuestionIndex + 1} of ${totalQuestions})`;
     div.appendChild(label);
     div.appendChild(document.createElement('br'));
 
-    if (questionData.options.length === 0) {
+    if (questionData.isSubjective) {
         const input = document.createElement('input');
         input.type = 'text';
         input.className = 'form-control';
-        input.oninput = (e) => handleTextInput(e.target.value);
+        input.id = 'subjectiveInput';
         div.appendChild(input);
     } else {
         questionData.options.forEach(option => {
@@ -100,8 +93,6 @@ function displayQuestion() {
     } else {
         document.getElementById('backButton').style.display = 'none';
     }
-
-    document.getElementById('questionCounter').textContent = `Question ${currentQuestionIndex + 1} of ${totalQuestions}`;
 }
 
 function handleOptionClick(score) {
@@ -110,8 +101,14 @@ function handleOptionClick(score) {
     displayQuestion();
 }
 
-function handleTextInput(text) {
-    responses[currentQuestionIndex] = text;
+function handleNext() {
+    const questionData = surveyQuestions[currentQuestionIndex];
+    if (questionData.isSubjective) {
+        const input = document.getElementById('subjectiveInput').value;
+        responses[currentQuestionIndex] = input;
+    }
+    currentQuestionIndex++;
+    displayQuestion();
 }
 
 function goBack() {
@@ -128,12 +125,7 @@ function calculateScore() {
 
     surveyQuestions.forEach((questionData, index) => {
         const response = responses[index];
-        let responseText;
-        if (typeof response === 'number') {
-            responseText = questionData.options.find(option => option.score === response).text;
-        } else {
-            responseText = response;
-        }
+        const responseText = questionData.isSubjective ? response : questionData.options.find(option => option.score === response)?.text;
         const div = document.createElement('div');
         div.textContent = `${questionData.question}: ${responseText}`;
         summaryContent.appendChild(div);
