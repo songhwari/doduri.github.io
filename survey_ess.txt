@@ -1,3 +1,4 @@
+Epworth Sleepiness Scale
 Sitting and Reading|No chance of dozing/0|Slight chance of dozing/1|Moderate chance of dozing/2|High chance of dozing/3
 Watching Television|No chance of dozing/0|Slight chance of dozing/1|Moderate chance of dozing/2|High chance of dozing/3
 Sitting Inactive in a Public Place|No chance of dozing/0|Slight chance of dozing/1|Moderate chance of dozing/2|High chance of dozing/3

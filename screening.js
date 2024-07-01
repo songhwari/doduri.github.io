@@ -203,6 +203,30 @@ function customizeResult(summaryContent, surveyName) {
 			resultDiv.innerHTML = `<strong>Your total score is: ${score}, Severe</strong>`;
 		}
 		summaryContent.appendChild(resultDiv);
+	} else if (surveyName === 'ess') {
+		const resultDiv = document.createElement('div');
+		resultDiv.className = 'mt-4';
+		if (score < 8) {
+			resultDiv.innerHTML = `<strong>Your total score is: ${score}, Unlikely to have abnormal sleepiness</strong>`;
+		} else if (score < 10) {
+			resultDiv.innerHTML = `<strong>Your total score is: ${score}, Average amount of daytime sleepiness</strong>`;
+		} else if (score < 16) {
+			resultDiv.innerHTML = `<strong>Your total score is: ${score}, Excessive daytime sleepiness</strong>`;
+		} else if (score < 25) {
+			resultDiv.innerHTML = `<strong>Your total score is: ${score}, Severe excessive daytime sleepiness</strong>`;
+		}
+		summaryContent.appendChild(resultDiv);
+	} else if (surveyName === 'isi') {
+		const resultDiv = document.createElement('div');
+		resultDiv.className = 'mt-4';
+		if (score < 15) {
+			resultDiv.innerHTML = `<strong>Your total score is: ${score}, Mild insomnia</strong>`;
+		} else if (score < 22) {
+			resultDiv.innerHTML = `<strong>Your total score is: ${score}, Moderate insomnia</strong>`;
+		} else if (score < 29) {
+			resultDiv.innerHTML = `<strong>Your total score is: ${score}, Severe insomnia</strong>`;
+		}
+		summaryContent.appendChild(resultDiv);
 	} else {
 		surveyQuestions.forEach((questionData, index) => {
 			const response = responses[index];

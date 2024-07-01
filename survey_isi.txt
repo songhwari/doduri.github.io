@@ -1,3 +1,4 @@
+Insomnia
 Difficulty falling asleep|None/0|Mild/1|Moderate/2|Severe/3|Very severe/4
 Difficulty staying asleep|None/0|Mild/1|Moderate/2|Severe/3|Very severe/4
 Problems waking up too early|None/0|Mild/1|Moderate/2|Severe/3|Very severe/4
