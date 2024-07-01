@@ -131,25 +131,46 @@ function goBack() {
 }
 
 function calculateScore() {
-    const score = responses.reduce((acc, curr) => acc + (typeof curr === 'number' ? curr : 0), 0);
     const summaryContent = document.getElementById('summaryContent');
     summaryContent.innerHTML = '';
 
-    surveyQuestions.forEach((questionData, index) => {
-        const response = responses[index];
-        const responseText = questionData.isSubjective ? response : questionData.options.find(option => option.score === response)?.text;
-        const div = document.createElement('div');
-        div.textContent = `${questionData.question}: ${responseText}`;
-        summaryContent.appendChild(div);
-    });
-
-    const resultDiv = document.createElement('div');
-    resultDiv.className = 'mt-4';
-    resultDiv.innerHTML = `<strong>Your total score is: ${score}</strong>`;
-    summaryContent.appendChild(resultDiv);
+	customizeResult(summaryContent, getQueryParam('name'))
 
     document.getElementById('surveyForm').style.display = 'none';
     document.getElementById('summary').style.display = 'block';
+}
+
+function customizeResult(summaryContent, surveyName) {
+    const score = responses.reduce((acc, curr) => acc + (typeof curr === 'number' ? curr : 0), 0);
+	if (surveyName === 'phq9') {
+		const resultDiv = document.createElement('div');
+		resultDiv.className = 'mt-4';
+		if (score < 5) {
+			resultDiv.innerHTML = `<strong>Your total score is: ${score}, none</strong>`;
+		} else if (score < 10) {
+			resultDiv.innerHTML = `<strong>Your total score is: ${score}, mild</strong>`;
+		} else if (score < 15) {
+			resultDiv.innerHTML = `<strong>Your total score is: ${score}, moderate</strong>`;
+		} else if (score < 20) {
+			resultDiv.innerHTML = `<strong>Your total score is: ${score}, moderately severe</strong>`;
+		} else if (score < 28) {
+			resultDiv.innerHTML = `<strong>Your total score is: ${score}, severe</strong>`;
+		}
+		summaryContent.appendChild(resultDiv);
+	} else {
+		surveyQuestions.forEach((questionData, index) => {
+			const response = responses[index];
+			const responseText = questionData.isSubjective ? response : questionData.options.find(option => option.score === response)?.text;
+			const div = document.createElement('div');
+			div.textContent = `${questionData.question}: ${responseText}`;
+			summaryContent.appendChild(div);
+		});
+
+		const resultDiv = document.createElement('div');
+		resultDiv.className = 'mt-4';
+		resultDiv.innerHTML = `<strong>Your total score is: ${score}</strong>`;
+		summaryContent.appendChild(resultDiv);
+	}
 }
 
 window.onload = loadSurvey;
