@@ -143,6 +143,17 @@ function calculateScore() {
 function customizeResult(summaryContent, surveyName) {
     const score = responses.reduce((acc, curr) => acc + (typeof curr === 'number' ? curr : 0), 0);
 	if (surveyName === 'phq9') {
+		surveyQuestions.forEach((questionData, index) => {
+			if (index < 10) {
+				return;
+			}
+			const response = responses[index];
+			const responseText = questionData.isSubjective ? response : questionData.options.find(option => option.score === response)?.text;
+			const div = document.createElement('div');
+			div.textContent = `${questionData.question}: ${responseText}`;
+			summaryContent.appendChild(div);
+		});
+
 		const resultDiv = document.createElement('div');
 		resultDiv.className = 'mt-4';
 		if (score < 5) {
