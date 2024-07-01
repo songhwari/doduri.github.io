@@ -4,6 +4,7 @@ function showOptions(optionType) {
     document.getElementById('pedsOptions').style.display = optionType === 'peds' ? 'block' : 'none';
     document.getElementById('pedsWellCheckUp').style.display = optionType === 'peds_well_check_up' ? 'block' : 'none';
     document.getElementById('hospAddress').style.display = optionType === 'hosp_address' ? 'block' : 'none';
+    document.getElementById('bristolOptions').style.display = optionType === 'bristol' ? 'block' : 'none';
 }
 
 function showPedsWellCheckUp() {
@@ -60,6 +61,7 @@ function goBack() {
     document.getElementById('pedsOptions').style.display = 'none';
     document.getElementById('pedsWellCheckUp').style.display = 'none';
     document.getElementById('hospAddress').style.display = 'none';
+    document.getElementById('bristolOptions').style.display = 'none';
 }
 
 function calculateAge(event) {
