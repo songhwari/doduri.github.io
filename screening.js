@@ -101,16 +101,6 @@ function handleOptionClick(score) {
     displayQuestion();
 }
 
-function handleNext() {
-    const questionData = surveyQuestions[currentQuestionIndex];
-    if (questionData.isSubjective) {
-        const input = document.getElementById('subjectiveInput').value;
-        responses[currentQuestionIndex] = input;
-    }
-    currentQuestionIndex++;
-    displayQuestion();
-}
-
 function goBack() {
     if (currentQuestionIndex > 0) {
         currentQuestionIndex--;
