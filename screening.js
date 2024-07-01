@@ -1,6 +1,7 @@
 let currentQuestionIndex = 0;
 let responses = [];
 let surveyQuestions = [];
+let totalQuestions = 0;
 
 function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
@@ -20,14 +21,23 @@ async function loadSurvey() {
         const lines = text.split('\n').filter(line => line.trim());
         surveyQuestions = lines.map(line => {
             const parts = line.split('|');
-            return {
-                question: parts[0],
-                options: parts.slice(1).map(option => {
-                    const [text, score] = option.split('/');
-                    return { text, score: parseInt(score, 10) };
-                })
-            };
+            if (parts[0].startsWith('*')) {
+                return {
+                    question: parts[0].substring(1),
+                    options: [{ text: 'Free Text', score: 0, isFreeText: true }]
+                };
+            } else {
+                return {
+                    question: parts[0],
+                    options: parts.slice(1).map(option => {
+                        const [text, score] = option.split('/');
+                        return { text, score: parseInt(score, 10) };
+                    })
+                };
+            }
         });
+
+        totalQuestions = surveyQuestions.filter(q => q.options.length > 1 || q.options[0].isFreeText).length;
         displayQuestion();
     } catch (error) {
         console.error('Error loading survey:', error);
@@ -53,15 +63,25 @@ function displayQuestion() {
     div.appendChild(document.createElement('br'));
     
     questionData.options.forEach(option => {
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.className = 'btn btn-secondary btn-block mb-2';
-        button.textContent = option.text;
-        button.onclick = () => handleOptionClick(option.score);
-        div.appendChild(button);
+        if (option.isFreeText) {
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.className = 'form-control mb-2';
+            input.oninput = () => handleFreeTextInput(input.value);
+            div.appendChild(input);
+        } else {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'btn btn-secondary btn-block mb-2';
+            button.textContent = option.text;
+            button.onclick = () => handleOptionClick(option.score);
+            div.appendChild(button);
+        }
     });
     
     form.appendChild(div);
+    
+    updateQuestionCounter();
 
     if (currentQuestionIndex > 0) {
         document.getElementById('backButton').style.display = 'block';
@@ -70,10 +90,20 @@ function displayQuestion() {
     }
 }
 
+function updateQuestionCounter() {
+    const counterDiv = document.getElementById('questionCounter');
+    counterDiv.textContent = `Question ${currentQuestionIndex + 1} of ${totalQuestions}`;
+}
+
 function handleOptionClick(score) {
     responses[currentQuestionIndex] = score;
     currentQuestionIndex++;
     displayQuestion();
+}
+
+function handleFreeTextInput(value) {
+    responses[currentQuestionIndex] = value ? 0 : null;
+    document.getElementById('completeButton').style.display = value ? 'block' : 'none';
 }
 
 function goBack() {
@@ -84,13 +114,15 @@ function goBack() {
 }
 
 function calculateScore() {
-    const score = responses.reduce((acc, curr) => acc + curr, 0);
+    const score = responses.reduce((acc, curr) => acc + (typeof curr === 'number' ? curr : 0), 0);
     const summaryContent = document.getElementById('summaryContent');
     summaryContent.innerHTML = '';
 
     surveyQuestions.forEach((questionData, index) => {
         const response = responses[index];
-        const responseText = questionData.options.find(option => option.score === response).text;
+        const responseText = typeof response === 'number'
+            ? questionData.options.find(option => option.score === response).text
+            : response;
         const div = document.createElement('div');
         div.textContent = `${questionData.question}: ${responseText}`;
         summaryContent.appendChild(div);
