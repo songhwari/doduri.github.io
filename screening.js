@@ -1,7 +1,7 @@
 let currentQuestionIndex = 0;
+let displayQuestionIndex = 0;
 let responses = [];
 let surveyQuestions = [];
-let filteredQuestions = [];
 let totalQuestions = 0;
 
 function getQueryParam(param) {
@@ -38,8 +38,7 @@ async function loadSurvey() {
             }
         });
 
-        filteredQuestions = surveyQuestions.filter(q => q.options.length > 1 || q.options[0].isFreeText);
-        totalQuestions = filteredQuestions.length;
+        totalQuestions = surveyQuestions.filter(q => q.options.length > 1 || q.options[0].isFreeText).length;
         displayQuestion();
     } catch (error) {
         console.error('Error loading survey:', error);
@@ -50,12 +49,12 @@ function displayQuestion() {
     const form = document.getElementById('dynamicQuestions');
     form.innerHTML = ''; // Clear previous question
 
-    if (currentQuestionIndex >= filteredQuestions.length) {
+    if (currentQuestionIndex >= surveyQuestions.length) {
         document.getElementById('completeButton').style.display = 'block';
         return;
     }
 
-    const questionData = filteredQuestions[currentQuestionIndex];
+    const questionData = surveyQuestions[currentQuestionIndex];
     const div = document.createElement('div');
     div.classList.add('question', 'mb-4');
     
@@ -83,7 +82,12 @@ function displayQuestion() {
     
     form.appendChild(div);
     
-    updateQuestionCounter();
+    if (questionData.options.length > 1 || questionData.options[0].isFreeText) {
+        updateQuestionCounter();
+        displayQuestionIndex++;
+    } else {
+        updateQuestionCounter(true);
+    }
 
     if (currentQuestionIndex > 0) {
         document.getElementById('backButton').style.display = 'block';
@@ -92,9 +96,13 @@ function displayQuestion() {
     }
 }
 
-function updateQuestionCounter() {
+function updateQuestionCounter(skip = false) {
     const counterDiv = document.getElementById('questionCounter');
-    counterDiv.textContent = `Question ${currentQuestionIndex + 1} of ${totalQuestions}`;
+    if (skip) {
+        counterDiv.textContent = '';
+    } else {
+        counterDiv.textContent = `Question ${displayQuestionIndex + 1} of ${totalQuestions}`;
+    }
 }
 
 function handleOptionClick(score) {
@@ -111,6 +119,7 @@ function handleFreeTextInput(value) {
 function goBack() {
     if (currentQuestionIndex > 0) {
         currentQuestionIndex--;
+        displayQuestionIndex--;
         displayQuestion();
     }
 }
@@ -120,7 +129,7 @@ function calculateScore() {
     const summaryContent = document.getElementById('summaryContent');
     summaryContent.innerHTML = '';
 
-    filteredQuestions.forEach((questionData, index) => {
+    surveyQuestions.forEach((questionData, index) => {
         const response = responses[index];
         const responseText = typeof response === 'number'
             ? questionData.options.find(option => option.score === response).text
