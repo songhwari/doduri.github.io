@@ -111,7 +111,7 @@ function displayQuestion() {
     } else {
         document.getElementById('backButton').style.display = 'none';
     }
-    document.getElementById('completeButton').style.display = (currentQuestionIndex === surveyQuestions.length - 1) ? 'block' : 'none';
+    //document.getElementById('completeButton').style.display = (currentQuestionIndex === surveyQuestions.length - 1) ? 'block' : 'none';
 }
 
 function handleOptionClick(score) {
