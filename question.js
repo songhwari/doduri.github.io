@@ -7,6 +7,9 @@ function showOptions(optionType) {
     document.getElementById('bristolOptions').style.display = optionType === 'bristol' ? 'block' : 'none';
     document.getElementById('tylenolImage').style.display = optionType === 'tylenol' ? 'block' : 'none';
     document.getElementById('ibuprofenImage').style.display = optionType === 'ibuprofen' ? 'block' : 'none';
+    document.getElementById('lactationOptions').style.display = optionType === 'lactation' ? 'block' : 'none';
+    document.getElementById('dieticianOptions').style.display = optionType === 'dietician' ? 'block' : 'none';
+    document.getElementById('edisOptions').style.display = optionType === 'edis' ? 'block' : 'none';
 }
 
 function showPedsWellCheckUp() {
@@ -69,6 +72,9 @@ function goBack() {
     document.getElementById('bristolOptions').style.display = 'none';
     document.getElementById('tylenolImage').style.display = 'none';
     document.getElementById('ibuprofenImage').style.display = 'none';
+    document.getElementById('lactationOptions').style.display = 'none';
+    document.getElementById('dieticianOptions').style.display = 'none';
+    document.getElementById('edisOptions').style.display = 'none';
 }
 
 function calculateAge(event) {
