@@ -178,7 +178,7 @@ function customizeResult(summaryContent, surveyName) {
 		resultDiv.className = 'mt-4';
 		if (true) {
 			resultDiv.innerHTML = `<strong>Your total score is: ${score}`;
-		} if (score < 5) {
+		} else if (score < 5) {
 			resultDiv.innerHTML = `<strong>Your total score is: ${score}, none</strong>`;
 		} else if (score < 10) {
 			resultDiv.innerHTML = `<strong>Your total score is: ${score}, mild</strong>`;
@@ -298,7 +298,7 @@ function customizeResult(summaryContent, surveyName) {
 		resultDiv.className = 'mt-4';
 		if (true) {
 			resultDiv.innerHTML = `<strong>Your total score is: ${score}`;
-		} if (score < 8) {
+		} else if (score < 8) {
 			resultDiv.innerHTML = `<strong>Your total score is: ${score}, Unlikely to have abnormal sleepiness</strong>`;
 		} else if (score < 10) {
 			resultDiv.innerHTML = `<strong>Your total score is: ${score}, Average amount of daytime sleepiness</strong>`;
@@ -313,7 +313,7 @@ function customizeResult(summaryContent, surveyName) {
 		resultDiv.className = 'mt-4';
 		if (true) {
 			resultDiv.innerHTML = `<strong>Your total score is: ${score}`;
-		} if (score < 15) {
+		} else if (score < 15) {
 			resultDiv.innerHTML = `<strong>Your total score is: ${score}, Mild insomnia</strong>`;
 		} else if (score < 22) {
 			resultDiv.innerHTML = `<strong>Your total score is: ${score}, Moderate insomnia</strong>`;
