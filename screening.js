@@ -3,7 +3,6 @@ let responses = [];
 let surveyQuestions = [];
 let surveyTitle = "Survey";
 let totalQuestions = 0;
-let visibleQuestionIndex = 0;
 
 function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
@@ -25,33 +24,47 @@ async function loadSurvey() {
         let title = "";
         lines.forEach(line => {
             if (!line.includes('|')) {
-                title = line;
+				if (line.startsWith('*')) {
+                    totalQuestions++;
+                    surveyQuestions.push({
+                        question: line,
+						number: totalQuestions,
+                        options: Array(0),
+                        isSubjective: true,
+                        title: title || "Survey",
+                        isCounted: true
+                    });
+				} else {
+	                title = line;
+				}
             } else {
                 const parts = line.split('|');
                 if (parts.length === 2) {
                     // Skip single-option questions for total count
                     surveyQuestions.push({
                         question: parts[0],
+						number: 0,
                         options: parts.slice(1).map(option => {
                             const [text, score] = option.split('/');
                             return { text, score: parseInt(score, 10) };
                         }),
-                        isSubjective: parts[0].startsWith('*'),
+                        isSubjective: false,
                         title: title || "Survey",
                         isCounted: false
                     });
                 } else {
+					totalQuestions++;
                     surveyQuestions.push({
                         question: parts[0],
+						number: totalQuestions,
                         options: parts.slice(1).map(option => {
                             const [text, score] = option.split('/');
                             return { text, score: parseInt(score, 10) };
                         }),
-                        isSubjective: parts[0].startsWith('*'),
+                        isSubjective: false,
                         title: title || "Survey",
                         isCounted: true
                     });
-                    totalQuestions++;
                 }
             }
         });
@@ -77,12 +90,9 @@ function displayQuestion() {
     const div = document.createElement('div');
     div.classList.add('question', 'mb-4');
 
-    if (questionData.isCounted) {
-        visibleQuestionIndex++;
-    }
     const label = document.createElement('label');
     label.textContent = questionData.isCounted
-        ? `${questionData.question} (${visibleQuestionIndex} of ${totalQuestions})`
+        ? `${questionData.question} (${questionData.number} of ${totalQuestions})`
         : questionData.question;
     div.appendChild(label);
     div.appendChild(document.createElement('br'));
@@ -116,9 +126,6 @@ function displayQuestion() {
 
 function handleOptionClick(score) {
     responses[currentQuestionIndex] = score;
-    if (surveyQuestions[currentQuestionIndex].isCounted) {
-        visibleQuestionIndex++;
-    }
     currentQuestionIndex++;
     displayQuestion();
 }
@@ -126,9 +133,6 @@ function handleOptionClick(score) {
 function goBack() {
     if (currentQuestionIndex > 0) {
         currentQuestionIndex--;
-        if (surveyQuestions[currentQuestionIndex].isCounted) {
-            visibleQuestionIndex--;
-        }
         displayQuestion();
     }
 }
