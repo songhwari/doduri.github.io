@@ -3,7 +3,7 @@ function showOptions(optionType) {
     document.getElementById('adultOptions').style.display = optionType === 'adult' ? 'block' : 'none';
     document.getElementById('pedsOptions').style.display = optionType === 'peds' ? 'block' : 'none';
     document.getElementById('pedsWellCheckUp').style.display = optionType === 'peds_well_check_up' ? 'block' : 'none';
-    document.getElementById('hospAddress').style.display = optionType === 'hosp_address' ? 'block' : 'none';
+    document.getElementById('nbsOptions').style.display = optionType === 'nbs' ? 'block' : 'none';
     document.getElementById('bristolOptions').style.display = optionType === 'bristol' ? 'block' : 'none';
     document.getElementById('tylenolImage').style.display = optionType === 'tylenol' ? 'block' : 'none';
     document.getElementById('ibuprofenImage').style.display = optionType === 'ibuprofen' ? 'block' : 'none';
@@ -65,7 +65,7 @@ function goBack() {
     document.getElementById('adultOptions').style.display = 'none';
     document.getElementById('pedsOptions').style.display = 'none';
     document.getElementById('pedsWellCheckUp').style.display = 'none';
-    document.getElementById('hospAddress').style.display = 'none';
+    document.getElementById('nbsOptions').style.display = 'none';
     document.getElementById('bristolOptions').style.display = 'none';
     document.getElementById('tylenolImage').style.display = 'none';
     document.getElementById('ibuprofenImage').style.display = 'none';
