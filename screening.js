@@ -103,6 +103,7 @@ function displayQuestion() {
         input.type = 'text';
         input.className = 'form-control';
         input.id = 'subjectiveInput'+questionData.number;
+		input.value = responses_txt[currentQuestionIndex] ? responses_txt[currentQuestionIndex]: '';
 		const button = document.createElement('button');
 		button.type = 'button';
 		button.className = 'btn btn-secondary btn-block mb-2';
@@ -116,6 +117,11 @@ function displayQuestion() {
             button.type = 'button';
             button.className = 'btn btn-secondary btn-block mb-2';
             button.textContent = option.text;
+			if (responses_txt[currentQuestionIndex]) {
+				if (responses_txt[currentQuestionIndex] === option.text) {
+		            button.className = 'btn btn-dark btn-block mb-2';
+				}
+			}
             button.onclick = () => handleOptionClick(option.text, option.score);
             div.appendChild(button);
         });
