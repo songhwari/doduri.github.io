@@ -1,5 +1,6 @@
 let currentQuestionIndex = 0;
 let responses = [];
+let responses_txt = [];
 let surveyQuestions = [];
 let surveyTitle = "Survey";
 let totalQuestions = 0;
@@ -101,15 +102,21 @@ function displayQuestion() {
         const input = document.createElement('input');
         input.type = 'text';
         input.className = 'form-control';
-        input.id = 'subjectiveInput';
+        input.id = 'subjectiveInput'+questionData.number;
+		const button = document.createElement('button');
+		button.type = 'button';
+		button.className = 'btn btn-secondary btn-block mb-2';
+		button.textContent = 'Next';
+		button.onclick = () => handleOptionClick(input.value, 0);
         div.appendChild(input);
+        div.appendChild(button);
     } else {
         questionData.options.forEach(option => {
             const button = document.createElement('button');
             button.type = 'button';
             button.className = 'btn btn-secondary btn-block mb-2';
             button.textContent = option.text;
-            button.onclick = () => handleOptionClick(option.score);
+            button.onclick = () => handleOptionClick(option.text, option.score);
             div.appendChild(button);
         });
     }
@@ -121,11 +128,11 @@ function displayQuestion() {
     } else {
         document.getElementById('backButton').style.display = 'none';
     }
-    //document.getElementById('completeButton').style.display = (currentQuestionIndex === surveyQuestions.length - 1) ? 'block' : 'none';
 }
 
-function handleOptionClick(score) {
+function handleOptionClick(txt, score) {
     responses[currentQuestionIndex] = score;
+    responses_txt[currentQuestionIndex] = txt;
     currentQuestionIndex++;
     displayQuestion();
 }
@@ -155,7 +162,7 @@ function customizeResult(summaryContent, surveyName) {
 				return;
 			}
 			const response = responses[index];
-			const responseText = questionData.isSubjective ? response : questionData.options.find(option => option.score === response)?.text;
+			const responseText = responses_txt[index];
 			const div = document.createElement('div');
 			div.textContent = `${questionData.question}: ${responseText}`;
 			summaryContent.appendChild(div);
@@ -181,7 +188,7 @@ function customizeResult(summaryContent, surveyName) {
 				return;
 			}
 			const response = responses[index];
-			const responseText = questionData.isSubjective ? response : questionData.options.find(option => option.score === response)?.text;
+			const responseText = responses_txt[index];
 			const div = document.createElement('div');
 			div.textContent = `${questionData.question}: ${responseText}`;
 			summaryContent.appendChild(div);
@@ -223,7 +230,7 @@ function customizeResult(summaryContent, surveyName) {
 				return;
 			}
 			const response = responses[index];
-			const responseText = questionData.isSubjective ? response : questionData.options.find(option => option.score === response)?.text;
+			const responseText = responses_txt[index];
 			const div = document.createElement('div');
 			div.textContent = `${questionData.question}: ${responseText}`;
 			summaryContent.appendChild(div);
@@ -295,7 +302,7 @@ function customizeResult(summaryContent, surveyName) {
 	} else {
 		surveyQuestions.forEach((questionData, index) => {
 			const response = responses[index];
-			const responseText = questionData.isSubjective ? response : questionData.options.find(option => option.score === response)?.text;
+			const responseText = responses_txt[index];
 			const div = document.createElement('div');
 			div.textContent = `${questionData.question}: ${responseText}`;
 			summaryContent.appendChild(div);
