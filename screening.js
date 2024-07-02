@@ -28,7 +28,7 @@ async function loadSurvey() {
 				if (line.startsWith('*')) {
                     totalQuestions++;
                     surveyQuestions.push({
-                        question: line,
+                        question: line.substring(1).replace(/<br\s*\/?>/gi, '\n'),
 						number: totalQuestions,
                         options: Array(0),
                         isSubjective: true,
@@ -43,7 +43,7 @@ async function loadSurvey() {
                 if (parts.length === 2) {
                     // Skip single-option questions for total count
                     surveyQuestions.push({
-                        question: parts[0],
+                        question: parts[0].replace(/<br\s*\/?>/gi, '\n'),
 						number: 0,
                         options: parts.slice(1).map(option => {
                             const [text, score] = option.split('/');
@@ -56,7 +56,7 @@ async function loadSurvey() {
                 } else {
 					totalQuestions++;
                     surveyQuestions.push({
-                        question: parts[0],
+                        question: parts[0].replace(/<br\s*\/?>/gi, '\n'),
 						number: totalQuestions,
                         options: parts.slice(1).map(option => {
                             const [text, score] = option.split('/');
