@@ -34,14 +34,8 @@
                     <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToCalc('fu_weight')">Weight calculator</button>
                     <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('nbs')">Hospital Address for NBS</button>
                     <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('bristol')">Bristol Stool Chart</button>
-                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showImage('tylenol')">Tylenol Dose</button>
-                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showImage('ibuprofen')">Ibuprofen Dose</button>
-                    <div id="tylenolImage" style="display: none;">
-                        <img src="tylenol.png" alt="Tylenol" class="img-fluid mb-2">
-                    </div>
-                    <div id="ibuprofenImage" style="display: none;">
-                        <img src="ibuprofen.png" alt="Ibuprofen" class="img-fluid mb-2">
-                    </div>
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('tylenol')">Tylenol Dose</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('ibuprofen')">Ibuprofen Dose</button>
                     <button type="button" class="btn btn-warning btn-block mt-3" onclick="goBack()">Back</button>
                 </div>
                 <div id="pedsWellCheckUp" class="text-center" style="display: none;">
@@ -89,39 +83,17 @@
                     <img src="poo.jpg" alt="Bristol Stool Chart" class="img-fluid">
                     <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('peds')">Back</button>
                 </div>
+				<div id="tylenolImage" class="text-center" style="display: none;">
+					<img src="tylenol.png" alt="Tylenol" class="img-fluid mb-2">
+                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('peds')">Back</button>
+				</div>
+				<div id="ibuprofenImage" class="text-center" style="display: none;">
+					<img src="ibuprofen.png" alt="Ibuprofen" class="img-fluid mb-2">
+                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('peds')">Back</button>
+				</div>
             </div>
         </div>
     </div>
-    <script>
-        function showOptions(option) {
-            document.getElementById('initialOptions').style.display = 'none';
-            document.getElementById('adultOptions').style.display = 'none';
-            document.getElementById('pedsOptions').style.display = 'none';
-            document.getElementById('pedsWellCheckUp').style.display = 'none';
-            document.getElementById('nbsOptions').style.display = 'none';
-            document.getElementById('bristolOptions').style.display = 'none';
-            document.getElementById(option + 'Options').style.display = 'block';
-        }
-
-        function goBack() {
-            document.getElementById('initialOptions').style.display = 'block';
-            document.getElementById('adultOptions').style.display = 'none';
-            document.getElementById('pedsOptions').style.display = 'none';
-            document.getElementById('pedsWellCheckUp').style.display = 'none';
-            document.getElementById('nbsOptions').style.display = 'none';
-            document.getElementById('bristolOptions').style.display = 'none';
-        }
-
-        function showImage(image) {
-            document.getElementById('tylenolImage').style.display = 'none';
-            document.getElementById('ibuprofenImage').style.display = 'none';
-            if (image === 'tylenol') {
-                document.getElementById('tylenolImage').style.display = 'block';
-            } else if (image === 'ibuprofen') {
-                document.getElementById('ibuprofenImage').style.display = 'block';
-            }
-        }
-    </script>
     <script src="question.js"></script>
 </body>
 </html>

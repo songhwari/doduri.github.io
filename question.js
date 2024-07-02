@@ -5,6 +5,8 @@ function showOptions(optionType) {
     document.getElementById('pedsWellCheckUp').style.display = optionType === 'peds_well_check_up' ? 'block' : 'none';
     document.getElementById('hospAddress').style.display = optionType === 'hosp_address' ? 'block' : 'none';
     document.getElementById('bristolOptions').style.display = optionType === 'bristol' ? 'block' : 'none';
+    document.getElementById('tylenolImage').style.display = optionType === 'tylenol' ? 'block' : 'none';
+    document.getElementById('ibuprofenImage').style.display = optionType === 'ibuprofen' ? 'block' : 'none';
 }
 
 function showPedsWellCheckUp() {
@@ -65,6 +67,8 @@ function goBack() {
     document.getElementById('pedsWellCheckUp').style.display = 'none';
     document.getElementById('hospAddress').style.display = 'none';
     document.getElementById('bristolOptions').style.display = 'none';
+    document.getElementById('tylenolImage').style.display = 'none';
+    document.getElementById('ibuprofenImage').style.display = 'none';
 }
 
 function calculateAge(event) {
