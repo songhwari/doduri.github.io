@@ -30,7 +30,10 @@ function populateDobYear() {
 
 function populateDobDay() {
     const dobDaySelect = document.getElementById('dobDay');
-    for (let day = 1; day <= 31; day++) {
+    if (dobDaySelect.options.length > 0) {
+        return;
+    }
+	for (let day = 1; day <= 31; day++) {
         const option = document.createElement('option');
         option.value = day;
         option.textContent = day;

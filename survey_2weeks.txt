@@ -1,6 +1,7 @@
+Milestone
 Fixes on face|Yes/1|Not yet/0
 Lift chin off surface|Yes/1|Not yet/0
-EMOTIONAL CHANGES WITH A NEW BABY**|Continue/0
+Emotional Change With a New Baby
 Since you have a new baby in your family, we would like to know how you are feeling now. Please check the answer that comes closest to how you have felt IN THE PAST 7 DAYS, not just how you feel today. In the past seven days…|Continue/0
 I have been able to laugh and see the funny side of things|As much as I always could/0|Not quite so much now/1|Definitely not so much now/2|Not at all/3
 I have looked forward with enjoyment to things|As much as I ever did/0|Rather less than I used to/1|Definitely less than I used to/2|Hardly at all/3
