@@ -176,7 +176,9 @@ function customizeResult(summaryContent, surveyName) {
 
 		const resultDiv = document.createElement('div');
 		resultDiv.className = 'mt-4';
-		if (score < 5) {
+		if (true) {
+			resultDiv.innerHTML = `<strong>Your total score is: ${score}`;
+		} if (score < 5) {
 			resultDiv.innerHTML = `<strong>Your total score is: ${score}, none</strong>`;
 		} else if (score < 10) {
 			resultDiv.innerHTML = `<strong>Your total score is: ${score}, mild</strong>`;
@@ -202,7 +204,9 @@ function customizeResult(summaryContent, surveyName) {
 
 		const resultDiv = document.createElement('div');
 		resultDiv.className = 'mt-4';
-		if (score < 5) {
+		if (true) {
+			resultDiv.innerHTML = `<strong>Your total score is: ${score}`;
+		} else if (score < 5) {
 			resultDiv.innerHTML = `<strong>Your total score is: ${score}, none</strong>`;
 		} else if (score < 10) {
 			resultDiv.innerHTML = `<strong>Your total score is: ${score}, mild</strong>`;
@@ -215,7 +219,9 @@ function customizeResult(summaryContent, surveyName) {
 	} else if (surveyName === 'pcl5') {
 		const resultDiv = document.createElement('div');
 		resultDiv.className = 'mt-4';
-		if (score < 40) {
+		if (true) {
+			resultDiv.innerHTML = `<strong>Your total score is: ${score}`;
+		} else if (score < 40) {
 			resultDiv.innerHTML = `<strong>Your total score is: ${score}, Low to moderate</strong>`;
 		} else if (score < 60) {
 			resultDiv.innerHTML = `<strong>Your total score is: ${score}, Moderate to severe</strong>`;
@@ -244,7 +250,9 @@ function customizeResult(summaryContent, surveyName) {
 
 		const resultDiv_phq9 = document.createElement('div');
 		resultDiv_phq9.className = 'mt-4';
-		if (score_phq9 < 5) {
+		if (true) {
+			resultDiv_phq9.innerHTML = `<strong>Your PHQ-9 total score is: ${score_phq9}</strong>`;
+		} else if (score_phq9 < 5) {
 			resultDiv_phq9.innerHTML = `<strong>Your PHQ-9 total score is: ${score_phq9}, none</strong>`;
 		} else if (score_phq9 < 10) {
 			resultDiv_phq9.innerHTML = `<strong>Your PHQ-9 total score is: ${score_phq9}, mild</strong>`;
@@ -259,7 +267,9 @@ function customizeResult(summaryContent, surveyName) {
 
 		const resultDiv_gad7 = document.createElement('div');
 		resultDiv_gad7.className = 'mt-4';
-		if (score_gad7 < 5) {
+		if (true) {
+			resultDiv_gad7.innerHTML = `<strong>Your GAD-7 total score is: ${score_gad7}</strong>`;
+		} else if (score_gad7 < 5) {
 			resultDiv_gad7.innerHTML = `<strong>Your GAD-7 total score is: ${score_gad7}, none</strong>`;
 		} else if (score_gad7 < 10) {
 			resultDiv_gad7.innerHTML = `<strong>Your GAD-7 total score is: ${score_gad7}, mild</strong>`;
@@ -272,7 +282,9 @@ function customizeResult(summaryContent, surveyName) {
 
 		const resultDiv_pcl5 = document.createElement('div');
 		resultDiv_pcl5.className = 'mt-4';
-		if (score_pcl5 < 40) {
+		if (true) {
+			resultDiv_pcl5.innerHTML = `<strong>Your PCL-5 total score is: ${score_pcl5}</strong>`;
+		} else if (score_pcl5 < 40) {
 			resultDiv_pcl5.innerHTML = `<strong>Your PCL-5 total score is: ${score_pcl5}, Low to moderate</strong>`;
 		} else if (score_pcl5 < 60) {
 			resultDiv_pcl5.innerHTML = `<strong>Your PCL-5 total score is: ${score_pcl5}, Moderate to severe</strong>`;
@@ -284,7 +296,9 @@ function customizeResult(summaryContent, surveyName) {
 	} else if (surveyName === 'ess') {
 		const resultDiv = document.createElement('div');
 		resultDiv.className = 'mt-4';
-		if (score < 8) {
+		if (true) {
+			resultDiv.innerHTML = `<strong>Your total score is: ${score}`;
+		} if (score < 8) {
 			resultDiv.innerHTML = `<strong>Your total score is: ${score}, Unlikely to have abnormal sleepiness</strong>`;
 		} else if (score < 10) {
 			resultDiv.innerHTML = `<strong>Your total score is: ${score}, Average amount of daytime sleepiness</strong>`;
@@ -297,7 +311,9 @@ function customizeResult(summaryContent, surveyName) {
 	} else if (surveyName === 'isi') {
 		const resultDiv = document.createElement('div');
 		resultDiv.className = 'mt-4';
-		if (score < 15) {
+		if (true) {
+			resultDiv.innerHTML = `<strong>Your total score is: ${score}`;
+		} if (score < 15) {
 			resultDiv.innerHTML = `<strong>Your total score is: ${score}, Mild insomnia</strong>`;
 		} else if (score < 22) {
 			resultDiv.innerHTML = `<strong>Your total score is: ${score}, Moderate insomnia</strong>`;
