@@ -116,6 +116,9 @@ function displayQuestion() {
 
 function handleOptionClick(score) {
     responses[currentQuestionIndex] = score;
+    if (surveyQuestions[currentQuestionIndex].isCounted) {
+        visibleQuestionIndex++;
+    }
     currentQuestionIndex++;
     displayQuestion();
 }
