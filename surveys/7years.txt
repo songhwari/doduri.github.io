@@ -1,22 +1,14 @@
-Milestones
-Speech is clear and understandable|yes/0|not yet/0
-Counts to 10|yes/0|not yet/0
-Draws a person with at least 6 body parts|yes/0|not yet/0
-Copies a triangle or square|yes/0|not yet/0
-Balances on one foot for 10 seconds|yes/0|not yet/0
+Does chores at home when asked|yes/0|not yet/0
+Gets along with family & friends|yes/0|not yet/0
+Engages in after-school activities|yes/0|not yet/0
+Reading & doing math and grade level|yes/0|not yet/0
+Eating healthy food and snacks|yes/0|not yet/0
+Has positive self-image|yes/0|not yet/0
 TUBERCULOSIS Screening
 Has a family member or contact had tuberculosis?|Yes/0|No/0
 Has a family member had a positive tuberculin skin test?|Yes/0|No/0
 Was your child born in a high risk country?|Yes/0|No/0
 Has your child traveled to a high risk country for more than one week?|Yes/0|No/0
-LEAD Screening
-Lives in a high risk Zip code or area identified by your state, territory, or installation?|Yes/0|No/0|Don’t know/0
-Has a sibling or playmate with lead poisoning?|Yes/0|No/0|Don’t know/0
-Resides in or visits a house or child care facility built before 1978 which has peeling/chipping paint or has been renovated or remodeled within the last 6 months?|Yes/0|No/0|Don’t know/0
-Comes in contact with an adult whose job or hobby involves lead exposure (firing range, metal work, mining, stained glass work, renovation/remodeling)?|Yes/0|No/0|Don’t know/0
-Lives in a household eligible for Medicaid, WIC, CHIP, or a state benefits program?|Yes/0|No/0|Don’t know/0
-Is a newly arrived refugee, immigrant, or foreign adoptee?|Yes/0|No/0|Don’t know/0
-Has another lead exposure risk factor identified on your state-specific lead screening questionnaire?|Yes/0|No/0|Don’t know/0
 ACE-Q
 *Of the statements in Section 1, HOW MANY apply to your child? Write the total number in the box.<br><br>■ Your child’s parents or guardians were separated or divorced<br>■ Your child lived with a household member who served time in jail or prison<br>■ Your child lived with a household member who was depressed, mentally ill or attempted suicide<br>■ Your child saw or heard household members hurt or threaten to hurt each other<br>■ A household member swore at, insulted, humiliated, or put down your child in a way that scared your child OR a household member acted in a way that made your child afraid that s/he might be physically hurt<br>■ Someone touched your child’s private parts or asked them to touch that person’s private parts in a sexual way that was unwanted, against your child’s will, or made your child feel uncomfortable<br>■ More than once, your child went without food, clothing, a place to live, or had no one to protect her/him<br>■ Someone pushed, grabbed, slapped or threw something at your child OR your child was hit so hard that your child was injured or had marks<br>■ Your child lived with someone who had a problem with drinking or using drugs<br>■ Your child often felt unsupported, unloved and/or unprotected|0-10
 *Of the statements in Section 2, HOW MANY apply to your child? Write the total number in the box.<br><br>■ Your child was in foster care<br>■ Your child experienced harassment or bullying at school<br>■ Your child lived with a parent or guardian who died<br>■ Your child was separated from her/him primary caregiver through deportation or immigration<br>■ Your child had a serious medical procedure or life threatening illness<br>■ Your child often saw or heard violence in the neighborhood or in her/his school neighborhood<br>■ Your child was detained, arrested or incarcerated<br>■ Your child was often treated badly because of race, sexual orientation, place of birth, disability or religion<br>■ Your child experienced verbal or physical abuse or threats from a romantic partner (i.e. boyfriend or girlfriend)|0-9

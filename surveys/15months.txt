@@ -1,3 +1,4 @@
+Developmental Milestones
 Calls you “mama” or “dada” or similar name|Not Yet/0|Somewhat/1|Very Much/2
 Looks around when you say things like “Where’s your bottle?” or “Where’s your blanket?”|Not Yet/0|Somewhat/1|Very Much/2
 Copies sounds that you make|Not Yet/0|Somewhat/1|Very Much/2
@@ -8,7 +9,7 @@ Walks up stairs with help|Not Yet/0|Somewhat/1|Very Much/2
 Kicks a ball|Not Yet/0|Somewhat/1|Very Much/2
 Names at least 5 familiar objects – like ball or milk|Not Yet/0|Somewhat/1|Very Much/2
 Names at least 5 body parts – like nose, hand, or tummy|Not Yet/0|Somewhat/1|Very Much/2
-
+Baby Pediatric Symptom Checklist(BPSC)
 Does your child have a hard time being with new people?|Not at all/0|Somewhat/1|Very Much/2
 Does your child have a hard time in new places?|Not at all/0|Somewhat/1|Very Much/2
 Does your child have a hard time with change?|Not at all/0|Somewhat/1|Very Much/2
@@ -21,19 +22,18 @@ Is it hard to keep your child on a schedule or routine?|Not at all/0|Somewhat/1|
 Is it hard to put your child to sleep?|Not at all/0|Somewhat/1|Very Much/2
 Is it hard to get enough sleep because of your child?|Not at all/0|Somewhat/1|Very Much/2
 Does your child have trouble staying asleep?|Not at all/0|Somewhat/1|Very Much/2
-
-Do you have any concerns about your child's learning or development?|Not at all/0|Somewhat/1|Very Much/2
-Do you have any concerns about your child's behavior?|Not at all/0|Somewhat/1|Very Much/2
-
-Does anyone who lives with your child smoke tobacco?|Yes/1|No/0
-In the last year, have you ever drunk alcohol or used drugs more than you meant to?|Yes/1|No/0
-Have you felt you wanted or needed to cut down on your drinking or drug use in the last year?|Yes/1|No/0
-Has a family member's drinking or drug use ever had a bad effect on your child?|Yes/1|No/0
-Within the past 12 months, we worried whether our food would run out before we got money to buy more.|Never true/0|Sometimes true/1|Often true/2
-In general, how would you describe your relationship with your spouse/partner?|No tension/0|Some tension/1|A lot tension/2|Not applicable/3
-Do you and your partner work out arguments with:|No difficulty/0|Some difficulty/1|Great difficulty/2|Not applicable/3
-
-During the past week, how many days did you or other family members read to your child?|0/0|1/1|2/2|3/3|4/4|5/5|6/6|7/7
-
+Parent's Concerns
+Do you have any concerns about your child's learning or development?|Not at all/0|Somewhat/0|Very Much/0
+Do you have any concerns about your child's behavior?|Not at all/0|Somewhat/0|Very Much/0
+Family Questions
+Does anyone who lives with your child smoke tobacco?|Yes/0|No/0
+In the last year, have you ever drunk alcohol or used drugs more than you meant to?|Yes/0|No/0
+Have you felt you wanted or needed to cut down on your drinking or drug use in the last year?|Yes/0|No/0
+Has a family member's drinking or drug use ever had a bad effect on your child?|Yes/0|No/0
+Within the past 12 months, we worried whether our food would run out before we got money to buy more.|Never true/0|Sometimes true/0|Often true/0
+In general, how would you describe your relationship with your spouse/partner?|No tension/0|Some tension/0|A lot tension/0|Not applicable/0
+Do you and your partner work out arguments with:|No difficulty/0|Some difficulty/0|Great difficulty/0|Not applicable/0
+During the past week, how many days did you or other family members read to your child?|0/0|1/0|2/0|3/0|4/0|5/0|6/0|7/0
+ACE-Q
 *Of the statements in Section 1, HOW MANY apply to your child? Write the total number in the box.<br><br>■ Your child’s parents or guardians were separated or divorced<br>■ Your child lived with a household member who served time in jail or prison<br>■ Your child lived with a household member who was depressed, mentally ill or attempted suicide<br>■ Your child saw or heard household members hurt or threaten to hurt each other<br>■ A household member swore at, insulted, humiliated, or put down your child in a way that scared your child OR a household member acted in a way that made your child afraid that s/he might be physically hurt<br>■ Someone touched your child’s private parts or asked them to touch that person’s private parts in a sexual way that was unwanted, against your child’s will, or made your child feel uncomfortable<br>■ More than once, your child went without food, clothing, a place to live, or had no one to protect her/him<br>■ Someone pushed, grabbed, slapped or threw something at your child OR your child was hit so hard that your child was injured or had marks<br>■ Your child lived with someone who had a problem with drinking or using drugs<br>■ Your child often felt unsupported, unloved and/or unprotected|0-10
 *Of the statements in Section 2, HOW MANY apply to your child? Write the total number in the box.<br><br>■ Your child was in foster care<br>■ Your child experienced harassment or bullying at school<br>■ Your child lived with a parent or guardian who died<br>■ Your child was separated from her/him primary caregiver through deportation or immigration<br>■ Your child had a serious medical procedure or life threatening illness<br>■ Your child often saw or heard violence in the neighborhood or in her/his school neighborhood<br>■ Your child was detained, arrested or incarcerated<br>■ Your child was often treated badly because of race, sexual orientation, place of birth, disability or religion<br>■ Your child experienced verbal or physical abuse or threats from a romantic partner (i.e. boyfriend or girlfriend)|0-9
