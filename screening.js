@@ -44,8 +44,8 @@ async function loadSurvey() {
 							surveyQuestions.push({
 								question: parts[0].substring(1),
 								number: totalQuestions,
-								options: {type: 'int', min: safeParseInt(settings[0]), max: safeParseInt(settings[1])},
-								isSubjective: true,
+								options: {min: safeParseInt(settings[0]), max: safeParseInt(settings[1])},
+								type: 'range',
 								title: title || "Survey",
 								isCounted: true
 							});
@@ -55,7 +55,7 @@ async function loadSurvey() {
 								question: parts[0].substring(1),
 								number: totalQuestions,
 								options: {type: 'str'},
-								isSubjective: true,
+								type: 'string',
 								title: title || "Survey",
 								isCounted: true
 							});
@@ -69,7 +69,7 @@ async function loadSurvey() {
 								const [text, score] = option.split('/');
 								return { text, score: parseInt(score, 10) };
 							}),
-							isSubjective: false,
+							type: 'dummy',
 							title: title || "Survey",
 							isCounted: false
 						});
@@ -83,7 +83,7 @@ async function loadSurvey() {
                             const [text, score] = option.split('/');
                             return { text, score: parseInt(score, 10) };
                         }),
-                        isSubjective: false,
+                        type: 'single',
                         title: title || "Survey",
                         isCounted: true
                     });
@@ -119,7 +119,7 @@ function displayQuestion() {
     div.appendChild(label);
     div.appendChild(document.createElement('br'));
 
-    if (questionData.isSubjective && questionData.options.type === 'int') {
+    if (questionData.type === 'range') {
 
 		const select = document.createElement('select');
 		select.className = 'form-control';
@@ -137,10 +137,10 @@ function displayQuestion() {
 		button.type = 'button';
 		button.className = 'btn btn-secondary btn-block mb-2';
 		button.textContent = 'Next';
-		button.onclick = () => handleOptionClick(select.value, 0);
+		button.onclick = () => handleOptionClick(select.value, safeParseInt(select.value));
         div.appendChild(select);
         div.appendChild(button);
-    } else if (questionData.isSubjective && questionData.options.type !== 'int') {
+    } else if (questionData.type === 'string') {
         const input = document.createElement('input');
         input.type = 'text';
         input.className = 'form-control';
