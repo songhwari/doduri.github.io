@@ -1,3 +1,4 @@
+Developmental Milestones
 Holds up arms to be picked up|Not Yet/0|Somewhat/1|Very Much/2
 Gets into a sitting position by him or herself|Not Yet/0|Somewhat/1|Very Much/2
 Picks up food and eats it|Not Yet/0|Somewhat/1|Very Much/2
@@ -8,6 +9,7 @@ Looks around when you say things like “Where’s your bottle?” or “Where�
 Copies sounds that you make|Not Yet/0|Somewhat/1|Very Much/2
 Walks across a room without help|Not Yet/0|Somewhat/1|Very Much/2
 Follows directions – like “Come here” or “Give me the ball”|Not Yet/0|Somewhat/1|Very Much/2
+Baby Pediatric Symptom Checklist(BPSC)
 Does your child have a hard time being with new people?|Not at all/0|Somewhat/1|Very Much/2
 Does your child have a hard time in new places?|Not at all/0|Somewhat/1|Very Much/2
 Does your child have a hard time with change?|Not at all/0|Somewhat/1|Very Much/2
@@ -20,20 +22,23 @@ Is it hard to keep your child on a schedule or routine?|Not at all/0|Somewhat/1|
 Is it hard to put your child to sleep?|Not at all/0|Somewhat/1|Very Much/2
 Is it hard to get enough sleep because of your child?|Not at all/0|Somewhat/1|Very Much/2
 Does your child have trouble staying asleep?|Not at all/0|Somewhat/1|Very Much/2
-Do you have any concerns about your child's learning or development?|Not at all/0|Somewhat/1|Very Much/2
-Do you have any concerns about your child's behavior?|Not at all/0|Somewhat/1|Very Much/2
-Does anyone who lives with your child smoke tobacco?|Yes/1|No/0
-In the last year, have you ever drunk alcohol or used drugs more than you meant to?|Yes/1|No/0
-Have you felt you wanted or needed to cut down on your drinking or drug use in the last year?|Yes/1|No/0
-Has a family member's drinking or drug use ever had a bad effect on your child?|Yes/1|No/0
-Within the past 12 months, we worried whether our food would run out before we got money to buy more.|Never true/0|Sometimes true/1|Often true/2
-In general, how would you describe your relationship with your spouse/partner?|No tension/0|Some tension/1|A lot tension/2|Not applicable/3
-Do you and your partner work out arguments with:|No difficulty/0|Some difficulty/1|Great difficulty/2|Not applicable/3
-During the past week, how many days did you or other family members read to your child?|0/0|1/1|2/2|3/3|4/4|5/5|6/6|7/7
-Lives in a high risk Zip code or area identified by your state, territory, or installation?|Yes/1|No/0|Don’t know/2
-Has a sibling or playmate with lead poisoning?|Yes/1|No/0|Don’t know/2
-Resides in or visits a house or child care facility built before 1978 which has peeling/chipping paint or has been renovated or remodeled within the last 6 months?|Yes/1|No/0|Don’t know/2
-Comes in contact with an adult whose job or hobby involves lead exposure (firing range, metal work, mining, stained glass work, renovation/remodeling)?|Yes/1|No/0|Don’t know/2
-Lives in a household eligible for Medicaid, WIC, CHIP, or a state benefits program?|Yes/1|No/0|Don’t know/2
-Is a newly arrived refugee, immigrant, or foreign adoptee?|Yes/1|No/0|Don’t know/2
-Has another lead exposure risk factor identified on your state-specific lead screening questionnaire?|Yes/1|No/0|Don’t know/2
+Parent's Concerns
+Do you have any concerns about your child's learning or development?|Not at all/0|Somewhat/0|Very Much/0
+Do you have any concerns about your child's behavior?|Not at all/0|Somewhat/0|Very Much/0
+Family Questions
+Does anyone who lives with your child smoke tobacco?|Yes/0|No/0
+In the last year, have you ever drunk alcohol or used drugs more than you meant to?|Yes/0|No/0
+Have you felt you wanted or needed to cut down on your drinking or drug use in the last year?|Yes/0|No/0
+Has a family member's drinking or drug use ever had a bad effect on your child?|Yes/0|No/0
+Within the past 12 months, we worried whether our food would run out before we got money to buy more.|Never true/0|Sometimes true/0|Often true/0
+In general, how would you describe your relationship with your spouse/partner?|No tension/0|Some tension/0|A lot tension/0|Not applicable/0
+Do you and your partner work out arguments with:|No difficulty/0|Some difficulty/0|Great difficulty/0|Not applicable/0
+During the past week, how many days did you or other family members read to your child?|0/0|1/0|2/0|3/0|4/0|5/0|6/0|7/0
+LEAD Screening
+Lives in a high risk Zip code or area identified by your state, territory, or installation?|Yes/0|No/0|Don’t know/0
+Has a sibling or playmate with lead poisoning?|Yes/0|No/0|Don’t know/0
+Resides in or visits a house or child care facility built before 1978 which has peeling/chipping paint or has been renovated or remodeled within the last 6 months?|Yes/0|No/0|Don’t know/0
+Comes in contact with an adult whose job or hobby involves lead exposure (firing range, metal work, mining, stained glass work, renovation/remodeling)?|Yes/0|No/0|Don’t know/0
+Lives in a household eligible for Medicaid, WIC, CHIP, or a state benefits program?|Yes/0|No/0|Don’t know/0
+Is a newly arrived refugee, immigrant, or foreign adoptee?|Yes/0|No/0|Don’t know/0
+Has another lead exposure risk factor identified on your state-specific lead screening questionnaire?|Yes/0|No/0|Don’t know/0
