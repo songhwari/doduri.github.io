@@ -364,6 +364,27 @@ function customizeResult(summaryContent, surveyName) {
 			resultDiv.innerHTML = `<strong>Your total score is: ${score}, Severe insomnia</strong>`;
 		}
 		summaryContent.appendChild(resultDiv);
+	} else if (surveyName === 'newborn') {
+		surveyQuestions.forEach((questionData, index) => {
+			const response = responses[index];
+			const responseText = responses_txt[index];
+			const div = document.createElement('div');
+			if (index < 2 && responseText !== 'Yes') {
+				div.style.color = 'red';
+			} else if (index == 12 && responseText !== 'Never') {
+				div.style.color = 'red';
+			}
+			div.textContent = `${questionData.question}: ${responseText}`;
+			summaryContent.appendChild(div);
+		});
+
+		const resultDiv = document.createElement('div');
+		resultDiv.className = 'mt-4';
+		resultDiv.innerHTML = `<strong>Your total score is: ${score}`;
+		if (score >= 10) {
+			resultDiv.style.color = 'red';
+		}
+		summaryContent.appendChild(resultDiv);
 	} else {
 		surveyQuestions.forEach((questionData, index) => {
 			const response = responses[index];
