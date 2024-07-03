@@ -25,6 +25,7 @@ Does your child have trouble staying asleep?|Not at all/0|Somewhat/1|Very Much/2
 Parent's Concerns
 Do you have any concerns about your child's learning or development?|Not at all/0|Somewhat/0|Very Much/0
 Do you have any concerns about your child's behavior?|Not at all/0|Somewhat/0|Very Much/0
+Family Questions
 Does anyone who lives with your child smoke tobacco?|Yes/0|No/0
 In the last year, have you ever drunk alcohol or used drugs more than you meant to?|Yes/0|No/0
 Have you felt you wanted or needed to cut down on your drinking or drug use in the last year?|Yes/0|No/0
