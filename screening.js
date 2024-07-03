@@ -214,6 +214,9 @@ function customizeResult(summaryContent, surveyName) {
 	    const score_pcl5 = responses_pcl5.reduce((acc, curr) => acc + (typeof curr === 'number' ? curr : 0), 0);
 
 		surveyQuestions.forEach((questionData, index) => {
+			if (surveyQuestions[index].type === 'dummy') {
+				return;
+			}
 			const response = responses[index];
 			const responseText = responses_txt[index];
 			const div = document.createElement('div');
@@ -239,6 +242,9 @@ function customizeResult(summaryContent, surveyName) {
 	} else if (surveyName === 'newborn' || surveyName === '2weeks') {
 		let last_title = '';
 		surveyQuestions.forEach((questionData, index) => {
+			if (surveyQuestions[index].type === 'dummy') {
+				return;
+			}
 			const response = responses[index];
 			const responseText = responses_txt[index];
 			const div = document.createElement('div');
