@@ -26,7 +26,7 @@ async function loadSurvey() {
     }
 
     try {
-        const response = await fetch(`survey_${surveyName}.txt`);
+        const response = await fetch(`./surveys/${surveyName}.txt`);
         const text = await response.text();
         const lines = text.split('\n').filter(line => line.trim());
 
