@@ -10,6 +10,14 @@ function getQueryParam(param) {
     return urlParams.get(param);
 }
 
+function safeParseInt(str) {
+    const parsed = parseInt(str, 10); 
+    if (isNaN(parsed)) {
+        return 0; 
+    }
+    return parsed;
+}
+
 async function loadSurvey() {
     const surveyName = getQueryParam('name');
     if (!surveyName) {
@@ -36,7 +44,7 @@ async function loadSurvey() {
 							surveyQuestions.push({
 								question: parts[0].substring(1),
 								number: totalQuestions,
-								options: {type: 'int', min: settings[0], max: settings[1]},
+								options: {type: 'int', min: safeParseInt(settings[0]), max: safeParseInt(settings[1])},
 								isSubjective: true,
 								title: title || "Survey",
 								isCounted: true
@@ -111,7 +119,7 @@ function displayQuestion() {
     div.appendChild(label);
     div.appendChild(document.createElement('br'));
 
-    if (questionData.isSubjective && questionData.options[0].type === 'int') {
+    if (questionData.isSubjective && questionData.options.type === 'int') {
 
 		const select = document.createElement('select');
 		select.className = 'form-control';
@@ -132,7 +140,7 @@ function displayQuestion() {
 		button.onclick = () => handleOptionClick(select.value, 0);
         div.appendChild(select);
         div.appendChild(button);
-    } else if (questionData.isSubjective && questionData.options[0].type !== 'int') {
+    } else if (questionData.isSubjective && questionData.options.type !== 'int') {
         const input = document.createElement('input');
         input.type = 'text';
         input.className = 'form-control';
