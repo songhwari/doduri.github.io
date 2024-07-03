@@ -30,8 +30,8 @@
                 <div id="pedsOptions" class="text-center" style="display: none;">
                     <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('aceq')">ACEQ</button>
                     <button type="button" class="btn btn-secondary btn-block mb-2" onclick="javascript:location.href='https://www.bilitool.org/';">Bilitool</button>
-                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToCalc('weight_loss')">Weight loss calculator</button>
-                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToCalc('fu_weight')">Weight calculator</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('weight_loss')">Weight loss calculator</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('fu_weight')">F/U Weight calculator</button>
                     <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('nbs')">Hospital Address for NBS</button>
                     <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('bristol')">Bristol Stool Chart</button>
                     <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('tylenol')">Tylenol Dose</button>
@@ -122,6 +122,66 @@
                     EMAIL : <a href="mailto:usarmy.Humphreys.medcom-kor.mbx.edis@mail.mil">usarmy.Humphreys.medcom-kor.mbx.edis@mail.mil</a><br>
                     Find us on Facebook- EDIS Korea<br>
                     <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('peds')">Back</button>
+                </div>
+                <div id="weightLossForm" class="text-center" style="display: none;">
+					<div class="form-group">
+						<label for="birthWeight">Birth Weight (grams)</label>
+						<input type="number" class="form-control" id="birthWeight" required>
+					</div>
+					<div class="form-group">
+						<label for="todaysWeight">Today's Weight (grams)</label>
+						<input type="number" class="form-control" id="todaysWeight" required>
+					</div>
+	                <div id="weightLossFormResult" class="text-center mt-4"></div>
+					<button type="button" class="btn btn-primary btn-block" onclick="calculateWeightLoss()">Calculate</button>
+                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('peds')">Back</button>
+                </div>
+                <div id="fuWeightForm" class="text-center" style="display: none;">
+					<div class="form-group">
+						<label for="lastVisitDate">Last Visit Date</label>
+
+						<div class="form-row">
+							<div class="col">
+								<select id="dobYear2" class="form-control" required></select>
+							</div>
+							<div class="col">
+								<select id="dobMonth2" class="form-control" required>
+									<option value="1">January</option>
+									<option value="2">February</option>
+									<option value="3">March</option>
+									<option value="4">April</option>
+									<option value="5">May</option>
+									<option value="6">June</option>
+									<option value="7">July</option>
+									<option value="8">August</option>
+									<option value="9">September</option>
+									<option value="10">October</option>
+									<option value="11">November</option>
+									<option value="12">December</option>
+								</select>
+							</div>
+							<div class="col">
+								<select id="dobDay2" class="form-control" required></select>
+							</div>
+						</div>
+
+					</div>
+					<div class="form-group">
+						<label for="lastVisitWeight">Last Visit Weight (grams)</label>
+						<input type="number" class="form-control" id="lastVisitWeight" required>
+					</div>
+					<div class="form-group">
+						<label for="visitDate">Today's Date</label>
+						<input type="date" class="form-control" id="visitDate2" required>
+					</div>
+					<div class="form-group">
+						<label for="visitWeight">Today's Weight (grams)</label>
+						<input type="number" class="form-control" id="visitWeight" required>
+					</div>
+
+					<div id="fuWeightFormResult" class="text-center mt-4"></div>
+					<button type="button" class="btn btn-primary btn-block" onclick="calculateFuWeight()">Calculate</button>
+					<button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('peds')">Back</button>
                 </div>
             </div>
         </div>
