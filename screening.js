@@ -217,7 +217,7 @@ function customizeResult(summaryContent, surveyName) {
 			const response = responses[index];
 			const responseText = responses_txt[index];
 			const div = document.createElement('div');
-			div.innerHTML = `${questionData.question}: <strong>${responseText}</strong>`;
+			div.innerHTML = `${questionData.number}. ${questionData.question}: <strong>${responseText}</strong>`;
 			summaryContent.appendChild(div);
 		});
 
@@ -254,7 +254,7 @@ function customizeResult(summaryContent, surveyName) {
 				div_title.style.fontWeight = 'bold';
 				summaryContent.appendChild(div_title);
 			}
-			div.textContent = `${questionData.question}: <strong>${responseText}</strong>`;
+			div.innerHTML = `${questionData.number}. ${questionData.question}: <strong>${responseText}</strong>`;
 			summaryContent.appendChild(div);
 		});
 
@@ -270,7 +270,7 @@ function customizeResult(summaryContent, surveyName) {
 			const response = responses[index];
 			const responseText = responses_txt[index];
 			const div = document.createElement('div');
-			div.innerHTML = `${questionData.question}: <strong>${responseText}</strong>`;
+			div.innerHTML = `${questionData.number}. ${questionData.question}: <strong>${responseText}</strong>`;
 			summaryContent.appendChild(div);
 		});
 
