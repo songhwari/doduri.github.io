@@ -1,3 +1,4 @@
+Developmental Milestones
 Holds head steady when being pulled up to a sitting position|Not Yet/0|Somewhat/1|Very Much/2
 Brings hands together|Not Yet/0|Somewhat/1|Very Much/2
 Laughs|Not Yet/0|Somewhat/1|Very Much/2
@@ -8,6 +9,7 @@ Rolls over|Not Yet/0|Somewhat/1|Very Much/2
 Passes a toy from one hand to the other|Not Yet/0|Somewhat/1|Very Much/2
 Looks for you or another caregiver when upset|Not Yet/0|Somewhat/1|Very Much/2
 Holds two objects and bangs them together|Not Yet/0|Somewhat/1|Very Much/2
+Baby Pediatric Symptom Checklist(BPSC)
 Does your child have a hard time being with new people?|Not at all/0|Somewhat/1|Very Much/2
 Does your child have a hard time in new places?|Not at all/0|Somewhat/1|Very Much/2
 Does your child have a hard time with change?|Not at all/0|Somewhat/1|Very Much/2
@@ -20,8 +22,10 @@ Is it hard to keep your child on a schedule or routine?|Not at all/0|Somewhat/1|
 Is it hard to put your child to sleep?|Not at all/0|Somewhat/1|Very Much/2
 Is it hard to get enough sleep because of your child?|Not at all/0|Somewhat/1|Very Much/2
 Does your child have trouble staying asleep?|Not at all/0|Somewhat/1|Very Much/2
+Parent's Concerns
 Do you have any concerns about your child's learning or development?|Not at all/0|Somewhat/1|Very Much/2
 Do you have any concerns about your child's behavior?|Not at all/0|Somewhat/1|Very Much/2
+Family Questions
 Does anyone who lives with your child smoke tobacco?|Yes/1|No/0
 In the last year, have you ever drunk alcohol or used drugs more than you meant to?|Yes/1|No/0
 Have you felt you wanted or needed to cut down on your drinking or drug use in the last year?|Yes/1|No/0
@@ -30,6 +34,8 @@ Within the past 12 months, we worried whether our food would run out before we g
 In general, how would you describe your relationship with your spouse/partner?|No tension/0|Some tension/1|A lot tension/2|Not applicable/3
 Do you and your partner work out arguments with:|No difficulty/0|Some difficulty/1|Great difficulty/2|Not applicable/3
 During the past week, how many days did you or other family members read to your child?|0/0|1/1|2/2|3/3|4/4|5/5|6/6|7/7
+Edinburgh Postnatal Depression Scale
+Since you have a new baby in your family, we would like to know how you are feeling now. Please check the answer that comes closest to how you have felt IN THE PAST 7 DAYS, not just how you feel today. In the past seven days…|Continue/0
 I have been able to laugh and see the funny side of things|As much as I always could/0|Not quite so much now/1|Definitely not so much now/2|Not at all/3
 I have looked forward with enjoyment to things|As much as I ever did/0|Rather less than I used to/1|Definitely less than I used to/2|Hardly at all/3
 I have blamed myself unnecessarily when things went wrong|Yes, most of the time/3|Yes, some of the time/2|Not very often/1|No, never/0
