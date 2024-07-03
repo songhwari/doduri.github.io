@@ -107,7 +107,7 @@ function displayQuestion() {
 		input.autocomplete = 'off';
 		const button = document.createElement('button');
 		button.type = 'button';
-		button.className = 'btn btn-warning btn-block mt-4';
+		button.className = 'btn btn-secondary btn-block mb-2';
 		button.textContent = 'Next';
 		button.onclick = () => handleOptionClick(input.value, 0);
         div.appendChild(input);
