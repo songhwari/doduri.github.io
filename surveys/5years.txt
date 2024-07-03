@@ -1,78 +1,58 @@
-Tells you a story from a book or tv|Not Yet,0|Somewhat,1|Very Much,2
-Draws simple shapes – like a circle or a square|Not Yet,0|Somewhat,1|Very Much,2
-Says words like “feet” for more than one foot and “men” for more than one man|Not Yet,0|Somewhat,1|Very Much,2
-Uses words like “yesterday” and “tomorrow” correctly|Not Yet,0|Somewhat,1|Very Much,2
-Stays dry all night|Not Yet,0|Somewhat,1|Very Much,2
-Follows simple rules when playing a board game or card game|Not Yet,0|Somewhat,1|Very Much,2
-Prints his or her name|Not Yet,0|Somewhat,1|Very Much,2
-Draws pictures you recognize|Not Yet,0|Somewhat,1|Very Much,2
-Stays in the lines when coloring|Not Yet,0|Somewhat,1|Very Much,2
-Names the days of the weeks in the correct order|Not Yet,0|Somewhat,1|Very Much,2
+Tells you a story from a book or tv|Not Yet/0|Somewhat/1|Very Much/2
+Draws simple shapes – like a circle or a square|Not Yet/0|Somewhat/1|Very Much/2
+Says words like “feet” for more than one foot and “men” for more than one man|Not Yet/0|Somewhat/1|Very Much/2
+Uses words like “yesterday” and “tomorrow” correctly|Not Yet/0|Somewhat/1|Very Much/2
+Stays dry all night|Not Yet/0|Somewhat/1|Very Much/2
+Follows simple rules when playing a board game or card game|Not Yet/0|Somewhat/1|Very Much/2
+Prints his or her name|Not Yet/0|Somewhat/1|Very Much/2
+Draws pictures you recognize|Not Yet/0|Somewhat/1|Very Much/2
+Stays in the lines when coloring|Not Yet/0|Somewhat/1|Very Much/2
+Names the days of the weeks in the correct order|Not Yet/0|Somewhat/1|Very Much/2
 
-Does your child seem nervous or afraid?|Not at all,0|Somewhat,1|Very Much,2
-Does your child seem sad or unhappy?|Not at all,0|Somewhat,1|Very Much,2
-Does your child get upset if things are not done in a certain way?|Not at all,0|Somewhat,1|Very Much,2
-Does your child have a hard time with change?|Not at all,0|Somewhat,1|Very Much,2
-Does your child have trouble playing with other children?|Not at all,0|Somewhat,1|Very Much,2
-Does your child break things on purpose?|Not at all,0|Somewhat,1|Very Much,2
-Does your child fight with other children?|Not at all,0|Somewhat,1|Very Much,2
-Does your child have trouble paying attention?|Not at all,0|Somewhat,1|Very Much,2
-Does your child have a hard time calming down?|Not at all,0|Somewhat,1|Very Much,2
-Does your child have trouble staying with one activity?|Not at all,0|Somewhat,1|Very Much,2
-Is your child aggressive?|Not at all,0|Somewhat,1|Very Much,2
-Is your child fidgety or unable to sit still?|Not at all,0|Somewhat,1|Very Much,2
-Is your child angry?|Not at all,0|Somewhat,1|Very Much,2
-Is it hard to take your child out in public?|Not at all,0|Somewhat,1|Very Much,2
-Is it hard to comfort your child?|Not at all,0|Somewhat,1|Very Much,2
-Is it hard to know what your child needs?|Not at all,0|Somewhat,1|Very Much,2
-Is it hard to keep your child on a schedule or routine?|Not at all,0|Somewhat,1|Very Much,2
-Is it hard to get your child to obey you?|Not at all,0|Somewhat,1|Very Much,2
+Does your child seem nervous or afraid?|Not at all/0|Somewhat/1|Very Much/2
+Does your child seem sad or unhappy?|Not at all/0|Somewhat/1|Very Much/2
+Does your child get upset if things are not done in a certain way?|Not at all/0|Somewhat/1|Very Much/2
+Does your child have a hard time with change?|Not at all/0|Somewhat/1|Very Much/2
+Does your child have trouble playing with other children?|Not at all/0|Somewhat/1|Very Much/2
+Does your child break things on purpose?|Not at all/0|Somewhat/1|Very Much/2
+Does your child fight with other children?|Not at all/0|Somewhat/1|Very Much/2
+Does your child have trouble paying attention?|Not at all/0|Somewhat/1|Very Much/2
+Does your child have a hard time calming down?|Not at all/0|Somewhat/1|Very Much/2
+Does your child have trouble staying with one activity?|Not at all/0|Somewhat/1|Very Much/2
+Is your child aggressive?|Not at all/0|Somewhat/1|Very Much/2
+Is your child fidgety or unable to sit still?|Not at all/0|Somewhat/1|Very Much/2
+Is your child angry?|Not at all/0|Somewhat/1|Very Much/2
+Is it hard to take your child out in public?|Not at all/0|Somewhat/1|Very Much/2
+Is it hard to comfort your child?|Not at all/0|Somewhat/1|Very Much/2
+Is it hard to know what your child needs?|Not at all/0|Somewhat/1|Very Much/2
+Is it hard to keep your child on a schedule or routine?|Not at all/0|Somewhat/1|Very Much/2
+Is it hard to get your child to obey you?|Not at all/0|Somewhat/1|Very Much/2
 
-Do you have any concerns about your child's learning or development?|Not at all,0|Somewhat,1|Very Much,2
-Do you have any concerns about your child's behavior?|Not at all,0|Somewhat,1|Very Much,2
+Do you have any concerns about your child's learning or development?|Not at all/0|Somewhat/1|Very Much/2
+Do you have any concerns about your child's behavior?|Not at all/0|Somewhat/1|Very Much/2
 
-Does anyone who lives with your child smoke tobacco?|Yes,1|No,0
-In the last year, have you ever drunk alcohol or used drugs more than you meant to?|Yes,1|No,0
-Have you felt you wanted or needed to cut down on your drinking or drug use in the last year?|Yes,1|No,0
-Has a family member's drinking or drug use ever had a bad effect on your child?|Yes,1|No,0
-Within the past 12 months, we worried whether our food would run out before we got money to buy more.|Never true,0|Sometimes true,1|Often true,2
-In general, how would you describe your relationship with your spouse/partner?|No tension,0|Some tension,1|A lot tension,2|Not applicable,3
-Do you and your partner work out arguments with:|No difficulty,0|Some difficulty,1|Great difficulty,2|Not applicable,3
+Does anyone who lives with your child smoke tobacco?|Yes/1|No/0
+In the last year, have you ever drunk alcohol or used drugs more than you meant to?|Yes/1|No/0
+Have you felt you wanted or needed to cut down on your drinking or drug use in the last year?|Yes/1|No/0
+Has a family member's drinking or drug use ever had a bad effect on your child?|Yes/1|No/0
+Within the past 12 months, we worried whether our food would run out before we got money to buy more.|Never true/0|Sometimes true/1|Often true/2
+In general, how would you describe your relationship with your spouse/partner?|No tension/0|Some tension/1|A lot tension/2|Not applicable/3
+Do you and your partner work out arguments with:|No difficulty/0|Some difficulty/1|Great difficulty/2|Not applicable/3
 
-During the past week, how many days did you or other family members read to your child?|0,0|1,1|2,2|3,3|4,4|5,5|6,6|7,7
+During the past week, how many days did you or other family members read to your child?|0/0|1/1|2/2|3/3|4/4|5/5|6/6|7/7
 
-Has a family member or contact had tuberculosis?|Yes,1|No,0
-Has a family member had a positive tuberculin skin test?|Yes,1|No,0
-Was your child born in a high risk country?|Yes,1|No,0
-Has your child traveled to a high risk country for more than one week?|Yes,1|No,0
+Has a family member or contact had tuberculosis?|Yes/1|No/0
+Has a family member had a positive tuberculin skin test?|Yes/1|No/0
+Was your child born in a high risk country?|Yes/1|No/0
+Has your child traveled to a high risk country for more than one week?|Yes/1|No/0
 
-Lives in a high risk Zip code or area identified by your state, territory, or installation?|Yes,1|No,0|Don’t know,2
-Has a sibling or playmate with lead poisoning?|Yes,1|No,0|Don’t know,2
-Resides in or visits a house or child care facility built before 1978 which has peeling/chipping paint or has been renovated or remodeled within the last 6 months?|Yes,1|No,0|Don’t know,2
-Comes in contact with an adult whose job or hobby involves lead exposure (firing range, metal work, mining, stained glass work, renovation/remodeling)?|Yes,1|No,0|Don’t know,2
-Lives in a household eligible for Medicaid, WIC, CHIP, or a state benefits program?|Yes,1|No,0|Don’t know,2
-Is a newly arrived refugee, immigrant, or foreign adoptee?|Yes,1|No,0|Don’t know,2
-Has another lead exposure risk factor identified on your state-specific lead screening questionnaire?|Yes,1|No,0|Don’t know,2
+Lives in a high risk Zip code or area identified by your state, territory, or installation?|Yes/1|No/0|Don’t know/2
+Has a sibling or playmate with lead poisoning?|Yes/1|No/0|Don’t know/2
+Resides in or visits a house or child care facility built before 1978 which has peeling/chipping paint or has been renovated or remodeled within the last 6 months?|Yes/1|No/0|Don’t know/2
+Comes in contact with an adult whose job or hobby involves lead exposure (firing range, metal work, mining, stained glass work, renovation/remodeling)?|Yes/1|No/0|Don’t know/2
+Lives in a household eligible for Medicaid, WIC, CHIP, or a state benefits program?|Yes/1|No/0|Don’t know/2
+Is a newly arrived refugee, immigrant, or foreign adoptee?|Yes/1|No/0|Don’t know/2
+Has another lead exposure risk factor identified on your state-specific lead screening questionnaire?|Yes/1|No/0|Don’t know/2
 
-Of the statements in Section 1, HOW MANY apply to your child? Write the total number in the box.|Total number,0
-■ Your child’s parents or guardians were separated or divorced
-■ Your child lived with a household member who served time in jail or prison
-■ Your child lived with a household member who was depressed, mentally ill or attempted suicide
-■ Your child saw or heard household members hurt or threaten to hurt each other
-■ A household member swore at, insulted, humiliated, or put down your child in a way that scared your child OR a household member acted in a way that made your child afraid that s/he might be physically hurt
-■ Someone touched your child’s private parts or asked them to touch that person’s private parts in a sexual way that was unwanted, against your child’s will, or made your child feel uncomfortable
-■ More than once, your child went without food, clothing, a place to live, or had no one to protect her/him
-■ Someone pushed, grabbed, slapped or threw something at your child OR your child was hit so hard that your child was injured or had marks 
-■ Your child lived with someone who had a problem with drinking or using drugs 
-■ Your child often felt unsupported, unloved and/or unprotected 
-
-Of the statements in Section 2, HOW MANY apply to your child? Write the total number in the box.|Total number,0
-■ Your child was in foster care
-■ Your child experienced harassment or bullying at school
-■ Your child lived with a parent or guardian who died
-■ Your child was separated from her/him primary caregiver through deportation or immigration
-■ Your child had a serious medical procedure or life threatening illness
-■ Your child often saw or heard violence in the neighborhood or in her/his school neighborhood
-■ Your child was detained, arrested or incarcerated
-■ Your child was often treated badly because of race, sexual orientation, place of birth, disability or religion
-■ Your child experienced verbal or physical abuse or threats from a romantic partner (i.e. boyfriend or girlfriend)
+*Of the statements in Section 1, HOW MANY apply to your child? Write the total number in the box.<br><br>■ Your child’s parents or guardians were separated or divorced<br>■ Your child lived with a household member who served time in jail or prison<br>■ Your child lived with a household member who was depressed, mentally ill or attempted suicide<br>■ Your child saw or heard household members hurt or threaten to hurt each other<br>■ A household member swore at, insulted, humiliated, or put down your child in a way that scared your child OR a household member acted in a way that made your child afraid that s/he might be physically hurt<br>■ Someone touched your child’s private parts or asked them to touch that person’s private parts in a sexual way that was unwanted, against your child’s will, or made your child feel uncomfortable<br>■ More than once, your child went without food, clothing, a place to live, or had no one to protect her/him<br>■ Someone pushed, grabbed, slapped or threw something at your child OR your child was hit so hard that your child was injured or had marks<br>■ Your child lived with someone who had a problem with drinking or using drugs<br>■ Your child often felt unsupported, unloved and/or unprotected|0-10
+*Of the statements in Section 2, HOW MANY apply to your child? Write the total number in the box.<br><br>■ Your child was in foster care<br>■ Your child experienced harassment or bullying at school<br>■ Your child lived with a parent or guardian who died<br>■ Your child was separated from her/him primary caregiver through deportation or immigration<br>■ Your child had a serious medical procedure or life threatening illness<br>■ Your child often saw or heard violence in the neighborhood or in her/his school neighborhood<br>■ Your child was detained, arrested or incarcerated<br>■ Your child was often treated badly because of race, sexual orientation, place of birth, disability or religion<br>■ Your child experienced verbal or physical abuse or threats from a romantic partner (i.e. boyfriend or girlfriend)|0-9
