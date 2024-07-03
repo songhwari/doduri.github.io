@@ -125,7 +125,7 @@ function displayQuestion() {
 		select.className = 'form-control';
 		select.id = 'subjectiveInput' + questionData.number;
 
-		for (let i = questionData.options.min; i <= questionData.options.max; i++) {
+		for (let i = questionData.options.max; i >= questionData.options.min; i--) {
 			const option = document.createElement('option');
 			option.value = i;
 			option.textContent = i;
