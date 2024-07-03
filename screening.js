@@ -25,34 +25,47 @@ async function loadSurvey() {
         let title = "";
         lines.forEach(line => {
             if (!line.includes('|')) {
-				if (line.startsWith('*')) {
-                    totalQuestions++;
-                    surveyQuestions.push({
-                        question: line.substring(1),
-						number: totalQuestions,
-                        options: Array(0),
-                        isSubjective: true,
-                        title: title || "Survey",
-                        isCounted: true
-                    });
-				} else {
-	                title = line;
-				}
+				title = line;
             } else {
                 const parts = line.split('|');
+				const settings = parts[1].split('-');
                 if (parts.length === 2) {
-                    // Skip single-option questions for total count
-                    surveyQuestions.push({
-                        question: parts[0],
-						number: 0,
-                        options: parts.slice(1).map(option => {
-                            const [text, score] = option.split('/');
-                            return { text, score: parseInt(score, 10) };
-                        }),
-                        isSubjective: false,
-                        title: title || "Survey",
-                        isCounted: false
-                    });
+					if (parts[0].startsWith('*')) {
+						if (settings.length === 2) {//ranged int
+							totalQuestions++;
+							surveyQuestions.push({
+								question: parts[0].substring(1),
+								number: totalQuestions,
+								options: {type: 'int', min: settings[0], max: settings[1]},
+								isSubjective: true,
+								title: title || "Survey",
+								isCounted: true
+							});
+						} else { //other subjective
+							totalQuestions++;
+							surveyQuestions.push({
+								question: parts[0].substring(1),
+								number: totalQuestions,
+								options: {type: 'str'},
+								isSubjective: true,
+								title: title || "Survey",
+								isCounted: true
+							});
+						}
+					} else {
+						// Skip single-option questions for total count
+						surveyQuestions.push({
+							question: parts[0],
+							number: 0,
+							options: parts.slice(1).map(option => {
+								const [text, score] = option.split('/');
+								return { text, score: parseInt(score, 10) };
+							}),
+							isSubjective: false,
+							title: title || "Survey",
+							isCounted: false
+						});
+					}
                 } else {
 					totalQuestions++;
                     surveyQuestions.push({
@@ -98,7 +111,28 @@ function displayQuestion() {
     div.appendChild(label);
     div.appendChild(document.createElement('br'));
 
-    if (questionData.isSubjective) {
+    if (questionData.isSubjective && questionData.options[0].type === 'int') {
+
+		const select = document.createElement('select');
+		select.className = 'form-control';
+		select.id = 'subjectiveInput' + questionData.number;
+
+		for (let i = questionData.min; i <= questionData.max; i++) {
+			const option = document.createElement('option');
+			option.value = i;
+			option.textContent = i;
+			select.appendChild(option);
+		}
+
+		select.value = responses_txt[currentQuestionIndex] ? responses_txt[currentQuestionIndex]: '';
+		const button = document.createElement('button');
+		button.type = 'button';
+		button.className = 'btn btn-secondary btn-block mb-2';
+		button.textContent = 'Next';
+		button.onclick = () => handleOptionClick(select.value, 0);
+        div.appendChild(select);
+        div.appendChild(button);
+    } else if (questionData.isSubjective && questionData.options[0].type !== 'int') {
         const input = document.createElement('input');
         input.type = 'text';
         input.className = 'form-control';
