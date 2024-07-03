@@ -271,6 +271,18 @@ function customizeResult(summaryContent, surveyName) {
 			resultDiv.style.color = 'red';
 		}
 		summaryContent.appendChild(resultDiv);
+	} else if (surveyName === 'aceq') {
+		surveyQuestions.forEach((questionData, index) => {
+			if (surveyQuestions[index].type === 'dummy') {
+				return;
+			}
+			const response = responses[index];
+			const responseText = responses_txt[index];
+			const div = document.createElement('div');
+			const question = questionData.question.split('\n')[0];
+			div.innerHTML = `${questionData.number}. ${question}: <strong>${responseText}</strong>`;
+			summaryContent.appendChild(div);
+		});
 	} else {
 		surveyQuestions.forEach((questionData, index) => {
 			if (surveyQuestions[index].type === 'dummy') {
