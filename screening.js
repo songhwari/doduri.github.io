@@ -365,6 +365,7 @@ function customizeResult(summaryContent, surveyName) {
 		}
 		summaryContent.appendChild(resultDiv);
 	} else if (surveyName === 'newborn') {
+		let last_title = '';
 		surveyQuestions.forEach((questionData, index) => {
 			const response = responses[index];
 			const responseText = responses_txt[index];
@@ -373,6 +374,13 @@ function customizeResult(summaryContent, surveyName) {
 				div.style.color = 'red';
 			} else if (index == 12 && responseText !== 'Never') {
 				div.style.color = 'red';
+			}
+			if (last_title !== surveyQuestions[index].title) {
+				last_title = surveyQuestions[index].title;
+				const div_title = document.createElement('div');
+				div_title.textContent = last_title;
+				div_title.style.fontweight = 'bold';
+				summaryContent.appendChild(div_title);
 			}
 			div.textContent = `${questionData.question}: ${responseText}`;
 			summaryContent.appendChild(div);
