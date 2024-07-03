@@ -267,6 +267,9 @@ function customizeResult(summaryContent, surveyName) {
 		summaryContent.appendChild(resultDiv);
 	} else {
 		surveyQuestions.forEach((questionData, index) => {
+			if (surveyQuestions[index].type === 'dummy') {
+				return;
+			}
 			const response = responses[index];
 			const responseText = responses_txt[index];
 			const div = document.createElement('div');
