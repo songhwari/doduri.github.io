@@ -279,7 +279,7 @@ function customizeResult(summaryContent, surveyName) {
 			const response = responses[index];
 			const responseText = responses_txt[index];
 			const div = document.createElement('div');
-			const question = questionData.question.split('\n')[0];
+			const question = questionData.question.replace(/<br\s*\/?>/gi, '\n').split('\n')[0];
 			div.innerHTML = `${questionData.number}. ${question}: <strong>${responseText}</strong>`;
 			summaryContent.appendChild(div);
 		});
