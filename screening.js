@@ -92,7 +92,7 @@ function displayQuestion() {
     div.classList.add('question', 'mb-4');
 
     const label = document.createElement('label');
-    label.textContent = questionData.isCounted
+    label.innerHTML = questionData.isCounted
         ? `${questionData.question} (${questionData.number} of ${totalQuestions})`
         : questionData.question;
     div.appendChild(label);
