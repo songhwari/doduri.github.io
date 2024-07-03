@@ -104,6 +104,7 @@ function displayQuestion() {
         input.className = 'form-control';
         input.id = 'subjectiveInput'+questionData.number;
 		input.value = responses_txt[currentQuestionIndex] ? responses_txt[currentQuestionIndex]: '';
+		input.autocomplete = 'off';
 		const button = document.createElement('button');
 		button.type = 'button';
 		button.className = 'btn btn-secondary btn-block mb-2';
