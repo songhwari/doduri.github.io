@@ -6,9 +6,9 @@ Explains the reasons for things, like needing a sweater when it’s cold|Not Yet
 Compares things – using words like “bigger” or “shorter”|Not Yet/0|Somewhat/1|Very Much/2
 Answers questions like “What do you do when you are cold?” or “... when you are sleepy?”|Not Yet/0|Somewhat/1|Very Much/2
 Tells you a story from a book or tv|Not Yet/0|Somewhat/1|Very Much/2
-Explains the reasons for things, like needing a sweater when it’s cold|Not Yet/0|Somewhat/1|Very Much/2
-Compares things – using words like “bigger” or “shorter”|Not Yet/0|Somewhat/1|Very Much/2
-Answers questions like “What do you do when you are cold?” or “... when you are sleepy?”|Not Yet/0|Somewhat/1|Very Much/2
+Draws simple shapes - like a circle or a square|Not Yet/0|Somewhat/1|Very Much/2
+Says words like "feet"for more than one foot and "men" for more than one man|Not Yet/0|Somewhat/1|Very Much/2
+Uses words like "yesterday" and "tomorrow" correctly|Not Yet/0|Somewhat/1|Very Much/2
 Preschool Pediatric Symptom Checklist(PPSC)
 Does your child seem nervous or afraid?|Not at all/0|Somewhat/1|Very Much/2
 Does your child seem sad or unhappy?|Not at all/0|Somewhat/1|Very Much/2
