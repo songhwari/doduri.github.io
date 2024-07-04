@@ -265,18 +265,18 @@ function customizeResult(summaryContent, surveyName) {
 			} else if (surveyQuestions[index].question === 'The thought of harming myself has occurred to me' && responseText !== 'Never') {
 				div.style.color = 'red';
 			}
-			if (surveyQuestions[index].title === 'Baby Pediatric Symptom Checklist(BPSC)') {
-				if (++bpsc_index == 4) {
-					summaryContent.appendChild(document.createElement('hr'));
-					bpsc_index == 0;
-				}
-			}
 			const question = questionData.question.replace(/<br\s*\/?>/gi, '\n').split('\n')[0];
 			div.innerHTML = `${questionData.number}. ${question}: <strong>${responseText}</strong>`;
 			if (surveyQuestions[index].type === 'dummy') {
 				;
 			} else {
 				summaryContent.appendChild(div);
+			}
+			if (surveyQuestions[index].title === 'Baby Pediatric Symptom Checklist(BPSC)') {
+				if (++bpsc_index == 4) {
+					summaryContent.appendChild(document.createElement('hr'));
+					bpsc_index = 0;
+				}
 			}
 
 			last_title = surveyQuestions[index].title;
