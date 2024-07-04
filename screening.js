@@ -246,6 +246,7 @@ function customizeResult(summaryContent, surveyName) {
 	} else if (checkupSurveys.includes(surveyName)) {//Checkup Surveys
 		let last_title = '';
 		let last_title_score = 0;
+		let bpsc_index = 0;
 		surveyQuestions.forEach((questionData, index) => {
 			//before
 			if (last_title !== surveyQuestions[index].title) {
@@ -261,10 +262,14 @@ function customizeResult(summaryContent, surveyName) {
 			const div = document.createElement('div');
 			if (surveyQuestions[index].title === 'Milestones' && response !== 'Yes') {
 				div.style.color = 'red';
-			} else if (surveyQuestions[index].title === 'Developmental Milestones' && responseText !== 'Yes') {
-				div.style.color = 'red';
 			} else if (surveyQuestions[index].question === 'The thought of harming myself has occurred to me' && responseText !== 'Never') {
 				div.style.color = 'red';
+			}
+			if (surveyQuestions[index].title === 'Baby Pediatric Symptom Checklist(BPSC)') {
+				if (++bpsc_index == 4) {
+					summaryContent.appendChild(document.createElement('hr'));
+					bpsc_index == 0;
+				}
 			}
 			const question = questionData.question.replace(/<br\s*\/?>/gi, '\n').split('\n')[0];
 			div.innerHTML = `${questionData.number}. ${question}: <strong>${responseText}</strong>`;
@@ -281,9 +286,12 @@ function customizeResult(summaryContent, surveyName) {
 			if (index == surveyQuestions.length-1 || surveyQuestions[index].title !== surveyQuestions[index+1].title) {
 				if (summaryTitles.includes(last_title)) {
 					const div_summary = document.createElement('div');
-					div_summary.innerHTML = `<h3>${surveyQuestions[index].title} score: ${last_title_score}</h3>`;
+					div_summary.style.fontWeight = 'bold';
+					div_summary.style.color = 'red';
+					div_summary.textContent = `${surveyQuestions[index].title} score: ${last_title_score}`;
 					summaryContent.appendChild(div_summary);
 				}
+				summaryContent.appendChild(document.createElement('hr'));
 				last_title_score = 0;
 			}
 		});
