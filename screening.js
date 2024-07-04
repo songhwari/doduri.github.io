@@ -206,7 +206,7 @@ function calculateScore() {
 function customizeResult(summaryContent, surveyName) {
     const score = responses.reduce((acc, curr) => acc + (typeof curr === 'number' ? curr : 0), 0);
 	const checkupSurveys = ['newborn', '2weeks', '2months', '4months', '6months', '9months', '12months', '15months', '18months', '24months', '30months', '3years', '4years', '5years', '6years', '7-10years', '11years', '12+years']; // 포함할 조건들을 배열로 나열
-	const summaryTitles = ['Milestones', 'Developmental Milestones', 'Baby Pediatric Symptom Checklist(BPSC)', 'Preschool Pediatric Symptom Checklist(PPSC)', "Parent's Observations of Social Interactions(POSI)", 'ACE-Q', 'Pediatric Symptom Checklist(PSC-17)'];
+	const summaryTitles = ['Developmental Milestones', 'Baby Pediatric Symptom Checklist(BPSC)', 'Preschool Pediatric Symptom Checklist(PPSC)', "Parent's Observations of Social Interactions(POSI)", 'ACE-Q', 'Pediatric Symptom Checklist(PSC-17)'];
 
 	if (surveyName === 'longform') {
 		const responses_phq9 = responses.slice(0, 12);
@@ -259,7 +259,7 @@ function customizeResult(summaryContent, surveyName) {
 			const responseText = responses_txt[index];
 
 			const div = document.createElement('div');
-			if (surveyQuestions[index].title === 'Milestones' && responseText !== 'Yes') {
+			if (surveyQuestions[index].title === 'Milestones' && response !== 'Yes') {
 				div.style.color = 'red';
 			} else if (surveyQuestions[index].title === 'Developmental Milestones' && responseText !== 'Yes') {
 				div.style.color = 'red';
@@ -278,13 +278,13 @@ function customizeResult(summaryContent, surveyName) {
 			last_title_score += response;
 
 			//after
-			if (summaryTitles.includes(last_title)) {
-				if (index == surveyQuestions.length-1 || surveyQuestions[index].title !== surveyQuestions[index+1].title) {
+			if (index == surveyQuestions.length-1 || surveyQuestions[index].title !== surveyQuestions[index+1].title) {
+				if (summaryTitles.includes(last_title)) {
 					const div_summary = document.createElement('div');
 					div_summary.innerHTML = `<h3>${surveyQuestions[index].title} score: ${last_title_score}</h3>`;
 					summaryContent.appendChild(div_summary);
-					last_title_score = 0;
 				}
+				last_title_score = 0;
 			}
 		});
 
