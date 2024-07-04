@@ -1,14 +1,14 @@
 Developmental Milestones
-Makes sounds that let you know he or she is happy or upset|Not Yet/1|Somewhat/2|Very Much/3
-Seems happy to see you|Not Yet/1|Somewhat/2|Very Much/3
-Follows a moving toy with his or her eyes|Not Yet/1|Somewhat/2|Very Much/3
-Turns head to find the person who is talking|Not Yet/1|Somewhat/2|Very Much/3
-Holds head steady when being pulled up to a sitting position|Not Yet/1|Somewhat/2|Very Much/3
-Brings hands together|Not Yet/1|Somewhat/2|Very Much/3
-Laughs|Not Yet/1|Somewhat/2|Very Much/3
-Keeps head steady when held in a sitting position|Not Yet/1|Somewhat/2|Very Much/3
-Makes sounds like "ga," "ma," or "ba"|Not Yet/1|Somewhat/2|Very Much/3
-Looks when you call his or her name|Not Yet/1|Somewhat/2|Very Much/3
+Makes sounds that let you know he or she is happy or upset|Not Yet/0|Somewhat/1|Very Much/2
+Seems happy to see you|Not Yet/1|Not Yet/0|Somewhat/1|Very Much/2
+Follows a moving toy with his or her eyes|Not Yet/0|Somewhat/1|Very Much/2
+Turns head to find the person who is talking|Not Yet/0|Somewhat/1|Very Much/2
+Holds head steady when being pulled up to a sitting position|Not Yet/0|Somewhat/1|Very Much/2
+Brings hands together|Not Yet/0|Somewhat/1|Very Much/2
+Laughs|Not Yet/0|Somewhat/1|Very Much/2
+Keeps head steady when held in a sitting position|Not Yet/0|Somewhat/1|Very Much/2
+Makes sounds like "ga," "ma," or "ba"|Not Yet/0|Somewhat/1|Very Much/2
+Looks when you call his or her name|Not Yet/0|Somewhat/1|Very Much/2
 Baby Pediatric Symptom Checklist(BPSC)
 Does your child have a hard time being with new people?|Not at all/1|Somewhat/2|Very Much/3
 Does your child have a hard time in new places?|Not at all/1|Somewhat/2|Very Much/3
