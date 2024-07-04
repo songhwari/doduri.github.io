@@ -18,6 +18,7 @@
                     <button type="button" class="btn btn-primary btn-lg btn-block mb-3" onclick="showOptions('peds_well_check_up')">Peds Well Check Up</button>
                 </div>
                 <div id="adultOptions" class="text-center" style="display: none;">
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('rank')">Military Ranks</button>
                     <button type="button" class="btn btn-secondary btn-block mb-2" onclick="javascript:location.href='https://mosdb.com/army/';">ARMY MOS</button>
                     <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('phq9')">PHQ9</button>
                     <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('gad7')">GAD7</button>
@@ -78,6 +79,11 @@
                         <button type="submit" class="btn btn-primary btn-block">Calculate</button>
                         <button type="button" class="btn btn-warning btn-block mt-3" onclick="goBack()">Back</button>
                     </form>
+                </div>
+                <div id="rankOptions" class="text-center" style="display: none;">
+                    <img src="./images/rank.png" alt="Military Ranks" class="img-fluid">
+                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('adult')">Back</button>
+                </div>
                 </div>
                 <div id="nbsOptions" class="text-center" style="display: none;">
                     <img src="./images/nbs.png" alt="Hospital Address for NBS" class="img-fluid">
