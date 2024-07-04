@@ -246,9 +246,6 @@ function customizeResult(summaryContent, surveyName) {
 		let last_title = '';
 		let last_title_score = 0;
 		surveyQuestions.forEach((questionData, index) => {
-			const response = responses[index];
-			const responseText = responses_txt[index];
-
 			//before
 			if (last_title !== surveyQuestions[index].title) {
 				const div_title = document.createElement('div');
