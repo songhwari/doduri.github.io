@@ -1,4 +1,5 @@
 GAD-7
+Before you begin filling out the anxiety screening questionnaires, please note that we will not ask for patient identification informtation and your answers will not be recorded. After completing the survey, please show the results to the nurse|Continue/0
 Over the last 2 weeks, how often have you been bothered by any of the following problems?|Continue/0
 Feeling nervous, anxious, or on edge|Not at all/0|Several days/1|Over half the days/2|Nearly every day/3
 Not being able to stop or control worrying|Not at all/0|Several days/1|Over half the days/2|Nearly every day/3
