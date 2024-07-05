@@ -193,6 +193,11 @@ function displayQuestion() {
             checkbox.id = 'option_'+questionData.number+'_'+option_id;
             checkbox.value = option.score;
 			checkbox.setAttribute('data-option', option.text);
+			if (responses_txt[currentQuestionIndex] && responses_txt[currentQuestionIndex].endsWith(option.text)) {
+				checkbox.checked = true;
+			} else if (responses_txt[currentQuestionIndex] && responses_txt[currentQuestionIndex].includes(option.text+', ')) {
+				checkbox.checked = true;
+			}
 
             const label = document.createElement('label');
             label.className = 'form-check-label';
@@ -250,7 +255,7 @@ function handleMultipleOptionClick(questionData) {
     const selectedOptions = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.getAttribute('data-option'));
 	
 	responses[currentQuestionIndex] = Math.max(...selectedValues);
-    responses_txt[currentQuestionIndex] = selectedOptions.join(',');
+    responses_txt[currentQuestionIndex] = selectedOptions.join(', ');
     currentQuestionIndex++;
     displayQuestion();
 }
