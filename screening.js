@@ -208,7 +208,7 @@ function displayQuestion() {
 		button.type = 'button';
 		button.className = 'btn btn-secondary btn-block mb-2';
 		button.textContent = 'Next';
-		button.onclick = () => handleMultipleChoice(questionData);
+		button.onclick = () => handleMultipleOptionClick(questionData);
         div.appendChild(button);
 
     } else {
