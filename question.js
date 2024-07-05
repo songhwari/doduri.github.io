@@ -13,6 +13,7 @@ function showOptions(optionType) {
     document.getElementById('weightLossForm').style.display = optionType === 'weight_loss' ? 'block' : 'none';
     document.getElementById('fuWeightForm').style.display = optionType === 'fu_weight' ? 'block' : 'none';
     document.getElementById('rankImage').style.display = optionType === 'rank' ? 'block' : 'none';
+    document.getElementById('pedsvitalsignImage').style.display = optionType === 'pedsvitalsign' ? 'block' : 'none';
 }
 
 function populateDob() {
@@ -93,6 +94,7 @@ function goBack() {
     document.getElementById('weightLossForm').style.display = 'none';
     document.getElementById('fuWeightForm').style.display = 'none';
     document.getElementById('rankImage').style.display = 'none';
+    document.getElementById('pedsvitalsignImage').style.display = 'none';
 }
 
 function calculateAge(event) {
