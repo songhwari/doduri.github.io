@@ -62,14 +62,13 @@ function populateLastVisitDate() {
 
 function setTodayAsDefault() {
     let today = new Date();
-	today.setHours(0, 0, 0, 0);
 
-    document.getElementById('visitDate').valueAsDate = today;
+    document.getElementById('visitDate').value = today.toISOString().slice(0,10);
     document.getElementById('dobYear').value = today.getFullYear();
     document.getElementById('dobMonth').value = today.getMonth() + 1; // Months are 0-indexed
     document.getElementById('dobDay').value = today.getDate();
 
-    document.getElementById('visitDate2').valueAsDate = today;
+    document.getElementById('visitDate2').value = today.toISOString().slice(0,10);
     document.getElementById('dobYear2').value = today.getFullYear();
     document.getElementById('dobMonth2').value = today.getMonth() + 1; // Months are 0-indexed
     document.getElementById('dobDay2').value = today.getDate();
