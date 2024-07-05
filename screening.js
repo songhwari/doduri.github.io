@@ -354,6 +354,7 @@ function customizeResult(summaryContent, surveyName) {
 				bpsc_score += response;
 				if (bpsc_index == 4) {
 					const div_bpsc = document.createElement('div');
+					div_bpsc.style.fontWeight = 'bold';
 					div_bpsc.textContent = `BPSC section score: ${bpsc_score}`;
 					summaryContent.appendChild(div_bpsc);
 					summaryContent.appendChild(document.createElement('hr'));
