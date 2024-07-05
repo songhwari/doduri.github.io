@@ -77,7 +77,7 @@ async function loadSurvey() {
 
 				totalQuestions++;
 				surveyQuestions.push({
-					question: headings[0],
+					question: headings[2],
 					number: totalQuestions,
 					options: parts.slice(1).map(option => {
 						const [text, score] = option.split('/');
@@ -192,6 +192,7 @@ function displayQuestion() {
             checkbox.className = 'form-check-input';
             checkbox.id = 'option_'+questionData.number+'_'+option_id;
             checkbox.value = option.score;
+			checkbox.setAttribute('data-option', option.text);
 
             const label = document.createElement('label');
             label.className = 'form-check-label';
@@ -246,9 +247,10 @@ function handleOptionClick(txt, score) {
 function handleMultipleOptionClick(questionData) {
     const checkboxes = document.querySelectorAll(`input[type="checkbox"]`);
     const selectedValues = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+    const selectedOptions = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.getAttribute('data-option'));
 	
 	responses[currentQuestionIndex] = Math.max(...selectedValues);
-    responses_txt[currentQuestionIndex] = selectedValues.join(', ');;
+    responses_txt[currentQuestionIndex] = selectedOptions.join(',');
     currentQuestionIndex++;
     displayQuestion();
 }
