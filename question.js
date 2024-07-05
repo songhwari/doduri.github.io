@@ -61,7 +61,9 @@ function populateLastVisitDate() {
 }
 
 function setTodayAsDefault() {
-    const today = new Date();
+    let today = new Date();
+	today.setHours(0, 0, 0, 0);
+
     document.getElementById('visitDate').valueAsDate = today;
     document.getElementById('dobYear').value = today.getFullYear();
     document.getElementById('dobMonth').value = today.getMonth() + 1; // Months are 0-indexed

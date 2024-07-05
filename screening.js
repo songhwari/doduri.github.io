@@ -18,6 +18,15 @@ function safeParseInt(str) {
     return parsed;
 }
 
+function splitWithLimit(str, delimiter, limit) {
+  const parts = str.split(delimiter);
+  const result = parts.slice(0, limit);
+  if (parts.length > limit) {
+    result.push(parts.slice(limit).join(delimiter));
+  }
+  return result;
+}
+
 async function loadSurvey() {
     const surveyName = getQueryParam('name');
     if (!surveyName) {
@@ -34,60 +43,78 @@ async function loadSurvey() {
         lines.forEach(line => {
             if (!line.includes('|')) {
 				title = line;
-            } else {
+            } else if (line.startsWith('*text*')) {
                 const parts = line.split('|');
-				const settings = parts[1].split('-');
-                if (parts.length === 2) {
-					if (parts[0].startsWith('*')) {
-						if (settings.length === 2) {//ranged int
-							totalQuestions++;
-							surveyQuestions.push({
-								question: parts[0].substring(1),
-								number: totalQuestions,
-								options: {min: safeParseInt(settings[0]), max: safeParseInt(settings[1])},
-								type: 'range',
-								title: title || "Survey",
-								isCounted: true
-							});
-						} else { //other subjective
-							totalQuestions++;
-							surveyQuestions.push({
-								question: parts[0].substring(1),
-								number: totalQuestions,
-								options: {type: 'str'},
-								type: 'string',
-								title: title || "Survey",
-								isCounted: true
-							});
-						}
-					} else {
-						// Skip single-option questions for total count
-						surveyQuestions.push({
-							question: parts[0],
-							number: 0,
-							options: parts.slice(1).map(option => {
-								const [text, score] = option.split('/');
-								return { text, score: parseInt(score, 10) };
-							}),
-							type: 'dummy',
-							title: title || "Survey",
-							isCounted: false
-						});
-					}
-                } else {
+				const headings = splitWithLimit(parts[0], '*', 2);
+
+				totalQuestions++;
+				surveyQuestions.push({
+					question: headings[2],
+					number: totalQuestions,
+					options: Array(0),
+					type: 'text',
+					title: title || "Survey",
+					isCounted: true
+				});
+            } else if (line.startsWith('*number/')) {
+                const parts = line.split('|');
+				const headings = splitWithLimit(parts[0], '*', 2);
+				const headings_options =  headings[1].split('/');
+
+				totalQuestions++;
+				surveyQuestions.push({
+					question: headings[2],
+					number: totalQuestions,
+					options: {min: safeParseInt(headings_options[1]), max: safeParseInt(headings_options[2])},
+					type: 'number',
+					title: title || "Survey",
+					isCounted: true
+				});
+            } else if (line.startsWith('*multiple/')) {
+                const parts = line.split('|');
+				const headings = splitWithLimit(parts[0], '*', 2);
+				const headings_options =  headings[1].split('/');
+
+				totalQuestions++;
+				surveyQuestions.push({
+					question: headings[0],
+					number: totalQuestions,
+					options: parts.slice(1).map(option => {
+						const [text, score] = option.split('/');
+						return { text, score: parseInt(score, 10) };
+					}),
+					type: 'multiple',
+					title: title || "Survey",
+					isCounted: true
+				});
+            } else {//single or dummy
+                const parts = line.split('|');
+				if (parts.length === 2) {
+					surveyQuestions.push({
+						question: parts[0],
+						number: 0,
+						options: parts.slice(1).map(option => {
+							const [text, score] = option.split('/');
+							return { text, score: parseInt(score, 10) };
+						}),
+						type: 'dummy',
+						title: title || "Survey",
+						isCounted: false
+					});
+				} else {
 					totalQuestions++;
-                    surveyQuestions.push({
-                        question: parts[0],
+					surveyQuestions.push({
+						question: parts[0],
 						number: totalQuestions,
-                        options: parts.slice(1).map(option => {
-                            const [text, score] = option.split('/');
-                            return { text, score: parseInt(score, 10) };
-                        }),
-                        type: 'single',
-                        title: title || "Survey",
-                        isCounted: true
-                    });
-                }
+						options: parts.slice(1).map(option => {
+							const [text, score] = option.split('/');
+							return { text, score: parseInt(score, 10) };
+						}),
+						type: 'single',
+						title: title || "Survey",
+						isCounted: true
+					});
+				}
             }
         });
 
@@ -119,7 +146,7 @@ function displayQuestion() {
     div.appendChild(label);
     div.appendChild(document.createElement('br'));
 
-    if (questionData.type === 'range') {
+    if (questionData.type === 'number') {
 
 		const select = document.createElement('select');
 		select.className = 'form-control';
@@ -140,7 +167,7 @@ function displayQuestion() {
 		button.onclick = () => handleOptionClick(select.value, safeParseInt(select.value));
         div.appendChild(select);
         div.appendChild(button);
-    } else if (questionData.type === 'string') {
+    } else if (questionData.type === 'text') {
         const input = document.createElement('input');
         input.type = 'text';
         input.className = 'form-control';
@@ -154,6 +181,36 @@ function displayQuestion() {
 		button.onclick = () => handleOptionClick(input.value, 0);
         div.appendChild(input);
         div.appendChild(button);
+    } else if (questionData.type === 'multiple') {
+		let option_id = 0;
+        questionData.options.forEach(option => {
+            const checkboxDiv = document.createElement('div');
+            checkboxDiv.className = 'form-check';
+
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.className = 'form-check-input';
+            checkbox.id = 'option_'+questionData.number+'_'+option_id;
+            checkbox.value = option.score;
+
+            const label = document.createElement('label');
+            label.className = 'form-check-label';
+            label.htmlFor = 'option_'+questionData.number+'_'+option_id;
+            label.textContent = option.text;
+
+            checkboxDiv.appendChild(checkbox);
+            checkboxDiv.appendChild(label);
+            div.appendChild(checkboxDiv);
+			option_id++;
+        });
+
+		const button = document.createElement('button');
+		button.type = 'button';
+		button.className = 'btn btn-secondary btn-block mb-2';
+		button.textContent = 'Next';
+		button.onclick = () => handleMultipleChoice(questionData);
+        div.appendChild(button);
+
     } else {
         questionData.options.forEach(option => {
             const button = document.createElement('button');
@@ -186,6 +243,16 @@ function handleOptionClick(txt, score) {
     displayQuestion();
 }
 
+function handleMultipleOptionClick(questionData) {
+    const checkboxes = document.querySelectorAll(`input[type="checkbox"]`);
+    const selectedValues = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+	
+	responses[currentQuestionIndex] = Math.max(...selectedValues);
+    responses_txt[currentQuestionIndex] = selectedValues.join(', ');;
+    currentQuestionIndex++;
+    displayQuestion();
+}
+
 function goBack() {
     if (currentQuestionIndex > 0) {
         currentQuestionIndex--;
@@ -196,6 +263,8 @@ function goBack() {
 function calculateScore() {
     const summaryContent = document.getElementById('summaryContent');
     summaryContent.innerHTML = '';
+
+    document.getElementById('surveyTitle').textContent = 'Survey Results';
 
 	customizeResult(summaryContent, getQueryParam('name'))
 
