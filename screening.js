@@ -282,7 +282,7 @@ function calculateScore() {
 function customizeResult(summaryContent, surveyName) {
     const score = responses.reduce((acc, curr) => acc + (typeof curr === 'number' ? curr : 0), 0);
 	const checkupSurveys = ['newborn', '2weeks', '2months', '4months', '6months', '9months', '12months', '15months', '18months', '24months', '30months', '3years', '4years', '5years', '6years', '7-10years', '11years', '12+years']; // 포함할 조건들을 배열로 나열
-	const summaryTitles = ['Developmental Milestones', 'Baby Pediatric Symptom Checklist(BPSC)', 'Preschool Pediatric Symptom Checklist(PPSC)', "Parent's Observations of Social Interactions(POSI)", 'ACE-Q', 'Pediatric Symptom Checklist(PSC-17)'];
+	const summaryTitles = ['Developmental Milestones', 'Preschool Pediatric Symptom Checklist(PPSC)', "Parent's Observations of Social Interactions(POSI)", 'ACE-Q', 'Pediatric Symptom Checklist(PSC-17)'];
 
 	if (surveyName === 'longform') {
 		const responses_phq9 = responses.slice(0, 12);
@@ -356,6 +356,9 @@ function customizeResult(summaryContent, surveyName) {
 					const div_bpsc = document.createElement('div');
 					div_bpsc.style.fontWeight = 'bold';
 					div_bpsc.textContent = `BPSC section score: ${bpsc_score}`;
+					if (bpsc_score >= 3) {
+						div_bpsc.style.color = 'red';
+					}
 					summaryContent.appendChild(div_bpsc);
 					summaryContent.appendChild(document.createElement('hr'));
 					bpsc_index = 0;
@@ -375,6 +378,8 @@ function customizeResult(summaryContent, surveyName) {
 						div_summary.style.color = 'red';
 					} else if (last_title === "Edinburgh Postnatal Depression Scale" && last_title_score >= 10) {
 						div_summary.style.color = 'red';
+					} else if (last_title === "Preschool Pediatric Symptom Checklist(PPSC)" && last_title_score >= 9) {
+						div_summary.style.color = 'red';
 					}
 					div_summary.textContent = `${surveyQuestions[index].title} score: ${last_title_score}`;
 					summaryContent.appendChild(div_summary);
@@ -383,14 +388,6 @@ function customizeResult(summaryContent, surveyName) {
 				last_title_score = 0;
 			}
 		});
-
-		const resultDiv = document.createElement('div');
-		resultDiv.className = 'mt-4';
-		resultDiv.innerHTML = `<h3>Your total score is: ${score}</h3>`;
-		if (score >= 10) {
-			resultDiv.style.color = 'red';
-		}
-		summaryContent.appendChild(resultDiv);
 	} else if (surveyName === 'aceq') {
 		surveyQuestions.forEach((questionData, index) => {
 			if (surveyQuestions[index].type === 'dummy') {
