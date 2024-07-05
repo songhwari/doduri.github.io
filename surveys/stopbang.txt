@@ -1,3 +1,5 @@
+STOP-BANG
+Before you begin filling out the sleep apnea screening questionnaires, please note that we will not ask for patient identification informtation and your answers will not be recorded. After completing the survey, please show the results to the nurse|Continue/0
 Do you snore loudly? (louder than talking or loud enough to be heard through closed doors?)|Yes/1|No/0
 Do you have or are you being treated for high blood pressure?|Yes/1|No/0
 Are you older than 50 years?|Yes/1|No/0

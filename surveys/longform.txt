@@ -1,3 +1,4 @@
+Before you begin filling out the depression, anxiety and PTSD screening questionnaires, please note that we will not ask for patient identification informtation and your answers will not be recorded. After completing the survey, please show the results to the nurse|Continue/0
 PHQ-9
 Over the last 2 weeks, how often have you been bothered by any of the following problems?|Continue/0
 Feeling down, depressed, or hopeless|Not at all/0|Several days/1|More than half the days/2|Nearly every day/3

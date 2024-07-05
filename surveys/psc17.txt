@@ -1,0 +1,18 @@
+Pediatric Symptom Checklist(PSC-17)
+Does your child fidgety, unable to sit still?|Never/0|Sometimes/1|Often/2
+Does your child acts as if driven by a motor?|Never/0|Sometimes/1|Often/2
+Does your child daydreams too much?|Never/0|Sometimes/1|Often/2
+Does your child distracted easily?|Never/0|Sometimes/1|Often/2
+Does your child feels sad?|Never/0|Sometimes/1|Often/2
+Does your child feels hopeless?|Never/0|Sometimes/1|Often/2
+Does your child have trouble concentrating?|Never/0|Sometimes/1|Often/2
+Does your child fight with other children?|Never/0|Sometimes/1|Often/2
+Does your child feel down on him/herself?|Never/0|Sometimes/1|Often/2
+Does your child worry a lot?|Never/0|Sometimes/1|Often/2
+Does your child seem to be having less fun?|Never/0|Sometimes/1|Often/2
+Does your child not listen to rules?|Never/0|Sometimes/1|Often/2
+Does your child not understand other people's feelings?|Never/0|Sometimes/1|Often/2
+Does your child teases others?|Never/0|Sometimes/1|Often/2
+Does your child blames others for his/her troubles?|Never/0|Sometimes/1|Often/2
+Does your child refuses to share?|Never/0|Sometimes/1|Often/2
+Does your child take things that do not belong to him/her?|Never/0|Sometimes/1|Often/2
