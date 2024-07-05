@@ -323,6 +323,7 @@ function customizeResult(summaryContent, surveyName) {
 		let last_title = '';
 		let last_title_score = 0;
 		let bpsc_index = 0;
+		let bpsc_score = 0;
 		surveyQuestions.forEach((questionData, index) => {
 			//before
 			if (last_title !== surveyQuestions[index].title) {
@@ -349,9 +350,15 @@ function customizeResult(summaryContent, surveyName) {
 				summaryContent.appendChild(div);
 			}
 			if (surveyQuestions[index].title === 'Baby Pediatric Symptom Checklist(BPSC)') {
-				if (++bpsc_index == 4) {
+				bpsc_index++;
+				bpsc_score += response;
+				if (bpsc_index == 4) {
+					const div_bpsc = document.createElement('div');
+					div_bpsc.textContent = `BPSC section score: ${bpsc_score}`;
+					summaryContent.appendChild(div_bpsc);
 					summaryContent.appendChild(document.createElement('hr'));
 					bpsc_index = 0;
+					bpsc_score = 0;
 				}
 			}
 
@@ -363,7 +370,11 @@ function customizeResult(summaryContent, surveyName) {
 				if (summaryTitles.includes(last_title)) {
 					const div_summary = document.createElement('div');
 					div_summary.style.fontWeight = 'bold';
-					div_summary.style.color = 'red';
+					if (last_title === "Parent's Observations of Social Interactions(POSI)" && last_title_score >= 3) {
+						div_summary.style.color = 'red';
+					} else if (last_title === "Edinburgh Postnatal Depression Scale" && last_title_score >= 10) {
+						div_summary.style.color = 'red';
+					}
 					div_summary.textContent = `${surveyQuestions[index].title} score: ${last_title_score}`;
 					summaryContent.appendChild(div_summary);
 				}
