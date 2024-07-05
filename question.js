@@ -178,7 +178,7 @@ function calculateRanges() {
 		const endDateForRange = calculatePreviousDate(calculatePreviousDate(endDate, diffDaysList[index+1]), {years: 0, months: 0, days: 1});
 		
 		const button = document.createElement('button');
-		button.textContent = `${diff.label}: ${endDateForRange} ~ ${startDate}`;
+		button.innerHTML = `<strong>${diff.label}</strong>: ${endDateForRange} ~ ${startDate}`;
 		button.className = 'btn btn-secondary btn-block mb-2';
 		button.onclick = function() {
 			window.location.href = `./screening.htm?name=${diff.name}`;
