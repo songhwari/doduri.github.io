@@ -60,13 +60,15 @@ function populateLastVisitDate() {
 
 function setTodayAsDefault() {
     let today = new Date();
+	let timezoneOffset = today.getTimezoneOffset() * 60000;
+	let today2 = new Date(today.getTime() - timezoneOffset); 
 
-    document.getElementById('visitDate').value = today.toISOString().slice(0,10);
+    document.getElementById('visitDate').value = today2.toISOString().slice(0,10);
 
-    document.getElementById('visitDate2').value = today.toISOString().slice(0,10);
-    document.getElementById('dobYear2').value = today.getFullYear();
-    document.getElementById('dobMonth2').value = today.getMonth() + 1; // Months are 0-indexed
-    document.getElementById('dobDay2').value = today.getDate();
+    document.getElementById('visitDate2').value = today2.toISOString().slice(0,10);
+    document.getElementById('dobYear2').value = today2.getFullYear();
+    document.getElementById('dobMonth2').value = today2.getMonth() + 1; // Months are 0-indexed
+    document.getElementById('dobDay2').value = today2.getDate();
 }
 
 function redirectToSurvey(name) {
@@ -130,6 +132,18 @@ function calculatePreviousDate(endDate, diff) {
     return `${year}-${month}-${day}`;
 }
 
+function getNextDate(dateString) {
+    let date = new Date(dateString);
+    
+    date.setDate(date.getDate() + 1);
+    
+    let year = date.getFullYear();
+    let month = String(date.getMonth() + 1).padStart(2, '0');
+    let day = String(date.getDate()).padStart(2, '0');
+    
+    return `${year}-${month}-${day}`;
+}
+
 function calculateWeightLoss() {
     const birthWeight = parseFloat(document.getElementById('birthWeight').value);
     const todaysWeight = parseFloat(document.getElementById('todaysWeight').value);
@@ -175,7 +189,7 @@ function calculateRanges() {
 		if (index == diffDaysList.length-1) return;//last=Adult
 
 		const startDate = calculatePreviousDate(endDate, diff);
-		const endDateForRange = calculatePreviousDate(calculatePreviousDate(endDate, diffDaysList[index+1]), {years: 0, months: 0, days: 1});
+		const endDateForRange = getNextDate(calculatePreviousDate(endDate, diffDaysList[index+1]));
 		
 		const button = document.createElement('button');
 		button.innerHTML = `<strong>${diff.label}</strong>: ${endDateForRange} ~ ${startDate}`;
