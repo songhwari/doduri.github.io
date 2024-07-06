@@ -365,6 +365,7 @@ function customizeResult(summaryContent, surveyName) {
 	} else {
 		let last_title = '';
 		let last_title_score = 0;
+		let last_title_count = 0;
 		surveyQuestions.forEach((questionData, index) => {
 			//before
 			if (last_title !== surveyQuestions[index].title) {
@@ -384,6 +385,7 @@ function customizeResult(summaryContent, surveyName) {
 				;
 			} else {
 				summaryContent.appendChild(div);
+				last_title_count++;
 			}
 
 			last_title = surveyQuestions[index].title;
@@ -394,8 +396,11 @@ function customizeResult(summaryContent, surveyName) {
 				const div_summary = document.createElement('div');
 				div_summary.style.fontWeight = 'bold';
 				div_summary.textContent = `${surveyQuestions[index].title} score: ${last_title_score}`;
-				summaryContent.appendChild(div_summary);
-				summaryContent.appendChild(document.createElement('hr'));
+				if (last_title_count >0) {
+					summaryContent.appendChild(div_summary);
+					summaryContent.appendChild(document.createElement('hr'));
+				}
+				last_title_count = 0;
 				last_title_score = 0;
 			}
 		});
