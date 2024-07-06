@@ -293,42 +293,7 @@ function customizeResult(summaryContent, surveyName) {
 	const checkupSurveys = ['newborn', '2weeks', '2months', '4months', '6months', '9months', '12months', '15months', '18months', '24months', '30months', '3years', '4years', '5years', '6years', '7years', '8-10years', '11years', '12-18years']; // 포함할 조건들을 배열로 나열
 	const summaryTitles = ['Developmental Milestones', 'Preschool Pediatric Symptom Checklist(PPSC)', "Parent's Observations of Social Interactions(POSI)", 'ACE-Q', 'Pediatric Symptom Checklist(PSC-17)'];
 
-	if (surveyName === 'longform') {
-		const responses_phq9 = responses.slice(0, 12);
-		const responses_gad7 = responses.slice(12, 21);
-		const responses_pcl5 = responses.slice(21, 42);
-	    const score_phq9 = responses_phq9.reduce((acc, curr) => acc + (typeof curr === 'number' ? curr : 0), 0);
-	    const score_gad7 = responses_gad7.reduce((acc, curr) => acc + (typeof curr === 'number' ? curr : 0), 0);
-	    const score_pcl5 = responses_pcl5.reduce((acc, curr) => acc + (typeof curr === 'number' ? curr : 0), 0);
-
-		surveyQuestions.forEach((questionData, index) => {
-			if (surveyQuestions[index].type === 'dummy') {
-				return;
-			}
-			const response = responses[index];
-			const responseText = responses_txt[index];
-			const div = document.createElement('div');
-			const question = questionData.question.replace(/<br\s*\/?>/gi, '\n').split('\n')[0];
-			div.innerHTML = `${questionData.number}. ${question}: <strong>${responseText}</strong>`;
-			summaryContent.appendChild(div);
-		});
-
-		const resultDiv_phq9 = document.createElement('div');
-		resultDiv_phq9.className = 'mt-4';
-		resultDiv_phq9.innerHTML = `<h3>Your PHQ-9 total score is: ${score_phq9}</h3>`;
-		summaryContent.appendChild(resultDiv_phq9);
-
-		const resultDiv_gad7 = document.createElement('div');
-		resultDiv_gad7.className = 'mt-4';
-		resultDiv_gad7.innerHTML = `<h3>Your GAD-7 total score is: ${score_gad7}</h3>`;
-		summaryContent.appendChild(resultDiv_gad7);
-
-		const resultDiv_pcl5 = document.createElement('div');
-		resultDiv_pcl5.className = 'mt-4';
-		resultDiv_pcl5.innerHTML = `<h3>Your PCL-5 total score is: ${score_pcl5}</h3>`;
-		summaryContent.appendChild(resultDiv_pcl5);
-
-	} else if (checkupSurveys.includes(surveyName)) {//Checkup Surveys
+	if (checkupSurveys.includes(surveyName)) {//Checkup Surveys
 		let last_title = '';
 		let last_title_score = 0;
 		let bpsc_index = 0;
