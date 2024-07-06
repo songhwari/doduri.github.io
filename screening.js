@@ -243,6 +243,10 @@ function displayQuestion() {
 }
 
 function handleOptionClick(txt, score) {
+	if (txt === '') {
+		alert('No items selected or entered. Please select or enter an item and click Next.');
+		return;
+	}
     responses[currentQuestionIndex] = score;
     responses_txt[currentQuestionIndex] = txt;
     currentQuestionIndex++;
@@ -253,6 +257,11 @@ function handleMultipleOptionClick(questionData) {
     const checkboxes = document.querySelectorAll(`input[type="checkbox"]`);
     const selectedValues = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
     const selectedOptions = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.getAttribute('data-option'));
+
+	if (selectedOptions.length === 0) {
+		alert('No items selected. Please select items and click Next.');
+		return;
+	}
 	
 	responses[currentQuestionIndex] = Math.max(...selectedValues);
     responses_txt[currentQuestionIndex] = selectedOptions.join(', ');
@@ -281,7 +290,7 @@ function calculateScore() {
 
 function customizeResult(summaryContent, surveyName) {
     const score = responses.reduce((acc, curr) => acc + (typeof curr === 'number' ? curr : 0), 0);
-	const checkupSurveys = ['newborn', '2weeks', '2months', '4months', '6months', '9months', '12months', '15months', '18months', '24months', '30months', '3years', '4years', '5years', '6years', '7-10years', '11years', '12+years']; // 포함할 조건들을 배열로 나열
+	const checkupSurveys = ['newborn', '2weeks', '2months', '4months', '6months', '9months', '12months', '15months', '18months', '24months', '30months', '3years', '4years', '5years', '6years', '7years', '8-10years', '11years', '12-18years']; // 포함할 조건들을 배열로 나열
 	const summaryTitles = ['Developmental Milestones', 'Preschool Pediatric Symptom Checklist(PPSC)', "Parent's Observations of Social Interactions(POSI)", 'ACE-Q', 'Pediatric Symptom Checklist(PSC-17)'];
 
 	if (surveyName === 'longform') {
@@ -413,6 +422,43 @@ function customizeResult(summaryContent, surveyName) {
 			summaryContent.appendChild(div);
 		});
 
+	
+		let last_title = '';
+		let last_title_score = 0;
+		surveyQuestions.forEach((questionData, index) => {
+			//before
+			if (last_title !== surveyQuestions[index].title) {
+				const div_title = document.createElement('div');
+				div_title.textContent = surveyQuestions[index].title;
+				div_title.style.fontWeight = 'bold';
+				summaryContent.appendChild(div_title);
+			}
+
+			const response = responses[index];
+			const responseText = responses_txt[index];
+
+			const div = document.createElement('div');
+			const question = questionData.question.replace(/<br\s*\/?>/gi, '\n').split('\n')[0];
+			div.innerHTML = `${questionData.number}. ${question}: <strong>${responseText}</strong>`;
+			if (surveyQuestions[index].type === 'dummy') {
+				;
+			} else {
+				summaryContent.appendChild(div);
+			}
+
+			last_title = surveyQuestions[index].title;
+			last_title_score += response;
+
+			//after
+			if (index == surveyQuestions.length-1 || surveyQuestions[index].title !== surveyQuestions[index+1].title) {
+				const div_summary = document.createElement('div');
+				div_summary.style.fontWeight = 'bold';
+				div_summary.textContent = `${surveyQuestions[index].title} score: ${last_title_score}`;
+				summaryContent.appendChild(div_summary);
+				summaryContent.appendChild(document.createElement('hr'));
+				last_title_score = 0;
+			}
+		});
 		const resultDiv = document.createElement('div');
 		resultDiv.className = 'mt-4';
 		resultDiv.innerHTML = `<h3>Your total score is: ${score}</h3>`;
