@@ -397,32 +397,7 @@ function customizeResult(summaryContent, surveyName) {
 				last_title_score = 0;
 			}
 		});
-	} else if (surveyName === 'aceq') {
-		surveyQuestions.forEach((questionData, index) => {
-			if (surveyQuestions[index].type === 'dummy') {
-				return;
-			}
-			const response = responses[index];
-			const responseText = responses_txt[index];
-			const div = document.createElement('div');
-			const question = questionData.question.replace(/<br\s*\/?>/gi, '\n').split('\n')[0];
-			div.innerHTML = `${questionData.number}. ${question}: <strong>${responseText}</strong>`;
-			summaryContent.appendChild(div);
-		});
 	} else {
-		surveyQuestions.forEach((questionData, index) => {
-			if (surveyQuestions[index].type === 'dummy') {
-				return;
-			}
-			const response = responses[index];
-			const responseText = responses_txt[index];
-			const div = document.createElement('div');
-			const question = questionData.question.replace(/<br\s*\/?>/gi, '\n').split('\n')[0];
-			div.innerHTML = `${questionData.number}. ${question}: <strong>${responseText}</strong>`;
-			summaryContent.appendChild(div);
-		});
-
-	
 		let last_title = '';
 		let last_title_score = 0;
 		surveyQuestions.forEach((questionData, index) => {
