@@ -311,7 +311,7 @@ function customizeResult(summaryContent, surveyName) {
 			const responseText = responses_txt[index];
 
 			const div = document.createElement('div');
-			if (surveyQuestions[index].title === 'Milestones' && response !== 'Yes') {
+			if (surveyQuestions[index].title === 'Milestones' && responseText.toLowerCase() !== 'yes') {
 				div.style.color = 'red';
 			} else if (surveyQuestions[index].question === 'The thought of harming myself has occurred to me' && responseText !== 'Never') {
 				div.style.color = 'red';
