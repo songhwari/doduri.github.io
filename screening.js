@@ -291,7 +291,7 @@ function calculateScore() {
 function customizeResult(summaryContent, surveyName) {
     const score = responses.reduce((acc, curr) => acc + (typeof curr === 'number' ? curr : 0), 0);
 	const checkupSurveys = ['newborn', '2weeks', '2months', '4months', '6months', '9months', '12months', '15months', '18months', '24months', '30months', '3years', '4years', '5years', '6years', '7years', '8-10years', '11years', '12-18years']; // 포함할 조건들을 배열로 나열
-	const summaryTitles = ['Developmental Milestones', 'Preschool Pediatric Symptom Checklist(PPSC)', "Parent's Observations of Social Interactions(POSI)", 'ACE-Q', 'Pediatric Symptom Checklist(PSC-17)'];
+	const summaryTitles = ['Developmental Milestones', 'Preschool Pediatric Symptom Checklist(PPSC)', "Parent's Observations of Social Interactions(POSI)", 'ACE-Q', 'Pediatric Symptom Checklist(PSC-17)', 'Edinburgh Postnatal Depression Scale'];
 
 	if (checkupSurveys.includes(surveyName)) {//Checkup Surveys
 		let last_title = '';
