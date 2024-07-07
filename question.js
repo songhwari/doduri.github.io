@@ -19,22 +19,12 @@ const diffDaysList = [{label:'Newborn', name:'newborn',years:0,months:0,days:2},
 	{label:'12-18 years old', name:'12-18years',years:12,months:0,days:0},
 	{label:'Adult', name:'Adult',years:19,months:0,days:0}];
 
-function showOptions(optionType) {
-    document.getElementById('initialOptions').style.display = 'none';
-    document.getElementById('adultOptions').style.display = optionType === 'adult' ? 'block' : 'none';
-    document.getElementById('pedsOptions').style.display = optionType === 'peds' ? 'block' : 'none';
-    document.getElementById('pedsWellCheckUp').style.display = optionType === 'peds_well_check_up' ? 'block' : 'none';
-    document.getElementById('nbsOptions').style.display = optionType === 'nbs' ? 'block' : 'none';
-    document.getElementById('bristolOptions').style.display = optionType === 'bristol' ? 'block' : 'none';
-    document.getElementById('tylenolImage').style.display = optionType === 'tylenol' ? 'block' : 'none';
-    document.getElementById('ibuprofenImage').style.display = optionType === 'ibuprofen' ? 'block' : 'none';
-    document.getElementById('lactationOptions').style.display = optionType === 'lactation' ? 'block' : 'none';
-    document.getElementById('dieticianOptions').style.display = optionType === 'dietician' ? 'block' : 'none';
-    document.getElementById('edisOptions').style.display = optionType === 'edis' ? 'block' : 'none';
-    document.getElementById('weightLossForm').style.display = optionType === 'weight_loss' ? 'block' : 'none';
-    document.getElementById('fuWeightForm').style.display = optionType === 'fu_weight' ? 'block' : 'none';
-    document.getElementById('rankImage').style.display = optionType === 'rank' ? 'block' : 'none';
-    document.getElementById('pedsvitalsignImage').style.display = optionType === 'pedsvitalsign' ? 'block' : 'none';
+
+function showOptions(divId) {
+	const contents = document.querySelectorAll('.content');
+	contents.forEach(content => content.classList.remove('active'));
+	document.getElementById(divId).classList.add('active');
+	history.pushState({divId: divId}, '', '#' + divId);
 }
 
 function populateLastVisitDate() {
@@ -73,24 +63,6 @@ function setTodayAsDefault() {
 
 function redirectToSurvey(name) {
     window.location.href = `./screening.htm?name=${name}`;
-}
-
-function goBack() {
-    document.getElementById('initialOptions').style.display = 'block';
-    document.getElementById('adultOptions').style.display = 'none';
-    document.getElementById('pedsOptions').style.display = 'none';
-    document.getElementById('pedsWellCheckUp').style.display = 'none';
-    document.getElementById('nbsOptions').style.display = 'none';
-    document.getElementById('bristolOptions').style.display = 'none';
-    document.getElementById('tylenolImage').style.display = 'none';
-    document.getElementById('ibuprofenImage').style.display = 'none';
-    document.getElementById('lactationOptions').style.display = 'none';
-    document.getElementById('dieticianOptions').style.display = 'none';
-    document.getElementById('edisOptions').style.display = 'none';
-    document.getElementById('weightLossForm').style.display = 'none';
-    document.getElementById('fuWeightForm').style.display = 'none';
-    document.getElementById('rankImage').style.display = 'none';
-    document.getElementById('pedsvitalsignImage').style.display = 'none';
 }
 
 function calculatePreviousDate(endDate, diff) {
@@ -194,16 +166,32 @@ function calculateRanges() {
 		const button = document.createElement('button');
 		button.innerHTML = `<strong>${diff.label}</strong>: ${endDateForRange} ~ ${startDate}`;
 		button.className = 'btn btn-secondary btn-block mb-2';
-		button.onclick = function() {
-			window.location.href = `./screening.htm?name=${diff.name}`;
-        };
+		if (diff.label === '12-18 years old') {
+			button.onclick = () => showOptions('ped12Options');
+		} else {
+			button.onclick = function() {
+				window.location.href = `./screening.htm?name=${diff.name}`;
+			};
+		}
 		buttonsContainer.appendChild(button);
 	});
 }
 
-window.onload = function() {
+window.addEventListener('popstate', function(event) {
+	if (event.state && event.state.divId) {
+		const contents = document.querySelectorAll('.content');
+		contents.forEach(content => content.classList.remove('active'));
+		document.getElementById(event.state.divId).classList.add('active');
+	}
+});
+
+window.addEventListener('load', function() {
+	const divId = location.hash.replace('#', '');
+	if (divId) {
+		showOptions(divId);
+	}
+
 	populateLastVisitDate();
     setTodayAsDefault();
-
 	calculateRanges();
-};
+});

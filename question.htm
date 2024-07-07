@@ -6,19 +6,23 @@
     <title>Question Selector</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .content { display: none; }
+        .content.active { display: block; }
+    </style>
 </head>
 <body>
     <div class="container mt-5">
         <div class="card">
             <div class="card-body">
                 <h1 class="card-title text-center">Select Option</h1>
-                <div id="initialOptions" class="text-center">
-                    <button type="button" class="btn btn-primary btn-lg btn-block mb-3" onclick="showOptions('adult')">Adult</button>
-                    <button type="button" class="btn btn-primary btn-lg btn-block mb-3" onclick="showOptions('peds')">Peds</button>
-                    <button type="button" class="btn btn-primary btn-lg btn-block mb-3" onclick="showOptions('peds_well_check_up')">Peds Well Check Up</button>
+                <div id="initialOptions" class="content text-center active">
+                    <button type="button" class="btn btn-primary btn-lg btn-block mb-3" onclick="showOptions('adultOptions')">Adult</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-block mb-3" onclick="showOptions('pedsOptions')">Peds</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-block mb-3" onclick="showOptions('pedsWellCheckUp')">Peds Well Check Up</button>
                 </div>
-                <div id="adultOptions" class="text-center" style="display: none;">
-                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('rank')">Military Ranks</button>
+                <div id="adultOptions" class="content text-center">
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('rankImage')">Military Ranks</button>
                     <button type="button" class="btn btn-secondary btn-block mb-2" onclick="javascript:location.href='https://mosdb.com/army/';">ARMY MOS</button>
                     <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('phq9')">PHQ9</button>
                     <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('gad7')">GAD7</button>
@@ -27,78 +31,76 @@
                     <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('stopbang')">STOP-BANG</button>
                     <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('ess')">Epworth Scale</button>
                     <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('isi')">Insomnia</button>
-                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="goBack()">Back</button>
+                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('initialOptions')">Back</button>
                 </div>
-                <div id="pedsOptions" class="text-center" style="display: none;">
-                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('pedsvitalsign')">PEDS Vital Sign</button>
+                <div id="pedsOptions" class="content text-center">
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('pedsvitalsignImage')">PEDS Vital Sign</button>
                     <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('epds')">EPDS</button>
                     <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('aceq')">ACEQ</button>
                     <button type="button" class="btn btn-secondary btn-block mb-2" onclick="redirectToSurvey('psc17')">PSC17</button>
                     <button type="button" class="btn btn-secondary btn-block mb-2" onclick="javascript:location.href='https://www.bilitool.org/';">Bilitool</button>
-                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('weight_loss')">Weight loss calculator</button>
-                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('fu_weight')">F/U Weight calculator</button>
-                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('nbs')">Hospital Address for NBS</button>
-                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('bristol')">Bristol Stool Chart</button>
-                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('tylenol')">Tylenol Dose</button>
-                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('ibuprofen')">Ibuprofen Dose</button>
-                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('lactation')">Lactation Consultant</button>
-                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('dietician')">Dietician Consultant</button>
-                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('edis')">EDIS </button>
-                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="goBack()">Back</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('weightLossForm')">Weight loss calculator</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('fuWeightForm')">F/U Weight calculator</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('nbsOptions')">Hospital Address for NBS</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('bristolOptions')">Bristol Stool Chart</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('tylenolImage')">Tylenol Dose</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('ibuprofenImage')">Ibuprofen Dose</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('lactationOptions')">Lactation Consultant</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('dieticianOptions')">Dietician Consultant</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('edisOptions')">EDIS </button>
+                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('initialOptions')">Back</button>
                 </div>
-                <div id="pedsWellCheckUp" class="text-center" style="display: none;">
+                <div id="pedsWellCheckUp" class="content text-center">
 					<div class="form-group">
 						<label for="visitDate">Date of Visit</label>
 						<input type="date" class="form-control" id="visitDate" required onchange="calculateRanges()">
 					</div>
 					<label >Date of Birth</label>
-					<div class="form-group" id="buttonsContainer">
-
-					</div>
-					<button type="button" class="btn btn-warning btn-block mt-3" onclick="goBack()">Back</button>
+					<div class="form-group" id="buttonsContainer"></div>
+					<button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('initialOptions')">Back</button>
                 </div>
-                <div id="nbsOptions" class="text-center" style="display: none;">
+                <div id="nbsOptions" class="content text-center">
                     <img src="./images/nbs.png" loading="lazy" alt="Hospital Address for NBS" class="img-fluid">
-                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('peds')">Back</button>
+                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('pedsOptions')">Back</button>
                 </div>
-                <div id="bristolOptions" class="text-center" style="display: none;">
+                <div id="bristolOptions" class="content text-center">
                     <img src="./images/poo.png" loading="lazy" alt="Bristol Stool Chart" class="img-fluid">
-                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('peds')">Back</button>
+                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('pedsOptions')">Back</button>
                 </div>
-				<div id="tylenolImage" class="text-center" style="display: none;">
+				<div id="tylenolImage" class="content text-center">
 					<img src="./images/tylenol.png" loading="lazy" alt="Tylenol" class="img-fluid mb-2">
-                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('peds')">Back</button>
+                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('pedsOptions')">Back</button>
 				</div>
-				<div id="ibuprofenImage" class="text-center" style="display: none;">
+				<div id="ibuprofenImage" class="content text-center">
 					<img src="./images/ibuprofen.png" loading="lazy" alt="Ibuprofen" class="img-fluid mb-2">
-                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('peds')">Back</button>
+                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('pedsOptions')">Back</button>
 				</div>
-                <div id="rankImage" class="text-center" style="display: none;">
+                <div id="rankImage" class="content text-center">
 					<img src="./images/rank.png" loading="lazy" alt="Military Ranks" class="img-fluid mb-2">
-                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('adult')">Back</button>
+                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('adultOptions')">Back</button>
 				</div>
-                <div id="pedsvitalsignImage" class="text-center" style="display: none;">
+                <div id="pedsvitalsignImage" class="content text-center">
 					<img src="./images/pedsvitalsign.png" loading="lazy" alt="PEDS Vital Sign" class="img-fluid mb-2">
-                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('peds')">Back</button>
+                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('pedsOptions')">Back</button>
 				</div>
-                <div id="lactationOptions" class="text-center" style="display: none;">
+                <div id="lactationOptions" class="content text-center">
                     Sarah Song, BSN, RN, IBCLC<br>
                     DSN: 737-7586<br>
                     COMM: 0503-337-7586<br>
                     Inpatient and Outpatient Appointment<br>
                     Breastfeeding Support Group<br>
                     Pre/Post-natal education, weighted feed, nipple measurement, one-on-one counseling and more!
-                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('peds')">Back</button>
+                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('pedsOptions')">Back</button>
                 </div>
-                <div id="dieticianOptions" class="text-center" style="display: none;">
+                <div id="dieticianOptions" class="content text-center">
                     Michelle Giang, MS, RD, LD, CLC<br>
                     DSN: 315-737-1570<br>
                     COMM: 0503-337-1570<br>
                     Individual Breastfeeding support and nutrition counseling <br>
                     with a Registered Dietitian for All Ages
-                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('peds')">Back</button>
+                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('pedsOptions')">Back</button>
                 </div>
-                <div id="edisOptions" class="text-center" style="display: none;">
+                <div id="edisOptions" class="content text-center">
                     For additional information, log on to <a href="https://www.EDIS.army.mil" target="_blank">www.EDIS.army.mil</a> or contact you local EDIS program at: 
                     EDIS<br>
                     EDIS, USAMEDDA-KOREA <br>
@@ -108,9 +110,13 @@
                     COMMERCIAL : 0503-337-1300<br>
                     EMAIL : <a href="mailto:usarmy.Humphreys.medcom-kor.mbx.edis@mail.mil">usarmy.Humphreys.medcom-kor.mbx.edis@mail.mil</a><br>
                     Find us on Facebook- EDIS Korea<br>
-                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('peds')">Back</button>
+                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('pedsOptions')">Back</button>
                 </div>
-                <div id="weightLossForm" class="text-center" style="display: none;">
+                <div id="ped12Options" class="content text-center">
+                    Since there is a portion of the Well Child Check Up Packet for children aged 12 and older that your child needs to complete, please arrive at the clinic 10 minutes before your scheduled appointment time. This will allow parents to fill out their portion and help their child complete their portion as well.
+                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('pedsWellCheckUp')">Back</button>
+                </div>
+                <div id="weightLossForm" class="content text-center">
 					<div class="form-group">
 						<label for="birthWeight">Birth Weight (grams)</label>
 						<input type="number" class="form-control" id="birthWeight" required>
@@ -121,12 +127,11 @@
 					</div>
 	                <div id="weightLossFormResult" class="text-center mt-4"></div>
 					<button type="button" class="btn btn-primary btn-block" onclick="calculateWeightLoss()">Calculate</button>
-                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('peds')">Back</button>
+                    <button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('pedsOptions')">Back</button>
                 </div>
-                <div id="fuWeightForm" class="text-center" style="display: none;">
+                <div id="fuWeightForm" class="content text-center">
 					<div class="form-group">
 						<label for="lastVisitDate">Last Visit Date</label>
-
 						<div class="form-row">
 							<div class="col">
 								<select id="dobYear2" class="form-control" required></select>
@@ -151,7 +156,6 @@
 								<select id="dobDay2" class="form-control" required></select>
 							</div>
 						</div>
-
 					</div>
 					<div class="form-group">
 						<label for="lastVisitWeight">Last Visit Weight (grams)</label>
@@ -165,10 +169,9 @@
 						<label for="visitWeight">Today's Weight (grams)</label>
 						<input type="number" class="form-control" id="visitWeight" required>
 					</div>
-
 					<div id="fuWeightFormResult" class="text-center mt-4"></div>
 					<button type="button" class="btn btn-primary btn-block" onclick="calculateFuWeight()">Calculate</button>
-					<button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('peds')">Back</button>
+					<button type="button" class="btn btn-warning btn-block mt-3" onclick="showOptions('pedsOptions')">Back</button>
                 </div>
             </div>
         </div>
