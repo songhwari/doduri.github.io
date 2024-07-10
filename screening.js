@@ -408,10 +408,12 @@ function customizeResult(summaryContent, surveyName) {
 				last_title_score = 0;
 			}
 		});
-		const resultDiv = document.createElement('div');
-		resultDiv.className = 'mt-4';
-		resultDiv.innerHTML = `<h3>Your total score is: ${score}</h3>`;
-		summaryContent.appendChild(resultDiv);
+		if (surveyName !== 'aceq') {
+			const resultDiv = document.createElement('div');
+			resultDiv.className = 'mt-4';
+			resultDiv.innerHTML = `<h3>Your total score is: ${score}</h3>`;
+			summaryContent.appendChild(resultDiv);
+		}
 	}
 }
 
