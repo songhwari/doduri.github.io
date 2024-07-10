@@ -381,7 +381,11 @@ function customizeResult(summaryContent, surveyName) {
 			const div = document.createElement('div');
 			const question = questionData.question.replace(/<br\s*\/?>/gi, '\n').split('\n')[0];
 			div.innerHTML = `${questionData.number}. ${question}: <strong>${responseText}</strong>`;
-			if (surveyQuestions[index].type === 'dummy' && responseText !== 'Nurse portion') {
+			//customize
+			if (surveyName === 'epds' && question === 'The thought of harming myself has occurred to me' && response>0) {
+				div.style.color = 'red';
+			}
+			if (surveyQuestions[index].type === 'dummy' && (surveyName !== 'stopbang' || responseText !== 'Nurse portion')) {
 				;
 			} else {
 				summaryContent.appendChild(div);
@@ -396,7 +400,7 @@ function customizeResult(summaryContent, surveyName) {
 				const div_summary = document.createElement('div');
 				div_summary.style.fontWeight = 'bold';
 				div_summary.textContent = `${surveyQuestions[index].title} score: ${last_title_score}`;
-				if (last_title_count >0) {
+				if (last_title_count >0 && last_title !=='ACE-Q') {
 					summaryContent.appendChild(div_summary);
 					summaryContent.appendChild(document.createElement('hr'));
 				}
