@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Selector</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .content {
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h1 style="display:none;" class="card-title text-center"></h1>
+                <div id="initialOptions" class="content text-center active">
+                    <button type="button" class="btn btn-secondary btn-block mb-2"
+                        onclick="javascript:location.href='https://waze.com/ul/hwyd64x5n9';">How to get to
+                        BDAACH(WAZE)</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2" onclick="showOptions('ohsImage')">How
+                        to
+                        get to OH clinic</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2"
+                        onclick="showOptions('pcmhImage')">Immunization Clinic</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2"
+                        onclick="showOptions('labImage')">Specimen Collection</button>
+                    <button type="button" class="btn btn-secondary btn-block mb-2"
+                        onclick="showOptions('pcmhlabImage')">IMMS &amp; Specimen Collection</button>
+                </div>
+                <div id="ohsImage" class="content text-center">
+                    <h1 class="card-title text-center">How to get to OH clinic</h1>
+                    <img src="./storage/ohs.png" loading="lazy" alt="How to get to OH clinic" class="img-fluid mb-2">
+                </div>
+                <div id="pcmhImage" class="content text-center">
+                    <h1 class="card-title text-center">Immunization Clinic</h1>
+                    <img src="./storage/pcmh.jpg" loading="lazy" alt="Immunization Clinic" class="img-fluid mb-2">
+                </div>
+                <div id="labImage" class="content text-center">
+                    <h1 class="card-title text-center">Specimen Collection</h1>
+                    <img src="./storage/lab.jpg" loading="lazy" alt="Specimen Collection" class="img-fluid mb-2">
+                </div>
+                <div id="pcmhlabImage" class="content text-center">
+                    <h1 class="card-title text-center">IMMS & Specimen Collection</h1>
+                    <img src="./storage/pcmhlab.jpg" loading="lazy" alt="IMMS & Specimen Collection"
+                        class="img-fluid mb-2">
+                </div>
+                <button type="button" class="btn btn-warning btn-block mt-3"
+                    onclick="showOptions('initialOptions')">Back</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="question.js"></script>
+</body>
+
+</html>
